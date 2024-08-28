@@ -9,7 +9,18 @@ li {
   list-style: none;
 }
 
+h2 {
+  color: #000;
+  text-align: center;
+  font-size: 48px;
+  font-weight: 700;
+}
+
 .icon {
+  cursor: pointer;
+}
+
+.button {
   cursor: pointer;
 }
 
@@ -19,6 +30,5 @@ li {
   max-width: 1512px;
   margin: 0 auto;
   justify-content: center;
-  flex-direction: column;
   margin-inline: auto;
 }

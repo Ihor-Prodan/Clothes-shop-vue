@@ -22,7 +22,7 @@
     background: #FFF;
   `;
 
-  const isArrivals = title.includes('Arrivals');
+  const isArrivals = title.includes('ARRIVALS');
 </script>
 
 <template>
@@ -30,7 +30,7 @@
     <section class="recommended">
       <h2
         class="recommended-title"
-        :id="isArrivals ? '/new-arrivals' : '/sale'"
+        :id="isArrivals ? 'new-arrivals' : 'sale'"
       >
         {{ title }}
       </h2>
@@ -44,19 +44,22 @@
         title="View All"
         :style="styleButton"
       />
+      <div
+        class="line"
+        v-if="isArrivals"
+      ></div>
     </section>
   </div>
 </template>
 
 <style lang="scss">
   .recommended {
-    padding-inline: 100px;
+    // padding-inline: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
     margin-top: 72px;
-    padding-bottom: 100px;
     background: #fff;
 
     &-title {
@@ -72,5 +75,13 @@
       gap: 20px;
       margin-bottom: 36px;
     }
+  }
+
+  .line {
+    margin-top: 64px;
+    height: 1px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    padding-inline: -100px;
   }
 </style>

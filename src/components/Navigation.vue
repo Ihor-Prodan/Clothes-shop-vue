@@ -26,9 +26,9 @@
   <nav class="navigation">
     <ul class="navigation-list">
       <li
-        class="navigation-item"
         v-for="nav of navigation"
         :key="nav.title"
+        class="navigation-item"
         :href="nav.href"
       >
         {{ nav.title }}

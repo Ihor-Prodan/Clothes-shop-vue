@@ -8,11 +8,15 @@ module.exports = {
     'eslint:recommended',
     '@vue/eslint-config-typescript',
     '@vue/eslint-config-prettier/skip-formatting',
+    "plugin:vue/vue3-recommended",
+    "prettier",
   ],
+  plugins: ["prettier"],
   parserOptions: {
     ecmaVersion: 'latest',
   },
   rules: {
+    "prettier/prettier": ["error"],
     'no-console': 'warn',
     eqeqeq: ['error', 'always'],
     curly: ['error', 'all'],
