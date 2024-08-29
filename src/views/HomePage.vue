@@ -5,7 +5,7 @@
   import Recommended from '@/components/Recommended.vue';
   import Styles from '@/components/Styles.vue';
   import Reviews from '@/components/Reviews.vue';
-  import Footer from '@/components/Footer.vue';
+  import Footer from '@/components/Footer/Footer.vue';
 </script>
 
 <template>
@@ -17,8 +17,8 @@
     <Recommended title="TOP SELLING" />
     <Styles />
     <Reviews />
-    <Footer />
   </div>
+  <Footer />
 </template>
 
 <style lang="scss" scoped>
