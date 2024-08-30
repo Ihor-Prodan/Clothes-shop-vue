@@ -1,12 +1,16 @@
 <script lang="ts" setup>
+  import { computed, onMounted } from 'vue';
   import ProductCard from './ProductCard.vue';
   import UIbutton from './UIcomponents/UIbutton.vue';
+  import { useProductStore } from '@/stores/product';
 
   interface Props {
     title: string;
   }
 
   const { title } = defineProps<Props>();
+  const productsArr = useProductStore();
+  const products = computed(() => productsArr.products);
 
   const styleButton = `
     display: flex;
@@ -23,30 +27,48 @@
   `;
 
   const isArrivals = title.includes('ARRIVALS');
+
+  const sortedProducts = computed(() => {
+    const productsCopy = [...products.value];
+
+    if (isArrivals) {
+      return productsCopy.sort((a, b) => b.price - a.price).slice(0, 4);
+    } else {
+      return productsCopy.sort((a, b) => b.rating - a.rating).slice(0, 4);
+    }
+  });
+
+  onMounted(() => {
+    productsArr.fetchProducts();
+  });
 </script>
 
 <template>
   <div class="wrapper">
     <section class="recommended">
       <h2
-        class="recommended-title"
         :id="isArrivals ? 'new-arrivals' : 'sale'"
+        class="recommended-title"
       >
         {{ title }}
       </h2>
       <div class="recommended-container">
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        <template
+          v-for="product in sortedProducts"
+          :key="product.id"
+        >
+          <ProductCard :product="product" />
+        </template>
       </div>
-      <UIbutton
-        title="View All"
-        :style="styleButton"
-      />
+      <div class="button-container">
+        <UIbutton
+          title="View All"
+          :style="styleButton"
+        />
+      </div>
       <div
-        class="line"
         v-if="isArrivals"
+        class="line"
       ></div>
     </section>
   </div>
@@ -54,10 +76,8 @@
 
 <style lang="scss">
   .recommended {
-    // padding-inline: 100px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 20px;
     margin-top: 72px;
     background: #fff;
@@ -83,5 +103,10 @@
     width: 100%;
     background: rgba(0, 0, 0, 0.1);
     padding-inline: -100px;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
   }
 </style>

@@ -3,12 +3,10 @@
 </script>
 
 <template>
-  <div class="button-container">
-    <button
-      class="button"
-      :style="style"
-    >
-      {{ title }}
-    </button>
-  </div>
+  <button
+    class="button"
+    :style="style"
+  >
+    {{ title }}
+  </button>
 </template>

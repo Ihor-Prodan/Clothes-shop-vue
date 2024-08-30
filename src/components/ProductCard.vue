@@ -1,36 +1,47 @@
+<script setup lang="ts">
+  import type { Product } from '@/Types/Product';
+  import { defineProps } from 'vue';
+
+  const props = defineProps<{ product: Product }>();
+</script>
+
 <template>
   <section class="productCard">
     <img
       class="productCard-image"
       alt="productCard-image"
-      src="../assets/image/card.png"
+      :src="props.product.images[0]"
     />
-    <p class="productCard-title">T-SHIRT WITH TAPE DETAILS</p>
+    <p class="productCard-title">{{ product.name.toUpperCase() }}</p>
     <div>
       <div class="productCard-ratingContainer">
         <div class="productCard-rating-stars">
           <img
-            class="productCard-rating"
-            alt="rating"
-            src="../assets/svg/rating.svg"
-          />
-          <img
-            class="productCard-rating"
-            alt="rating"
-            src="../assets/svg/rating.svg"
-          />
-          <img
+            v-for="(star, index) in Number(props.product.rating.toString()[0])"
+            :key="index"
             class="productCard-rating"
             alt="rating"
             src="../assets/svg/rating.svg"
           />
         </div>
-        <p class="productCard-ratingNumber">3/5</p>
+        <p class="productCard-ratingNumber">
+          {{ product.rating.toString()[0] }}/5
+        </p>
       </div>
       <div class="productCard-priceContainer">
-        <p class="productCard-priceContainer-price">$240</p>
-        <p class="productCard-priceContainer-priceDiscount">$260</p>
-        <div class="productCard-priceContainer-priceDiscountPrcent">-20%</div>
+        <p class="productCard-priceContainer-price">
+          {{
+            product.discountPrice > 0 ? product.discountPrice : product.price
+          }}
+        </p>
+        <template v-if="product.discountPrice > 0">
+          <p class="productCard-priceContainer-priceDiscount">
+            {{ product.price }}
+          </p>
+          <div class="productCard-priceContainer-priceDiscountPrcent">
+            {{ product.discount }}%
+          </div>
+        </template>
       </div>
     </div>
   </section>
@@ -52,12 +63,14 @@
     &-image {
       max-width: 295px;
       max-height: 298px;
+      object-fit: cover;
       padding-left: 1px;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       border-radius: 20px;
       background: #f0eeed;
+      object-position: top;
     }
 
     &-title {
@@ -92,6 +105,7 @@
       flex-direction: row;
       align-items: center;
       gap: 10px;
+      margin-bottom: 10px;
 
       &-price {
         color: #000;
