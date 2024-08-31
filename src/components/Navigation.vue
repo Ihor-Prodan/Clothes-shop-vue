@@ -1,5 +1,8 @@
 <script setup lang="ts">
   import { reactive } from 'vue';
+  import { useRouter } from 'vue-router';
+
+  const router = useRouter();
 
   const navigation = reactive([
     {
@@ -20,6 +23,10 @@
       href: '/brands',
     },
   ]);
+
+  const navigate = (href: string) => {
+    router.push(href);
+  };
 </script>
 
 <template>
@@ -30,6 +37,7 @@
         :key="nav.title"
         class="navigation-item"
         :href="nav.href"
+        @click="navigate(nav.href)"
       >
         {{ nav.title }}
       </li>

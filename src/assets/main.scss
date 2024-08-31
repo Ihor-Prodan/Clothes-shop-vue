@@ -1,3 +1,5 @@
+@import './mixins.scss';
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -22,6 +24,19 @@ h2 {
 
 .button {
   cursor: pointer;
+}
+
+.link-home {
+  display: flex;
+  margin-bottom: 2px;
+  color: rgba(0, 0, 0, 0.60);
+  @include fontBase;
+}
+
+.link-product {
+  @include fontBase;
+  margin-bottom: 2px;
+  color: #000;
 }
 
 .wrapper {

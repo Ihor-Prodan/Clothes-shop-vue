@@ -1,6 +1,9 @@
 <script setup lang="ts">
+  import { useRouter } from 'vue-router';
   import Navigation from './Navigation.vue';
   import UIinput from './UIcomponents/UIinput.vue';
+
+  const router = useRouter();
 </script>
 
 <template>
@@ -11,6 +14,7 @@
           class="icon"
           src="../assets/svg/logo.svg"
           alt="logo"
+          @click="router.push('/')"
         />
         <Navigation />
         <UIinput />

@@ -25,6 +25,7 @@
 
 <style scoped lang="scss">
   @import '../assets/_mixins.scss';
+
   .reviews {
     display: flex;
     width: 400px;

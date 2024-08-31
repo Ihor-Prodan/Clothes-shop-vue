@@ -54,11 +54,11 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-width: 296px;
+    // max-width: 296px;
     max-height: 440px;
     border: 1px solid #e0e0e0;
     border-radius: 20px;
-    padding: 10px;
+    padding: 20px;
 
     &-image {
       max-width: 295px;

@@ -3,6 +3,7 @@
   import ProductCard from './ProductCard.vue';
   import UIbutton from './UIcomponents/UIbutton.vue';
   import { useProductStore } from '@/stores/product';
+  import Line from './UIcomponents/UIline.vue';
 
   interface Props {
     title: string;
@@ -66,10 +67,11 @@
           :style="styleButton"
         />
       </div>
-      <div
-        v-if="isArrivals"
-        class="line"
-      ></div>
+      <template v-if="isArrivals">
+        <div class="line-container">
+          <Line />
+        </div>
+      </template>
     </section>
   </div>
 </template>
@@ -97,16 +99,12 @@
     }
   }
 
-  .line {
-    margin-top: 64px;
-    height: 1px;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.1);
-    padding-inline: -100px;
-  }
-
   .button-container {
     display: flex;
     justify-content: center;
+  }
+
+  .line-container {
+    margin-top: 64px;
   }
 </style>
