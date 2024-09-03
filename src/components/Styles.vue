@@ -1,10 +1,14 @@
 <template>
   <div class="wrapper">
-    <section class="styles">
+    <section
+      id="styles"
+      class="styles"
+    >
       <div class="styles-container">
         <h2 class="styles-title">BROWSE BY DRESS STYLE</h2>
         <div class="styles-container-image">
           <div class="small">
+            <p class="styles-container-image-title">Casual</p>
             <img
               class="image"
               src="../assets/image/casual.png"
@@ -12,6 +16,7 @@
             />
           </div>
           <div class="large">
+            <p class="styles-container-image-title">Formal</p>
             <img
               class="image"
               src="../assets/image/formal.png"
@@ -19,6 +24,7 @@
             />
           </div>
           <div class="large">
+            <p class="styles-container-image-title">Party</p>
             <img
               class="image"
               src="../assets/image/party.png"
@@ -26,6 +32,7 @@
             />
           </div>
           <div class="small">
+            <p class="styles-container-image-title">Gym</p>
             <img
               class="image"
               src="../assets/image/gym.png"
@@ -65,6 +72,15 @@
       flex-direction: row;
       flex-wrap: wrap;
       gap: 12px;
+
+      &-title {
+        position: absolute;
+        left: 30px;
+        top: 20px;
+        color: #000;
+        font-size: 24px;
+        font-weight: 700;
+      }
     }
   }
 
@@ -76,11 +92,13 @@
   }
 
   .small {
+    position: relative;
     width: 407px;
     height: auto;
   }
 
   .large {
+    position: relative;
     width: 684px;
     height: auto;
   }

@@ -11,21 +11,29 @@
     },
     {
       title: 'On Sale',
-      href: '/sale',
+      href: '#sale',
     },
 
     {
       title: 'New Arrivals',
-      href: '/new-arrivals',
+      href: '#new-arrivals',
     },
     {
-      title: 'Brands',
-      href: '/brands',
+      title: 'Dress Styles',
+      href: '#styles',
     },
   ]);
 
   const navigate = (href: string) => {
-    router.push(href);
+    if (href === '/shop') {
+      router.push(href);
+    } else {
+      const element = document.querySelector(href);
+
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   };
 </script>
 

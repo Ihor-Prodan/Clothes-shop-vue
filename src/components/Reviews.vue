@@ -1,5 +1,15 @@
 <script setup lang="ts">
-  import RewiewCard from './RewiewCard.vue';
+  import { Swiper, SwiperSlide } from 'swiper/vue';
+  import 'swiper/swiper-bundle.css';
+  import { Pagination, Navigation } from 'swiper/modules';
+  import { useReviewsStore } from '@/stores/reviews';
+  import { computed } from 'vue';
+  import ReviewCard from './ReviewCard.vue';
+
+  const reviewsArr = useReviewsStore();
+  const reviews = computed(() => reviewsArr.reviews);
+
+  console.log(reviews);
 </script>
 
 <template>
@@ -20,11 +30,20 @@
           />
         </div>
       </div>
-      <div class="reviews-grid">
-        <RewiewCard />
-        <RewiewCard />
-        <RewiewCard />
-      </div>
+      <Swiper
+        :modules="[Pagination, Navigation]"
+        :space-between="30"
+        :slides-per-view="1"
+        :pagination="{ clickable: true }"
+        navigation
+      >
+        <SwiperSlide
+          v-for="review in reviews"
+          :key="review.id"
+        >
+          <ReviewCard v-bind="review" />
+        </SwiperSlide>
+      </Swiper>
     </section>
   </div>
 </template>

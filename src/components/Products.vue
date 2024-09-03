@@ -5,6 +5,7 @@
   import { computed, onMounted } from 'vue';
   import Filter from './Filter.vue';
   import Line from './UIcomponents/UIline.vue';
+  import Pagination from './Pagination.vue';
 
   const productsArr = useProductStore();
   const productsList = computed(() => productsArr.products);
@@ -44,6 +45,7 @@
                 <ProductCard :product="product" />
               </template>
             </div>
+            <Pagination />
           </div>
         </div>
       </div>

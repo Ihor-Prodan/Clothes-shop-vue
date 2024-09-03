@@ -1,10 +1,18 @@
 <script setup lang="ts">
-  const { style, title } = defineProps<{ style: string; title: string }>();
+  import { ref } from 'vue';
+
+  const { style, title, isWhite } = defineProps<{
+    style: string;
+    title: string;
+    isWhite: boolean;
+  }>();
+
+  const color = ref(isWhite);
 </script>
 
 <template>
   <button
-    class="button"
+    :class="color ? 'button-white' : 'button'"
     :style="style"
   >
     {{ title }}

@@ -24,7 +24,6 @@
     flex-shrink: 0;
     border-radius: 62px;
     border: 1px solid rgba(0, 0, 0, 0.10);
-    background: #FFF;
   `;
 
   const isArrivals = title.includes('ARRIVALS');
@@ -63,6 +62,7 @@
       </div>
       <div class="button-container">
         <UIbutton
+          :is-white="true"
           title="View All"
           :style="styleButton"
         />

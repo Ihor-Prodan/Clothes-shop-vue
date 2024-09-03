@@ -45,14 +45,15 @@
           style.
         </p>
         <Button
+          :is-white="false"
           title="Shop Now"
           :style="heroButtonStyle"
         />
         <div class="hero-content">
           <div
-            class="hero-content-benefits"
             v-for="item of benefitsList"
             :key="item.subtitle"
+            class="hero-content-benefits"
           >
             <p class="hero-content-benefits-title">{{ item.title }}</p>
             <p class="hero-content-benefits-subtitle">{{ item.subtitle }}</p>

@@ -1,14 +1,22 @@
+<script setup lang="ts">
+  import type { Reviews } from '@/Types/reviews';
+
+  const props = defineProps<Reviews>();
+</script>
+
 <template>
   <section class="reviews">
     <div class="reviews-star-container">
       <img
+        v-for="(star, index) in props.stars"
+        :key="index"
         class="reviews-star"
         src="../assets/svg/rating.svg"
         alt="star"
       />
     </div>
     <div class="reviews-titleContainer">
-      <p class="reviews-title">Sarah M.</p>
+      <p class="reviews-title">{{ props.name }}</p>
       <img
         class="reviews-title-image"
         src="../assets/svg/confirm.svg"
@@ -16,9 +24,7 @@
       />
     </div>
     <p class="reviews-text">
-      "I'm blown away by the quality and style of the clothes I received from
-      Shop.co. From casual wear to elegant dresses, every piece I've bought has
-      exceeded my expectations.”
+      {{ props.text }}
     </p>
   </section>
 </template>

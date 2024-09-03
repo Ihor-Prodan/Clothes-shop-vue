@@ -54,11 +54,22 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    // max-width: 296px;
+    transition:
+      box-shadow 0.3s ease-in-out,
+      transform 0.3s ease-in-out;
     max-height: 440px;
     border: 1px solid #e0e0e0;
     border-radius: 20px;
     padding: 20px;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.01);
+      box-shadow: 0 3px 13px 0 rgba(23, 32, 49, 0.4);
+      transition:
+        box-shadow 0.3s ease-in-out,
+        transform 0.3s ease-in-out;
+    }
 
     &-image {
       max-width: 295px;
@@ -71,6 +82,12 @@
       border-radius: 20px;
       background: #f0eeed;
       object-position: top;
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.02);
+        transition: transform 0.3s ease-in-out;
+      }
     }
 
     &-title {

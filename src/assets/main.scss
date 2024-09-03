@@ -24,6 +24,27 @@ h2 {
 
 .button {
   cursor: pointer;
+  opacity: 1;
+  transition: box-shadow 0.3s ease-in-out, font-weight 0.3s ease-in-out;
+
+  &:hover {
+    font-weight: 600;
+    box-shadow: 0 3px 25px 0 rgba(24, 24, 24, 0.4);
+    transition: box-shadow 0.3s ease-in-out, font-weight 0.3s ease-in-out;
+  }
+
+  &-white {
+    opacity: 1;
+    cursor: pointer;
+    background: #fff;
+    transition: box-shadow 0.3s ease-in-out;
+
+    &:hover {
+      font-weight: 500;
+      box-shadow: 0 3px 13px 0 rgba(23, 32, 49, 0.40);
+      transition: box-shadow 0.3s ease-in-out, font-weight 0.3s ease-in-out;
+    }
+  }
 }
 
 .link-home {
