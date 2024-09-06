@@ -2,16 +2,31 @@
   import { useProductStore } from '@/stores/product';
   import ProductCard from './ProductCard.vue';
   import UIdrobdown from './UIcomponents/UIdrobdown.vue';
-  import { computed, onMounted } from 'vue';
+  import { computed, onMounted, ref, watch } from 'vue';
   import Filter from './Filter.vue';
   import Line from './UIcomponents/UIline.vue';
   import Pagination from './Pagination.vue';
+  import type { Product } from '@/Types/Product';
+  import { useFilterStore } from '@/stores/filterStore';
 
   const productsArr = useProductStore();
   const productsList = computed(() => productsArr.products);
 
+  const filteredProducts = ref<Product[]>(productsList.value);
+
+  const updateFilteredProducts = (filtered: Product[]) => {
+    filteredProducts.value = filtered;
+  };
+
   onMounted(() => {
     productsArr.fetchProducts();
+    filteredProducts.value = productsList.value;
+  });
+
+  watch(productsList, () => {
+    if (!useFilterStore().hasActiveFilters) {
+      filteredProducts.value = productsList.value;
+    }
   });
 </script>
 
@@ -28,7 +43,11 @@
         <p class="link-product">Casual</p>
       </div>
       <div class="products-container-andProducts">
-        <Filter />
+        <Filter
+          :products-list="productsList"
+          @update-products="updateFilteredProducts"
+        />
+
         <div class="products-container">
           <div class="product-type-container">
             <div class="product-typeAndTitle">
@@ -39,7 +58,7 @@
             </div>
             <div class="products-grid">
               <template
-                v-for="product in productsList.slice(0, 9)"
+                v-for="product in filteredProducts"
                 :key="product.id"
               >
                 <ProductCard :product="product" />

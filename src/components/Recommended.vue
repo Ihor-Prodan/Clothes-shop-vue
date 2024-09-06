@@ -10,6 +10,7 @@
   }
 
   const { title } = defineProps<Props>();
+
   const productsArr = useProductStore();
   const products = computed(() => productsArr.products);
 

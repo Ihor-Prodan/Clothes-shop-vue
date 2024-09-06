@@ -1,46 +1,39 @@
 <script setup lang="ts">
-  import { ref, computed } from 'vue';
-  import { useProductStore } from '@/stores/product';
+  import { useFilterStore } from '@/stores/filterStore';
+  import { ref } from 'vue';
 
-  const { products } = useProductStore();
+  const filterStore = useFilterStore();
+  const priceRange = ref<[number, number]>([...filterStore.priceRange]);
 
-  const minPrice = ref(0);
-  const maxPrice = ref(100);
-
-  const filteredProducts = computed(() => {
-    return products.filter((product) => {
-      return product.price >= minPrice.value && product.price <= maxPrice.value;
-    });
-  });
-
-  const updateFilteredProducts = () => {
-    filteredProducts.value;
+  const updatePriceRange = (range: [number, number]) => {
+    filterStore.resetFilters();
+    filterStore.setPriceRange(range);
   };
 </script>
 
 <template>
   <div class="price-filter">
-    <label for="min-price">Minimum price: {{ minPrice }}</label>
+    <label for="min-price">Minimum price: {{ priceRange[0] }}</label>
     <input
       id="min-price"
-      v-model="minPrice"
+      v-model="priceRange[0]"
       type="range"
       min="0"
-      :max="maxPrice"
-      @input="updateFilteredProducts"
+      max="100"
+      @input="updatePriceRange(priceRange)"
     />
 
-    <label for="max-price">Maximum price: {{ maxPrice }}</label>
+    <label for="max-price">Maximum price: {{ priceRange[1] }}</label>
     <input
       id="max-price"
-      v-model="maxPrice"
+      v-model="priceRange[1]"
       type="range"
-      :min="minPrice"
+      min="0"
       max="100"
-      @input="updateFilteredProducts"
+      @input="updatePriceRange(priceRange)"
     />
 
-    <p>Selected range: {{ minPrice }} - {{ maxPrice }}</p>
+    <p>Selected range: {{ priceRange[0] }} - {{ priceRange[1] }}</p>
   </div>
 </template>
 

@@ -6,15 +6,13 @@ import { ref } from 'vue';
 export const useReviewsStore = defineStore('rewiews', () => {
   const reviews = ref<Reviews[]>([]);
 
-  console.log(reviews);
-
   async function fetchReviews() {
     try {
       const response = await getReviews();
 
       reviews.value = response;
     } catch (error) {
-      console.error('Failed to fetch products:', error);
+      console.error('Failed to fetch reviews:', error);
     }
   }
 

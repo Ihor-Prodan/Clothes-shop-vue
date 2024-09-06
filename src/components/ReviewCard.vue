@@ -34,7 +34,7 @@
 
   .reviews {
     display: flex;
-    width: 400px;
+    max-width: 400px;
     height: 240px;
     padding: 28px 32px;
     align-items: flex-start;

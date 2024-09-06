@@ -139,7 +139,7 @@
     "id": 6
   },
   {
-    "type": "Hoodie Puma",
+    "type": "Hoodie",
     "sex": "Female",
     "images": [
       "/mocks/productPhoto/448262626.webp",
@@ -686,7 +686,7 @@
       "/mocks/productPhoto/428278645.webp",
       "/mocks/productPhoto/428278648.webp"
     ],
-    "name": "Summer T-shirt",
+    "name": "T-shirt",
     "rating": 53,
     "price": 20.99,
     "discountPrice": 15.74,
@@ -806,7 +806,7 @@
       "/mocks/productPhoto/464533263.webp",
       "/mocks/productPhoto/464533275.webp"
     ],
-    "name": "Everyday Shorts #21",
+    "name": "Everyday Shorts",
     "rating": 43,
     "price": 55.99,
     "discountPrice": 37.53,
@@ -1433,7 +1433,7 @@
     "id": 71
   },
   {
-    "type": "Jeans",
+    "type": "Trousers",
     "sex": "Male",
     "images": [
       "/mocks/productPhoto/218065090.webp",
@@ -1453,7 +1453,7 @@
     "id": 72
   },
   {
-    "type": "Jeans",
+    "type": "Trousers",
     "sex": "Male",
     "images": [
       "/mocks/productPhoto/356770831.webp",
@@ -1493,7 +1493,7 @@
     "id": 74
   },
   {
-    "type": "Jeans",
+    "type": "Trousers",
     "sex": "Male",
     "images": [
       "/mocks/productPhoto/420598844.webp",
@@ -1552,7 +1552,7 @@
     "id": 77
   },
   {
-    "type": "Jeans",
+    "type": "Trousers",
     "sex": "Female",
     "images": [
       "/mocks/productPhoto/439395920.webp",
@@ -1571,7 +1571,7 @@
     "id": 78
   },
   {
-    "type": "Jeans",
+    "type": "Trousers",
     "sex": "Female",
     "images": [
       "/mocks/productPhoto/426305326.webp",
@@ -1591,7 +1591,7 @@
     "id": 79
   },
   {
-    "type": "Jeans",
+    "type": "Trousers",
     "sex": "Female",
     "images": [
       "/mocks/productPhoto/430868754.webp",
@@ -1611,7 +1611,7 @@
     "id": 80
   },
   {
-    "type": "Jeans",
+    "type": "Trousers",
     "sex": "Female",
     "images": [
       "/mocks/productPhoto/439404755.webp",
@@ -1630,7 +1630,7 @@
     "id": 81
   },
   {
-    "type": "Jeans",
+    "type": "Trousers",
     "sex": "Female",
     "images": [
       "/mocks/productPhoto/439399241.webp",
@@ -1649,7 +1649,7 @@
     "id": 82
   },
   {
-    "type": "Jeans",
+    "type": "Trousers",
     "sex": "Female",
     "images": [
       "/mocks/productPhoto/439403649.webp",
@@ -1668,7 +1668,7 @@
     "id": 83
   },
   {
-    "type": "Jeans",
+    "type": "Trousers",
     "sex": "Female",
     "images": [
       "/mocks/productPhoto/439404481.webp",
@@ -1707,7 +1707,7 @@
     "id": 85
   },
   {
-    "type": "Jeans",
+    "type": "Trousers",
     "sex": "Male",
     "images": [
       "/mocks/productPhoto/391328192.webp",
@@ -1727,7 +1727,7 @@
     "id": 86
   },
   {
-    "type": "Jeans",
+    "type": "Trousers",
     "sex": "Male",
     "images": [
       "/mocks/productPhoto/391349376.webp",
@@ -1747,7 +1747,7 @@
     "id": 87
   },
   {
-    "type": "Jeans",
+    "type": "Trousers",
     "sex": "Male",
     "images": [
       "/mocks/productPhoto/356745333.webp",
@@ -1767,7 +1767,7 @@
     "id": 88
   },
   {
-    "type": "Jeans",
+    "type": "Trousers",
     "sex": "Male",
     "images": [
       "/mocks/productPhoto/444424878.webp",
@@ -1787,7 +1787,7 @@
     "id": 89
   },
   {
-    "type": "Jeans",
+    "type": "Trousers",
     "sex": "Male",
     "images": [
       "/mocks/productPhoto/430101313.webp",
@@ -1806,7 +1806,7 @@
     "id": 90
   },
   {
-    "type": "Jeans",
+    "type": "Trousers",
     "sex": "Male",
     "images": [
       "/mocks/productPhoto/218059638.webp",
@@ -1826,7 +1826,7 @@
     "id": 91
   },
   {
-    "type": "Jeans",
+    "type": "Trousers",
     "sex": "Male",
     "images": [
       "/mocks/productPhoto/428935311.webp",
@@ -1847,7 +1847,7 @@
     "id": 92
   },
   {
-    "type": "Jeans",
+    "type": "Trousers",
     "sex": "Male",
     "images": [
       "/mocks/productPhoto/409897316.webp",
@@ -1868,7 +1868,7 @@
     "id": 93
   },
   {
-    "type": "Jeans",
+    "type": "Trousers",
     "sex": "Male",
     "images": [
       "/mocks/productPhoto/412616842.webp",
@@ -1888,7 +1888,7 @@
     "id": 94
   },
   {
-    "type": "Jeans",
+    "type": "Trousers",
     "sex": "Male",
     "images": [
       "/mocks/productPhoto/461257834.webp",
@@ -1908,7 +1908,7 @@
     "id": 95
   },
   {
-    "type": "Jeans",
+    "type": "Trousers",
     "sex": "Male",
     "images": [
       "/mocks/productPhoto/456546568.webp",
@@ -2071,7 +2071,7 @@
     "id": 103
   },
   {
-    "type": "Jeans",
+    "type": "Trousers",
     "sex": "Female",
     "images": [
       "/mocks/productPhoto/462924597.webp",
@@ -2092,7 +2092,7 @@
     "id": 104
   },
   {
-    "type": "Jeans",
+    "type": "Trousers",
     "sex": "Female",
     "images": [
       "/mocks/productPhoto/459788027.webp",
@@ -2112,7 +2112,7 @@
     "id": 105
   },
   {
-    "type": "Jeans",
+    "type": "Trousers",
     "sex": "Female",
     "images": [
       "/mocks/productPhoto/446954437.webp",

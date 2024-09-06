@@ -1,12 +1,24 @@
 <script setup lang="ts">
-  const size = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
+  import { useFilterStore } from '@/stores/filterStore';
+  import { ref } from 'vue';
+
+  const filterStore = useFilterStore();
+
+  const sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
+  const selectedSize = ref<string>('');
+
+  const selectSize = (size: string) => {
+    filterStore.setSelectedSize(size);
+    selectedSize.value = size;
+  };
 </script>
 
 <template>
   <div
-    v-for="s in size"
+    v-for="s in sizes"
     :key="s"
-    class="size"
+    :class="'size'"
+    @click="selectSize(s)"
   >
     {{ s }}
   </div>
