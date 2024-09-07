@@ -1,15 +1,38 @@
+<script lang="ts" setup>
+  const { currentPage, totalPages } = defineProps<{
+    currentPage: number;
+    totalPages: number;
+  }>();
+
+  const emit = defineEmits(['previous-page', 'next-page', 'go-to-page']);
+</script>
+
 <template>
   <div class="pagination">
-    <button class="buttons">
+    <button
+      class="buttons"
+      :disabled="currentPage === 1"
+      @click="emit('previous-page')"
+    >
       <img src="../assets/svg/buttonArow.svg" />
       Previous
     </button>
     <div class="page-container">
-      <div class="page-numbers">1</div>
-      <div class="page-numbers">2</div>
-      <div class="page-numbers">3</div>
+      <div
+        v-for="page in totalPages"
+        :key="page"
+        class="page-numbers"
+        :class="{ active: page === currentPage }"
+        @click="emit('go-to-page', page)"
+      >
+        {{ page }}
+      </div>
     </div>
-    <button class="buttons">
+    <button
+      class="buttons"
+      :disabled="currentPage === totalPages"
+      @click="emit('next-page')"
+    >
       Next
       <img
         class="icon"

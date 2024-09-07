@@ -3,10 +3,10 @@
     "type": "Shorts",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/167433736.webp",
-      "/mocks/productPhoto/167433737.webp",
-      "/mocks/productPhoto/167433739.webp",
-      "/mocks/productPhoto/167433741.webp"
+      "mocks/productPhoto/167433736.webp",
+      "mocks/productPhoto/167433737.webp",
+      "mocks/productPhoto/167433739.webp",
+      "mocks/productPhoto/167433741.webp"
     ],
     "name": "Sporty Shorts Puma",
     "rating": 43,
@@ -23,10 +23,10 @@
     "type": "Shorts",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/423720966.webp",
-      "/mocks/productPhoto/423720967.webp",
-      "/mocks/productPhoto/423720970.webp",
-      "/mocks/productPhoto/423720971.webp"
+      "mocks/productPhoto/423720966.webp",
+      "mocks/productPhoto/423720967.webp",
+      "mocks/productPhoto/423720970.webp",
+      "mocks/productPhoto/423720971.webp"
     ],
     "name": "Casual Shorts",
     "rating": 42,

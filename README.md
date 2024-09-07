@@ -1,6 +1,7 @@
 # shop-co
 
 This template should help get you started developing with Vue 3 in Vite.
+## https://ihor-prodan.github.io/Clothes-shop-vue/
 
 ## Recommended IDE Setup
 

@@ -1,8 +1,14 @@
 <script setup lang="ts">
   import type { Product } from '@/Types/Product';
-  import { defineProps } from 'vue';
+  import { computed, defineProps } from 'vue';
 
   const props = defineProps<{ product: Product }>();
+
+  const processedImages = computed(() => {
+    const baseUrl = import.meta.env.BASE_URL || '/';
+
+    return props.product.images.map((image) => `${baseUrl}${image}`);
+  });
 </script>
 
 <template>
@@ -10,7 +16,7 @@
     <img
       class="productCard-image"
       alt="productCard-image"
-      :src="props.product.images[0]"
+      :src="processedImages[0]"
     />
     <p class="productCard-title">{{ product.name.toUpperCase() }}</p>
     <div>

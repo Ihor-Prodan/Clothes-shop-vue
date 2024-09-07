@@ -14,6 +14,31 @@
 
   const filteredProducts = ref<Product[]>(productsList.value);
 
+  const currentPage = ref(1);
+  const productsPerPage = ref(9);
+
+  const paginatedProducts = computed(() => {
+    const start = (currentPage.value - 1) * productsPerPage.value;
+    const end = start + productsPerPage.value;
+    return filteredProducts.value.slice(start, end);
+  });
+
+  const totalPages = computed(() => {
+    return Math.ceil(filteredProducts.value.length / productsPerPage.value);
+  });
+
+  const goToNextPage = () => {
+    if (currentPage.value < totalPages.value) {
+      currentPage.value += 1;
+    }
+  };
+
+  const goToPreviousPage = () => {
+    if (currentPage.value > 1) {
+      currentPage.value -= 1;
+    }
+  };
+
   const updateFilteredProducts = (filtered: Product[]) => {
     filteredProducts.value = filtered;
   };
@@ -58,13 +83,19 @@
             </div>
             <div class="products-grid">
               <template
-                v-for="product in filteredProducts"
+                v-for="product in paginatedProducts"
                 :key="product.id"
               >
                 <ProductCard :product="product" />
               </template>
             </div>
-            <Pagination />
+            <Pagination
+              :current-page="currentPage"
+              :total-pages="totalPages"
+              @next-page="goToNextPage"
+              @previous-page="goToPreviousPage"
+              @go-to-page="(page) => (currentPage = page)"
+            />
           </div>
         </div>
       </div>

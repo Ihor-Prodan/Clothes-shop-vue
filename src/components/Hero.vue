@@ -60,18 +60,6 @@
           </div>
         </div>
       </div>
-      <div class="starBig">
-        <img
-          src="../assets/svg/starBig.svg"
-          alt="starBig"
-        />
-      </div>
-      <div class="starSmall">
-        <img
-          src="../assets/svg/starSmall.svg"
-          alt="starSmall"
-        />
-      </div>
     </section>
   </div>
 </template>
