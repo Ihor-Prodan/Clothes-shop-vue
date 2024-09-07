@@ -1,0 +1,123 @@
+[
+  {
+    "id": 1,
+    "productID": 101,
+    "name": "Sarah M.",
+    "text": "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.",
+    "stars": 5,
+    "posted": "Posted on August 14, 2023"
+  },
+  {
+    "id": 2,
+    "productID": 102,
+    "name": "John D.",
+    "text": "Great quality and fast shipping. Will definitely buy again!",
+    "stars": 4,
+    "posted": "Posted on July 22, 2023"
+  },
+  {
+    "id": 3,
+    "productID": 103,
+    "name": "Emily R.",
+    "text": "Not what I expected. The size didn't fit well.",
+    "stars": 2,
+    "posted": "Posted on June 5, 2023"
+  },
+  {
+    "id": 4,
+    "productID": 104,
+    "name": "Michael S.",
+    "text": "Awesome products, love the variety and the prices are reasonable.",
+    "stars": 5,
+    "posted": "Posted on September 1, 2023"
+  },
+  {
+    "id": 5,
+    "productID": 105,
+    "name": "Jessica W.",
+    "text": "Decent quality but delivery was slow.",
+    "stars": 3,
+    "posted": "Posted on May 30, 2023"
+  },
+  {
+    "id": 6,
+    "productID": 106,
+    "name": "David K.",
+    "text": "High-quality clothing and perfect fit!",
+    "stars": 5,
+    "posted": "Posted on July 15, 2023"
+  },
+  {
+    "id": 7,
+    "productID": 107,
+    "name": "Sophia A.",
+    "text": "The dress I bought was beautiful, but it shrunk after washing.",
+    "stars": 2,
+    "posted": "Posted on June 18, 2023"
+  },
+  {
+    "id": 8,
+    "productID": 108,
+    "name": "Daniel B.",
+    "text": "Loved the customer service and the products are top-notch.",
+    "stars": 5,
+    "posted": "Posted on August 21, 2023"
+  },
+  {
+    "id": 9,
+    "productID": 109,
+    "name": "Olivia C.",
+    "text": "Good quality but slightly overpriced.",
+    "stars": 3,
+    "posted": "Posted on July 11, 2023"
+  },
+  {
+    "id": 10,
+    "productID": 110,
+    "name": "William N.",
+    "text": "Will shop again. The shirts I bought are comfortable and durable.",
+    "stars": 4,
+    "posted": "Posted on May 10, 2023"
+  },
+  {
+    "id": 11,
+    "productID": 111,
+    "name": "Isabella F.",
+    "text": "Nice collection, but I had to return one item due to poor stitching.",
+    "stars": 3,
+    "posted": "Posted on August 7, 2023"
+  },
+  {
+    "id": 12,
+    "productID": 112,
+    "name": "James L.",
+    "text": "Perfect shopping experience, highly recommend!",
+    "stars": 5,
+    "posted": "Posted on September 5, 2023"
+  },
+  {
+    "id": 13,
+    "productID": 113,
+    "name": "Ava T.",
+    "text": "Colors faded after the first wash, not very happy with it.",
+    "stars": 1,
+    "posted": "Posted on June 28, 2023"
+  },
+  {
+    "id": 14,
+    "productID": 114,
+    "name": "Ethan H.",
+    "text": "The fabric feels cheap, won't buy again.",
+    "stars": 2,
+    "posted": "Posted on July 19, 2023"
+  },
+  {
+    "id": 15,
+    "productID": 115,
+    "name": "Mia G.",
+    "text": "Excellent products, love the quality and the fit.",
+    "stars": 5,
+    "posted": "Posted on August 29, 2023"
+  }
+]
+
