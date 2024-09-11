@@ -1,18 +1,39 @@
 <script lang="ts" setup>
+  import { useRoute, useRouter } from 'vue-router';
+  import { computed, watch } from 'vue';
+
   const { currentPage, totalPages } = defineProps<{
     currentPage: number;
     totalPages: number;
   }>();
 
   const emit = defineEmits(['previous-page', 'next-page', 'go-to-page']);
+  const route = useRoute();
+  const router = useRouter();
+
+  const pageFromQuery = computed(() => {
+    return parseInt(route.query.page as string, 10) || currentPage;
+  });
+
+  const goToPage = (page: number) => {
+    router.push({ query: { ...route.query, page } });
+    emit('go-to-page', page);
+  };
+
+  watch(
+    () => route.query.page,
+    (newPage) => {
+      emit('go-to-page', parseInt(newPage as string, 10) || currentPage);
+    }
+  );
 </script>
 
 <template>
   <div class="pagination">
     <button
       class="buttons"
-      :disabled="currentPage === 1"
-      @click="emit('previous-page')"
+      :disabled="pageFromQuery === 1"
+      @click="goToPage(pageFromQuery - 1)"
     >
       <img src="../assets/svg/buttonArow.svg" />
       Previous
@@ -22,16 +43,16 @@
         v-for="page in totalPages"
         :key="page"
         class="page-numbers"
-        :class="{ active: page === currentPage }"
-        @click="emit('go-to-page', page)"
+        :class="{ active: page === pageFromQuery }"
+        @click="goToPage(page)"
       >
         {{ page }}
       </div>
     </div>
     <button
       class="buttons"
-      :disabled="currentPage === totalPages"
-      @click="emit('next-page')"
+      :disabled="pageFromQuery === totalPages"
+      @click="goToPage(pageFromQuery + 1)"
     >
       Next
       <img
@@ -71,6 +92,11 @@
       transition: box-shadow 0.3s ease-in-out;
       font-weight: 600;
     }
+  }
+
+  .active {
+    background: #000;
+    color: #fff;
   }
 
   .buttons {

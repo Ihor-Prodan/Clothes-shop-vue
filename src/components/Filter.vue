@@ -140,7 +140,7 @@
     display: flex;
     flex-direction: column;
     width: 300px;
-    height: 80%;
+    height: 1000px;
     border: 1px solid #e4e4e4;
     border-radius: 20px;
     padding: 10px;
