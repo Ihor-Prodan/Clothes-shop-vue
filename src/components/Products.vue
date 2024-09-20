@@ -86,7 +86,9 @@
                 v-for="product in paginatedProducts"
                 :key="product.id"
               >
-                <ProductCard :product="product" />
+                <router-link to="/product/:id">
+                  <ProductCard :product="product"
+                /></router-link>
               </template>
             </div>
             <Pagination
@@ -119,6 +121,7 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-gap: 25px;
+      min-height: 1113px;
     }
 
     .products-container {

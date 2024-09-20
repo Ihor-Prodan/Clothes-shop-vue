@@ -18,6 +18,7 @@
     'Dress',
     'Trousers',
   ];
+  const sizesFilter = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
   const filterStyleType = ['Casual', 'Formal', 'Party', 'Gym'];
 
   const selectedClothesType = computed(() => filterStore.selectedClothesType);
@@ -112,7 +113,10 @@
       <div class="filters-container-filter-size">
         <p class="filters-container-filter-name">Size</p>
         <div class="filters-container-filter-size-container">
-          <UIsizeButton v-model="selectedSize" />
+          <UIsizeButton
+            v-model="selectedSize"
+            :sizes="sizesFilter"
+          />
         </div>
       </div>
       <Line />

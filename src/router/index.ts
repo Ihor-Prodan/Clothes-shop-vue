@@ -15,6 +15,11 @@ const router = createRouter({
       name: 'shop',
       component: ShopPage,
     },
+    {
+      path: '/product/:id',
+      name: 'info',
+      component: () => import('../components/ProductInfo.vue'),
+    },
     // {
     //   path: '/about',
     //   name: 'about',

@@ -3,8 +3,8 @@
   import { ref } from 'vue';
 
   const filterStore = useFilterStore();
+  defineProps<{ sizes: string[] }>();
 
-  const sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
   const selectedSize = ref<string>('');
 
   const selectSize = (size: string) => {
@@ -17,7 +17,7 @@
   <div
     v-for="s in sizes"
     :key="s"
-    :class="'size'"
+    :class="['size', { 'size-active': selectedSize === s }]"
     @click="selectSize(s)"
   >
     {{ s }}
@@ -36,6 +36,12 @@
     background: #f0f0f0;
     font-size: 14px;
     font-weight: 500;
+    cursor: pointer;
+
+    &:hover {
+      background: #bcbaba;
+      color: #fff;
+    }
   }
 
   .size-active {
