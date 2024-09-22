@@ -3,14 +3,28 @@
   import UIswiper from './UIcomponents/IUswiper.vue';
   import UIsizeButton from './UIcomponents/UIsizeButton.vue';
   import UIbutton from './UIcomponents/UIbutton.vue';
+  import ReviewCard from './ReviewCard.vue';
 
   import { useProductStore } from '@/stores/product';
-  import { computed } from 'vue';
+  import { computed, onMounted } from 'vue';
+  import { useReviewsStore } from '@/stores/reviews';
+  import Recommended from './Recommended.vue';
   const productsArr = useProductStore();
   const productsList = computed(() => productsArr.products);
 
+  const reviewsArr = useReviewsStore();
+  const reviews = computed(() =>
+    reviewsArr.reviews.filter(
+      (rev) => rev.productID === productsList.value[1].id
+    )
+  );
+
+  onMounted(() => {
+    reviewsArr.fetchReviews();
+  });
+
   const infoButtonStyle = `
-   display: flex;
+    display: flex;
     width: 400px;
     height: 52px;
     padding: 16px 54px;
@@ -23,16 +37,44 @@
     color: #FFF;
     font-size: 16px;
     font-weight: 500;
-    line-height: normal;
     border: none;
   `;
+
+  const infoReviewButton = `
+    display: flex;
+    width: 166px;
+    height: 48px;
+    padding: 16px 20px;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 62px;
+    background: #000;
+    border: none;
+`;
+
+  const loadReviev = `
+    margin-top: 30px;
+    display: flex;
+    width: 230px;
+    height: 52px;
+    padding: 16px 54px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+    border-radius: 62px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+`;
 </script>
 
 <template>
   <div class="wrapper">
     <section class="product-info">
       <Line />
-      <div class="products-link-container">
+      <div class="link-container">
         <p class="link-home">Home</p>
         <img
           class="link-icon"
@@ -116,6 +158,33 @@
           </div>
         </div>
       </div>
+      <div class="product-info-review-container">
+        <div class="review-titleAndButton">
+          <h3 class="review-title">All Reviews</h3>
+          <UIbutton
+            title="Write a Review"
+            :is-white="false"
+            :style="infoReviewButton"
+          />
+        </div>
+        <div class="review-grid">
+          <ReviewCard
+            v-for="review in reviews"
+            :key="review.id"
+            v-bind="review"
+          />
+        </div>
+        <div class="addReview-container">
+          <UIbutton
+            title="Load More Reviews"
+            :is-white="true"
+            :style="loadReviev"
+          />
+        </div>
+      </div>
+      <div class="recommended-container">
+        <Recommended title="YOU MIGHT ALSO LIKE" />
+      </div>
     </section>
   </div>
 </template>
@@ -124,7 +193,6 @@
   .product-info {
     display: flex;
     flex-direction: column;
-    padding-inline: 100px;
 
     &-container {
       display: flex;
@@ -259,5 +327,44 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+  }
+
+  .product-info-review-container {
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .review-titleAndButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .review-title {
+    color: #000;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .review-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+  }
+
+  .addReview-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .recommended-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+    width: 100%;
   }
 </style>

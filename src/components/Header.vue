@@ -19,11 +19,13 @@
         <Navigation />
         <UIinput />
         <div class="header-content-imgContainer">
-          <img
-            class="icon"
-            src="../assets/svg/cart.svg"
-            alt="cart"
-          />
+          <router-link to="/cart">
+            <img
+              class="icon"
+              src="../assets/svg/cart.svg"
+              alt="cart"
+            />
+          </router-link>
           <img
             class="icon"
             src="../assets/svg/account.svg"

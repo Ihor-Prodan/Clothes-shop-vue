@@ -1,10 +1,10 @@
 <script setup lang="ts">
-  import ProductInfo from '@/components/ProductInfo.vue';
+  import Cart from '@/components/Cart.vue';
 </script>
 
 <template>
   <div class="container">
-    <ProductInfo />
+    <Cart />
   </div>
 </template>
 
