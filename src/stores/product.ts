@@ -15,5 +15,9 @@ export const useProductStore = defineStore('product', () => {
     }
   }
 
-  return { fetchProducts, products };
+  const getProductById = (id: number) => {
+    return products.value.find((product) => product.id === id);
+  };
+
+  return { fetchProducts, products, getProductById };
 });

@@ -86,7 +86,7 @@
                 v-for="product in paginatedProducts"
                 :key="product.id"
               >
-                <router-link to="/product/:id">
+                <router-link :to="`/product/${product.id}`">
                   <ProductCard :product="product"
                 /></router-link>
               </template>

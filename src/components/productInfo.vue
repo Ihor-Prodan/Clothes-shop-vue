@@ -6,11 +6,19 @@
   import ReviewCard from './ReviewCard.vue';
 
   import { useProductStore } from '@/stores/product';
-  import { computed, onMounted } from 'vue';
+  import { computed, onMounted, ref } from 'vue';
   import { useReviewsStore } from '@/stores/reviews';
   import Recommended from './Recommended.vue';
+  import { useRoute } from 'vue-router';
   const productsArr = useProductStore();
   const productsList = computed(() => productsArr.products);
+
+  const route = useRoute();
+  const productId = ref(route.params.id);
+
+  const product = computed(() =>
+    productsArr.products.find((p) => p.id.toString() === productId.value)
+  );
 
   const reviewsArr = useReviewsStore();
   const reviews = computed(() =>
@@ -21,6 +29,7 @@
 
   onMounted(() => {
     reviewsArr.fetchReviews();
+    productsArr.fetchProducts();
   });
 
   const infoButtonStyle = `
@@ -93,39 +102,46 @@
         <p class="link-product">Info</p>
       </div>
 
-      <div class="product-info-container">
-        <UIswiper :images="productsList[0].images" />
+      <div
+        v-if="product"
+        class="product-info-container"
+      >
+        <UIswiper :images="product.images" />
         <div class="product-info-container-info">
           <div class="product-info-container-info-type">
             <h1 class="product-info-container-info-title">
-              {{ productsList[0].name }}
+              {{ product.name }}
             </h1>
             <div class="product-info-container-info-review">
               <img
-                v-for="(star, index) in Number(
-                  productsList[0].rating.toString()[0]
-                )"
+                v-for="(star, index) in Number(product.rating.toString()[0])"
                 :key="index"
                 class="product-info-container-info-review-icon"
                 src="../assets/svg/rating.svg"
               />
               <p class="product-info-container-info-review-text">
-                {{ productsList[0].rating.toString()[0] }}/5
+                {{ product.rating.toString()[0] }}/5
               </p>
             </div>
             <div class="product-info-container-info-price">
-              <p class="product-info-priceNew">
-                {{ productsList[0].discountPrice }}
+              <p
+                v-if="product.discount > 0"
+                class="product-info-priceNew"
+              >
+                {{ product.discountPrice }}
               </p>
               <p class="product-info-priceDiscount">
-                {{ productsList[0].price }}
+                {{ product.price }}
               </p>
-              <div class="product-info-priceDiscountPrcent">
-                {{ productsList[0].discount }}%
+              <div
+                v-if="product.discount > 0"
+                class="product-info-priceDiscountPrcent"
+              >
+                {{ product.discount }}%
               </div>
             </div>
             <p class="product-info-container-info-text">
-              {{ productsList[0].description }}
+              {{ product.description }}
             </p>
           </div>
           <div class="sizeAndbuttons">
@@ -133,7 +149,7 @@
             <div class="product-info-container-info-size">
               <p class="product-info-container-info-size-title">Size:</p>
               <div class="product-info-container-info-size-container">
-                <UIsizeButton :sizes="productsList[0].large" />
+                <UIsizeButton :sizes="product.large" />
               </div>
             </div>
             <Line />
