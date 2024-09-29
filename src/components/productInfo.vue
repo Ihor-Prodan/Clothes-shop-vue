@@ -130,7 +130,14 @@
               >
                 {{ product.discountPrice }}
               </p>
-              <p class="product-info-priceDiscount">
+
+              <p
+                :class="
+                  product.discount > 0
+                    ? 'product-info-priceDiscount'
+                    : 'product-info-priceNew'
+                "
+              >
                 {{ product.price }}
               </p>
               <div

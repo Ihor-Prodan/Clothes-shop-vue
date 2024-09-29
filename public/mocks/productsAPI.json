@@ -43,10 +43,10 @@
     "type": "T-shirts",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/189095740.webp",
-      "/mocks/productPhoto/189095751.webp",
-      "/mocks/productPhoto/189095756.webp",
-      "/mocks/productPhoto/189095767.webp"
+      "mocks/productPhoto/189095740.webp",
+      "mocks/productPhoto/189095751.webp",
+      "mocks/productPhoto/189095756.webp",
+      "mocks/productPhoto/189095767.webp"
     ],
     "name": "T-shirt Puma",
     "rating": 40,
@@ -63,10 +63,10 @@
     "type": "Hoodie",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/276478815.webp",
-      "/mocks/productPhoto/276478825.webp",
-      "/mocks/productPhoto/276478834.webp",
-      "/mocks/productPhoto/276478848.webp"
+      "mocks/productPhoto/276478815.webp",
+      "mocks/productPhoto/276478825.webp",
+      "mocks/productPhoto/276478834.webp",
+      "mocks/productPhoto/276478848.webp"
     ],
     "name": "Warm Hoodie",
     "rating": 44,
@@ -83,10 +83,10 @@
     "type": "Shorts",
     "sex": "Female",
     "images": [
-       "/mocks/productPhoto/435576950.webp",
-      "/mocks/productPhoto/435576954.webp",
-      "/mocks/productPhoto/435576955.webp",
-      "/mocks/productPhoto/435576951.webp"
+      "mocks/productPhoto/435576950.webp",
+      "mocks/productPhoto/435576954.webp",
+      "mocks/productPhoto/435576955.webp",
+      "mocks/productPhoto/435576951.webp"
     ],
     "name": "Summer Shorts",
     "rating": 47,
@@ -103,9 +103,9 @@
     "type": "Shirts",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/274247550.webp",
-      "/mocks/productPhoto/274247543.webp",
-      "/mocks/productPhoto/274247557.webp"
+      "mocks/productPhoto/274247550.webp",
+      "mocks/productPhoto/274247543.webp",
+      "mocks/productPhoto/274247557.webp"
     ],
     "name": "Formal Shirt",
     "rating": 4,
@@ -122,10 +122,10 @@
     "type": "T-shirts",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/376434711.webp",
-      "/mocks/productPhoto/376434715.webp",
-      "/mocks/productPhoto/376434720.webp",
-      "/mocks/productPhoto/376434726.webp"
+      "mocks/productPhoto/376434711.webp",
+      "mocks/productPhoto/376434715.webp",
+      "mocks/productPhoto/376434720.webp",
+      "mocks/productPhoto/376434726.webp"
     ],
     "name": "Cool Tee",
     "rating": 4,
@@ -142,10 +142,10 @@
     "type": "Hoodie",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/448262626.webp",
-      "/mocks/productPhoto/448262623.webp",
-      "/mocks/productPhoto/448262628.webp",
-      "/mocks/productPhoto/448262632.webp"
+      "mocks/productPhoto/448262626.webp",
+      "mocks/productPhoto/448262623.webp",
+      "mocks/productPhoto/448262628.webp",
+      "mocks/productPhoto/448262632.webp"
     ],
     "name": "Stylish Hoodie",
     "rating": 40,
@@ -162,10 +162,10 @@
     "type": "Shorts",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/416590323.webp",
-      "/mocks/productPhoto/416590324.webp",
-      "/mocks/productPhoto/416590325.webp",
-      "/mocks/productPhoto/416590326.webp"
+      "mocks/productPhoto/416590323.webp",
+      "mocks/productPhoto/416590324.webp",
+      "mocks/productPhoto/416590325.webp",
+      "mocks/productPhoto/416590326.webp"
     ],
     "name": "Comfort Shorts",
     "rating": 43,
@@ -182,10 +182,10 @@
     "type": "Shirts",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/348971580.webp",
-      "/mocks/productPhoto/348971594.webp",
-      "/mocks/productPhoto/348971610.webp",
-      "/mocks/productPhoto/348971619.webp"
+      "mocks/productPhoto/348971580.webp",
+      "mocks/productPhoto/348971594.webp",
+      "mocks/productPhoto/348971610.webp",
+      "mocks/productPhoto/348971619.webp"
     ],
     "name": "Chic Shirt",
     "rating": 45,
@@ -202,10 +202,10 @@
     "type": "T-shirts",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/370695430.webp",
-      "/mocks/productPhoto/370695439.webp",
-      "/mocks/productPhoto/370695441.webp",
-      "/mocks/productPhoto/370695446.webp"
+      "mocks/productPhoto/370695430.webp",
+      "mocks/productPhoto/370695439.webp",
+      "mocks/productPhoto/370695441.webp",
+      "mocks/productPhoto/370695446.webp"
     ],
     "name": "Cool Graphic Tee",
     "rating": 42,
@@ -222,9 +222,9 @@
     "type": "Hoodie",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/365607732.webp",
-      "/mocks/productPhoto/365607735.webp",
-      "/mocks/productPhoto/365607738.webp"
+      "mocks/productPhoto/365607732.webp",
+      "mocks/productPhoto/365607735.webp",
+      "mocks/productPhoto/365607738.webp"
     ],
     "name": "Cozy Hoodie",
     "rating": 47,
@@ -241,10 +241,10 @@
     "type": "Shorts",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/315592699.webp",
-      "/mocks/productPhoto/315592714.webp",
-      "/mocks/productPhoto/315592726.webp",
-      "/mocks/productPhoto/315592741.webp"
+      "mocks/productPhoto/315592699.webp",
+      "mocks/productPhoto/315592714.webp",
+      "mocks/productPhoto/315592726.webp",
+      "mocks/productPhoto/315592741.webp"
     ],
     "name": "Sport Shorts",
     "rating": 41,
@@ -261,10 +261,10 @@
     "type": "Shirts",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/318949795.webp",
-      "/mocks/productPhoto/318949797.webp",
-      "/mocks/productPhoto/318949799.webp",
-      "/mocks/productPhoto/318949801.webp"
+      "mocks/productPhoto/318949795.webp",
+      "mocks/productPhoto/318949797.webp",
+      "mocks/productPhoto/318949799.webp",
+      "mocks/productPhoto/318949801.webp"
     ],
     "name": "Elegant Shirt",
     "rating": 46,
@@ -281,10 +281,10 @@
     "type": "T-shirts",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/428955611.webp",
-      "/mocks/productPhoto/428955612.webp",
-      "/mocks/productPhoto/428955615.webp",
-      "/mocks/productPhoto/428955616.webp"
+      "mocks/productPhoto/428955611.webp",
+      "mocks/productPhoto/428955612.webp",
+      "mocks/productPhoto/428955615.webp",
+      "mocks/productPhoto/428955616.webp"
     ],
     "name": "Fun Tee",
     "rating": 43,
@@ -301,10 +301,10 @@
     "type": "Hoodie",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/309887874.webp",
-      "/mocks/productPhoto/309887880.webp",
-      "/mocks/productPhoto/309887885.webp",
-      "/mocks/productPhoto/309887896.webp"
+      "mocks/productPhoto/309887874.webp",
+      "mocks/productPhoto/309887880.webp",
+      "mocks/productPhoto/309887885.webp",
+      "mocks/productPhoto/309887896.webp"
     ],
     "name": "Urban Hoodie",
     "rating": 47,
@@ -321,11 +321,11 @@
     "type": "Shorts",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/447576198.webp",
-      "/mocks/productPhoto/447576201.webp",
-      "/mocks/productPhoto/447576204.webp",
-      "/mocks/productPhoto/447576206.webp",
-      "/mocks/productPhoto/447576209.webp"
+      "mocks/productPhoto/447576198.webp",
+      "mocks/productPhoto/447576201.webp",
+      "mocks/productPhoto/447576204.webp",
+      "mocks/productPhoto/447576206.webp",
+      "mocks/productPhoto/447576209.webp"
     ],
     "name": "Relaxed Shorts",
     "rating": 42,
@@ -342,10 +342,10 @@
     "type": "Shirts",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/355669286.webp",
-      "/mocks/productPhoto/355669287.webp",
-      "/mocks/productPhoto/355669288.webp",
-      "/mocks/productPhoto/355669290.webp"
+      "mocks/productPhoto/355669286.webp",
+      "mocks/productPhoto/355669287.webp",
+      "mocks/productPhoto/355669288.webp",
+      "mocks/productPhoto/355669290.webp"
     ],
     "name": "Smart Shirt",
     "rating": 46,
@@ -362,10 +362,10 @@
     "type": "T-shirts",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/446504451.webp",
-      "/mocks/productPhoto/446504454.webp",
-      "/mocks/productPhoto/446504457.webp",
-      "/mocks/productPhoto/446504462.webp"
+      "mocks/productPhoto/446504451.webp",
+      "mocks/productPhoto/446504454.webp",
+      "mocks/productPhoto/446504457.webp",
+      "mocks/productPhoto/446504462.webp"
     ],
     "name": "Vintage Tee",
     "rating": 44,
@@ -382,10 +382,10 @@
     "type": "Hoodie",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/368895048.webp",
-      "/mocks/productPhoto/368895052.webp",
-      "/mocks/productPhoto/368895055.webp",
-      "/mocks/productPhoto/368895057.webp"
+      "mocks/productPhoto/368895048.webp",
+      "mocks/productPhoto/368895052.webp",
+      "mocks/productPhoto/368895055.webp",
+      "mocks/productPhoto/368895057.webp"
     ],
     "name": "Cozy Urban Hoodie",
     "rating": 48,
@@ -402,10 +402,10 @@
     "type": "Shorts",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/459402884.webp",
-      "/mocks/productPhoto/459402885.webp",
-      "/mocks/productPhoto/459402886.webp",
-      "/mocks/productPhoto/459402887.webp"
+      "mocks/productPhoto/459402884.webp",
+      "mocks/productPhoto/459402885.webp",
+      "mocks/productPhoto/459402886.webp",
+      "mocks/productPhoto/459402887.webp"
     ],
     "name": "Summer Shorts",
     "rating": 32,
@@ -422,9 +422,9 @@
     "type": "Shirts",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/377601475.webp",
-      "/mocks/productPhoto/377601480.webp",
-      "/mocks/productPhoto/377601483.webp"
+      "mocks/productPhoto/377601475.webp",
+      "mocks/productPhoto/377601480.webp",
+      "mocks/productPhoto/377601483.webp"
     ],
     "name": "Casual Shirt",
     "rating": 44,
@@ -441,9 +441,9 @@
     "type": "T-shirts",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/453575430.webp",
-      "/mocks/productPhoto/370695631.webp",
-      "/mocks/productPhoto/370695625.webp"
+      "mocks/productPhoto/453575430.webp",
+      "mocks/productPhoto/370695631.webp",
+      "mocks/productPhoto/370695625.webp"
     ],
     "name": "T-shirt",
     "rating": 41,
@@ -460,10 +460,10 @@
     "type": "Hoodie",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/396339824.webp",
-      "/mocks/productPhoto/396339831.webp",
-      "/mocks/productPhoto/396339826.webp",
-      "/mocks/productPhoto/396339834.webp"
+      "mocks/productPhoto/396339824.webp",
+      "mocks/productPhoto/396339831.webp",
+      "mocks/productPhoto/396339826.webp",
+      "mocks/productPhoto/396339834.webp"
     ],
     "name": "Winter Hoodie",
     "rating": 47,
@@ -480,11 +480,11 @@
     "type": "Shorts",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/456778410.webp",
-      "/mocks/productPhoto/456778415.webp",
-      "/mocks/productPhoto/456778420.webp",
-      "/mocks/productPhoto/456778426.webp",
-      "/mocks/productPhoto/456778435.webp"
+      "mocks/productPhoto/456778410.webp",
+      "mocks/productPhoto/456778415.webp",
+      "mocks/productPhoto/456778420.webp",
+      "mocks/productPhoto/456778426.webp",
+      "mocks/productPhoto/456778435.webp"
     ],
     "name": "Athletic Shorts",
     "rating": 53,
@@ -501,9 +501,9 @@
     "type": "Shirts",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/356748848.webp",
-      "/mocks/productPhoto/356748849.webp",
-      "/mocks/productPhoto/356748850.webp"
+      "mocks/productPhoto/356748848.webp",
+      "mocks/productPhoto/356748849.webp",
+      "mocks/productPhoto/356748850.webp"
     ],
     "name": "Casual Shirt",
     "rating": 4.0,
@@ -520,10 +520,10 @@
     "type": "Dress",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/180998551.webp",
-      "/mocks/productPhoto/180998557.webp",
-      "/mocks/productPhoto/180998566.webp",
-      "/mocks/productPhoto/180998572.webp"
+      "mocks/productPhoto/180998551.webp",
+      "mocks/productPhoto/180998557.webp",
+      "mocks/productPhoto/180998566.webp",
+      "mocks/productPhoto/180998572.webp"
     ],
     "name": "Party dress",
     "rating": 45,
@@ -540,11 +540,11 @@
     "type": "Hoodie",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/417919209.webp",
-      "/mocks/productPhoto/417919211.webp",
-      "/mocks/productPhoto/417919212.webp",
-      "/mocks/productPhoto/417919213.webp",
-      "/mocks/productPhoto/417919214.webp"
+      "mocks/productPhoto/417919209.webp",
+      "mocks/productPhoto/417919211.webp",
+      "mocks/productPhoto/417919212.webp",
+      "mocks/productPhoto/417919213.webp",
+      "mocks/productPhoto/417919214.webp"
     ],
     "name": "Casual Hoodie",
     "rating": 43,
@@ -561,10 +561,10 @@
     "type": "Shorts",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/408771786.webp",
-      "/mocks/productPhoto/408771787.webp",
-      "/mocks/productPhoto/408771789.webp",
-      "/mocks/productPhoto/408771790.webp"
+      "mocks/productPhoto/408771786.webp",
+      "mocks/productPhoto/408771787.webp",
+      "mocks/productPhoto/408771789.webp",
+      "mocks/productPhoto/408771790.webp"
     ],
     "name": "Comfort Shorts",
     "rating": 40,
@@ -581,10 +581,10 @@
     "type": "Shirts",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/318949870.webp",
-      "/mocks/productPhoto/318949873.webp",
-      "/mocks/productPhoto/318949876.webp",
-      "/mocks/productPhoto/318949880.webp"
+      "mocks/productPhoto/318949870.webp",
+      "mocks/productPhoto/318949873.webp",
+      "mocks/productPhoto/318949876.webp",
+      "mocks/productPhoto/318949880.webp"
     ],
     "name": "Dress Shirt",
     "rating": 56,
@@ -601,10 +601,10 @@
     "type": "T-shirts",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/425831034.webp",
-      "/mocks/productPhoto/425831035.webp",
-      "/mocks/productPhoto/425831036.webp",
-      "/mocks/productPhoto/425831037.webp"
+      "mocks/productPhoto/425831034.webp",
+      "mocks/productPhoto/425831035.webp",
+      "mocks/productPhoto/425831036.webp",
+      "mocks/productPhoto/425831037.webp"
     ],
     "name": "Sports T-shirt",
     "rating": 34,
@@ -621,10 +621,10 @@
     "type": "Hoodie",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/408767863.webp",
-      "/mocks/productPhoto/408767866.webp",
-      "/mocks/productPhoto/408767871.webp",
-      "/mocks/productPhoto/408767877.webp"
+      "mocks/productPhoto/408767863.webp",
+      "mocks/productPhoto/408767866.webp",
+      "mocks/productPhoto/408767871.webp",
+      "mocks/productPhoto/408767877.webp"
     ],
     "name": "Cozy Hoodie",
     "rating": 58,
@@ -641,10 +641,10 @@
     "type": "Shorts",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/167433762.webp",
-      "/mocks/productPhoto/167433763.webp",
-      "/mocks/productPhoto/167433764.webp",
-      "/mocks/productPhoto/167433765.webp"
+      "mocks/productPhoto/167433762.webp",
+      "mocks/productPhoto/167433763.webp",
+      "mocks/productPhoto/167433764.webp",
+      "mocks/productPhoto/167433765.webp"
     ],
     "name": "Sporty Shorts",
     "rating": 36,
@@ -661,10 +661,10 @@
     "type": "Shirts",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/428278628.webp",
-      "/mocks/productPhoto/428278631.webp",
-      "/mocks/productPhoto/428278634.webp",
-      "/mocks/productPhoto/428278639.webp"
+      "mocks/productPhoto/428278628.webp",
+      "mocks/productPhoto/428278631.webp",
+      "mocks/productPhoto/428278634.webp",
+      "mocks/productPhoto/428278639.webp"
     ],
     "name": "Casual cool shirts",
     "rating": 42,
@@ -681,10 +681,10 @@
     "type": "T-shirts",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/428278633.webp",
-      "/mocks/productPhoto/428278637.webp",
-      "/mocks/productPhoto/428278645.webp",
-      "/mocks/productPhoto/428278648.webp"
+      "mocks/productPhoto/428278633.webp",
+      "mocks/productPhoto/428278637.webp",
+      "mocks/productPhoto/428278645.webp",
+      "mocks/productPhoto/428278648.webp"
     ],
     "name": "T-shirt",
     "rating": 53,
@@ -701,10 +701,10 @@
     "type": "Hoodie",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/418511396.webp",
-      "/mocks/productPhoto/418511398.webp",
-      "/mocks/productPhoto/418511400.webp",
-      "/mocks/productPhoto/418511402.webp"
+      "mocks/productPhoto/418511396.webp",
+      "mocks/productPhoto/418511398.webp",
+      "mocks/productPhoto/418511400.webp",
+      "mocks/productPhoto/418511402.webp"
     ],
     "name": "Warm Hoodie",
     "rating": 45,
@@ -721,10 +721,10 @@
     "type": "Shorts",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/426943317.webp",
-      "/mocks/productPhoto/426943318.webp",
-      "/mocks/productPhoto/426943319.webp",
-      "/mocks/productPhoto/426943320.webp"
+      "mocks/productPhoto/426943317.webp",
+      "mocks/productPhoto/426943318.webp",
+      "mocks/productPhoto/426943319.webp",
+      "mocks/productPhoto/426943320.webp"
     ],
     "name": "Chill Shorts",
     "rating": 34,
@@ -741,10 +741,10 @@
     "type": "Shirts",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/436205105.webp",
-      "/mocks/productPhoto/436205110.webp",
-      "/mocks/productPhoto/436205114.webp",
-      "/mocks/productPhoto/436205117.webp"
+      "mocks/productPhoto/436205105.webp",
+      "mocks/productPhoto/436205110.webp",
+      "mocks/productPhoto/436205114.webp",
+      "mocks/productPhoto/436205117.webp"
     ],
     "name": "Office Shirt",
     "rating": 47,
@@ -761,10 +761,10 @@
     "type": "T-shirts",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/456552140.webp",
-      "/mocks/productPhoto/456552148.webp",
-      "/mocks/productPhoto/456552151.webp",
-      "/mocks/productPhoto/456552156.webp"
+      "mocks/productPhoto/456552140.webp",
+      "mocks/productPhoto/456552148.webp",
+      "mocks/productPhoto/456552151.webp",
+      "mocks/productPhoto/456552156.webp"
     ],
     "name": "Casual T-shirt",
     "rating": 31,
@@ -781,10 +781,10 @@
     "type": "Hoodie",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/462825028.webp",
-      "/mocks/productPhoto/462825029.webp",
-      "/mocks/productPhoto/462825030.webp",
-      "/mocks/productPhoto/462825031.webp"
+      "mocks/productPhoto/462825028.webp",
+      "mocks/productPhoto/462825029.webp",
+      "mocks/productPhoto/462825030.webp",
+      "mocks/productPhoto/462825031.webp"
     ],
     "name": "Trendy Hoodie",
     "rating": 58,
@@ -801,10 +801,10 @@
     "type": "Shorts",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/464533236.webp",
-      "/mocks/productPhoto/464533250.webp",
-      "/mocks/productPhoto/464533263.webp",
-      "/mocks/productPhoto/464533275.webp"
+      "mocks/productPhoto/464533236.webp",
+      "mocks/productPhoto/464533250.webp",
+      "mocks/productPhoto/464533263.webp",
+      "mocks/productPhoto/464533275.webp"
     ],
     "name": "Everyday Shorts",
     "rating": 43,
@@ -821,10 +821,10 @@
     "type": "Dress",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/445052202.webp",
-      "/mocks/productPhoto/445052203.webp",
-      "/mocks/productPhoto/445052204.webp",
-      "/mocks/productPhoto/445052207.webp"
+      "mocks/productPhoto/445052202.webp",
+      "mocks/productPhoto/445052203.webp",
+      "mocks/productPhoto/445052204.webp",
+      "mocks/productPhoto/445052207.webp"
     ],
     "name": "Stylish dress",
     "rating": 46,
@@ -841,10 +841,10 @@
     "type": "T-shirts",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/440172732.webp",
-      "/mocks/productPhoto/440172735.webp",
-      "/mocks/productPhoto/440172736.webp",
-      "/mocks/productPhoto/440172740.webp"
+      "mocks/productPhoto/440172732.webp",
+      "mocks/productPhoto/440172735.webp",
+      "mocks/productPhoto/440172736.webp",
+      "mocks/productPhoto/440172740.webp"
     ],
     "name": "Graphic Tee",
     "rating": 32,
@@ -861,10 +861,10 @@
     "type": "Hoodie",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/428024082.webp",
-      "/mocks/productPhoto/428024086.webp",
-      "/mocks/productPhoto/428024091.webp",
-      "/mocks/productPhoto/428024093.webp"
+      "mocks/productPhoto/428024082.webp",
+      "mocks/productPhoto/428024086.webp",
+      "mocks/productPhoto/428024091.webp",
+      "mocks/productPhoto/428024093.webp"
     ],
     "name": "Fleece Hoodie",
     "rating": 4.5,
@@ -881,10 +881,10 @@
     "type": "Shorts",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/191165171.webp",
-      "/mocks/productPhoto/191165181.webp",
-      "/mocks/productPhoto/191165194.webp",
-      "/mocks/productPhoto/191165208.webp"
+      "mocks/productPhoto/191165171.webp",
+      "mocks/productPhoto/191165181.webp",
+      "mocks/productPhoto/191165194.webp",
+      "mocks/productPhoto/191165208.webp"
     ],
     "name": "Casual Shorts",
     "rating": 54,
@@ -901,10 +901,10 @@
     "type": "Shirts",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/426683265.webp",
-      "/mocks/productPhoto/426683266.webp",
-      "/mocks/productPhoto/426683267.webp",
-      "/mocks/productPhoto/426683268.webp"    ],
+      "mocks/productPhoto/426683265.webp",
+      "mocks/productPhoto/426683266.webp",
+      "mocks/productPhoto/426683267.webp",
+      "mocks/productPhoto/426683268.webp"    ],
     "name": "Elegant Shirt",
     "rating": 48,
     "price": 55.99,
@@ -920,10 +920,10 @@
     "type": "T-shirts",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/446954404.webp",
-      "/mocks/productPhoto/446954406.webp",
-      "/mocks/productPhoto/446954407.webp",
-      "/mocks/productPhoto/446954410.webp"
+      "mocks/productPhoto/446954404.webp",
+      "mocks/productPhoto/446954406.webp",
+      "mocks/productPhoto/446954407.webp",
+      "mocks/productPhoto/446954410.webp"
     ],
     "name": "T-shirt adidas",
     "rating": 39,
@@ -940,11 +940,11 @@
     "type": "Hoodie",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/448262859.webp",
-      "/mocks/productPhoto/448262860.webp",
-      "/mocks/productPhoto/448262862.webp",
-      "/mocks/productPhoto/448262873.webp",
-      "/mocks/productPhoto/448262877.webp"
+      "mocks/productPhoto/448262859.webp",
+      "mocks/productPhoto/448262860.webp",
+      "mocks/productPhoto/448262862.webp",
+      "mocks/productPhoto/448262873.webp",
+      "mocks/productPhoto/448262877.webp"
     ],
     "name": "Urban Hoodie",
     "rating": 4.6,
@@ -961,10 +961,10 @@
     "type": "Shorts",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/460196658.webp",
-      "/mocks/productPhoto/460196660.webp",
-      "/mocks/productPhoto/460196664.webp",
-      "/mocks/productPhoto/460196667.webp"
+      "mocks/productPhoto/460196658.webp",
+      "mocks/productPhoto/460196660.webp",
+      "mocks/productPhoto/460196664.webp",
+      "mocks/productPhoto/460196667.webp"
     ],
     "name": "Sport Active Shorts",
     "rating": 55,
@@ -981,10 +981,10 @@
     "type": "Shirts",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/461702231.webp",
-      "/mocks/productPhoto/461702248.webp",
-      "/mocks/productPhoto/461702260.webp",
-      "/mocks/productPhoto/461702271.webp"
+      "mocks/productPhoto/461702231.webp",
+      "mocks/productPhoto/461702248.webp",
+      "mocks/productPhoto/461702260.webp",
+      "mocks/productPhoto/461702271.webp"
     ],
     "name": "Smart Shirt",
     "rating": 47,
@@ -1001,10 +1001,10 @@
     "type": "T-shirts",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/448371597.webp",
-      "/mocks/productPhoto/448371599.webp",
-      "/mocks/productPhoto/448371603.webp",
-      "/mocks/productPhoto/448371606.webp"
+      "mocks/productPhoto/448371597.webp",
+      "mocks/productPhoto/448371599.webp",
+      "mocks/productPhoto/448371603.webp",
+      "mocks/productPhoto/448371606.webp"
     ],
     "name": "Printed T-shirt",
     "rating": 43,
@@ -1021,10 +1021,10 @@
     "type": "Hoodie",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/371144308.webp",
-      "/mocks/productPhoto/371144310.webp",
-      "/mocks/productPhoto/371144321.webp",
-      "/mocks/productPhoto/371144330.webp"
+      "mocks/productPhoto/371144308.webp",
+      "mocks/productPhoto/371144310.webp",
+      "mocks/productPhoto/371144321.webp",
+      "mocks/productPhoto/371144330.webp"
     ],
     "name": "Comfortable Hoodie",
     "rating": 4.9,
@@ -1041,9 +1041,9 @@
     "type": "Shorts",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/336299056.webp",
-      "/mocks/productPhoto/336299057.webp",
-      "/mocks/productPhoto/336299058.webp"
+      "mocks/productPhoto/336299056.webp",
+      "mocks/productPhoto/336299057.webp",
+      "mocks/productPhoto/336299058.webp"
     ],
     "name": "Active Shorts",
     "rating": 49,
@@ -1060,9 +1060,9 @@
     "type": "Hoodie",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/439874694.webp",
-      "/mocks/productPhoto/439874697.webp",
-      "/mocks/productPhoto/439874700.webp"
+      "mocks/productPhoto/439874694.webp",
+      "mocks/productPhoto/439874697.webp",
+      "mocks/productPhoto/439874700.webp"
     ],
     "name": "Chic Hoodie",
     "rating": 45,
@@ -1079,10 +1079,10 @@
     "type": "T-shirts",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/449434627.webp",
-      "/mocks/productPhoto/449434628.webp",
-      "/mocks/productPhoto/449434629.webp",
-      "/mocks/productPhoto/449434630.webp"
+      "mocks/productPhoto/449434627.webp",
+      "mocks/productPhoto/449434628.webp",
+      "mocks/productPhoto/449434629.webp",
+      "mocks/productPhoto/449434630.webp"
     ],
     "name": "Casual T-shirt",
     "rating": 44,
@@ -1099,10 +1099,10 @@
     "type": "Hoodie",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/444371232.webp",
-      "/mocks/productPhoto/444371235.webp",
-      "/mocks/productPhoto/444371242.webp",
-      "/mocks/productPhoto/444371244.webp"
+      "mocks/productPhoto/444371232.webp",
+      "mocks/productPhoto/444371235.webp",
+      "mocks/productPhoto/444371242.webp",
+      "mocks/productPhoto/444371244.webp"
     ],
     "name": "Warm Hoodie",
     "rating": 49,
@@ -1119,9 +1119,9 @@
     "type": "Hoodie",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/377340285.webp",
-      "/mocks/productPhoto/377340293.webp",
-      "/mocks/productPhoto/377340300.webp"
+      "mocks/productPhoto/377340285.webp",
+      "mocks/productPhoto/377340293.webp",
+      "mocks/productPhoto/377340300.webp"
     ],
     "name": "Hoodie Casual #1",
     "rating": 35,
@@ -1138,9 +1138,9 @@
     "type": "Shirts",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/391306327.webp",
-      "/mocks/productPhoto/391306338.webp",
-      "/mocks/productPhoto/391306353.webp"
+      "mocks/productPhoto/391306327.webp",
+      "mocks/productPhoto/391306338.webp",
+      "mocks/productPhoto/391306353.webp"
     ],
     "name": "Formal Shirt #2",
     "rating": 39,
@@ -1157,10 +1157,10 @@
     "type": "T-shirts",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/452891596.webp",
-      "/mocks/productPhoto/452891598.webp",
-      "/mocks/productPhoto/452891600.webp",
-      "/mocks/productPhoto/452891602.webp"
+      "mocks/productPhoto/452891596.webp",
+      "mocks/productPhoto/452891598.webp",
+      "mocks/productPhoto/452891600.webp",
+      "mocks/productPhoto/452891602.webp"
     ],
     "name": "T-shirt Party",
     "rating": 42,
@@ -1177,10 +1177,10 @@
     "type": "Shorts",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/424966903.webp",
-      "/mocks/productPhoto/424966904.webp",
-      "/mocks/productPhoto/424966905.webp",
-      "/mocks/productPhoto/424966908.webp"
+      "mocks/productPhoto/424966903.webp",
+      "mocks/productPhoto/424966904.webp",
+      "mocks/productPhoto/424966905.webp",
+      "mocks/productPhoto/424966908.webp"
     ],
     "name": "Gym Shorts",
     "rating": 40,
@@ -1197,10 +1197,10 @@
     "type": "Dress",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/457592862.webp",
-      "/mocks/productPhoto/457592866.webp",
-      "/mocks/productPhoto/457592870.webp",
-      "/mocks/productPhoto/457592875.webp"
+      "mocks/productPhoto/457592862.webp",
+      "mocks/productPhoto/457592866.webp",
+      "mocks/productPhoto/457592870.webp",
+      "mocks/productPhoto/457592875.webp"
     ],
     "name": "Dress Shirt",
     "rating": 3.9,
@@ -1217,10 +1217,10 @@
     "type": "Shirts",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/339478198.webp",
-      "/mocks/productPhoto/339478205.webp",
-      "/mocks/productPhoto/339478209.webp",
-      "/mocks/productPhoto/339478213.webp"
+      "mocks/productPhoto/339478198.webp",
+      "mocks/productPhoto/339478205.webp",
+      "mocks/productPhoto/339478209.webp",
+      "mocks/productPhoto/339478213.webp"
     ],
     "name": "Formal Shirt",
     "rating": 4.3,
@@ -1237,10 +1237,10 @@
     "type": "T-shirts",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/434607232.webp",
-      "/mocks/productPhoto/434607238.webp",
-      "/mocks/productPhoto/434607246.webp",
-      "/mocks/productPhoto/434607252.webp"
+      "mocks/productPhoto/434607232.webp",
+      "mocks/productPhoto/434607238.webp",
+      "mocks/productPhoto/434607246.webp",
+      "mocks/productPhoto/434607252.webp"
     ],
     "name": "Gym T-shirt",
     "rating": 47,
@@ -1257,10 +1257,10 @@
     "type": "Shorts",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/424890694.webp",
-      "/mocks/productPhoto/424890698.webp",
-      "/mocks/productPhoto/424890703.webp",
-      "/mocks/productPhoto/424890725.webp"
+      "mocks/productPhoto/424890694.webp",
+      "mocks/productPhoto/424890698.webp",
+      "mocks/productPhoto/424890703.webp",
+      "mocks/productPhoto/424890725.webp"
     ],
     "name": "Sport Active Shorts",
     "rating": 39,
@@ -1277,10 +1277,10 @@
     "type": "T-shirts",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/398835349.webp",
-      "/mocks/productPhoto/398835352.webp",
-      "/mocks/productPhoto/398835358.webp",
-      "/mocks/productPhoto/398835368.webp"
+      "mocks/productPhoto/398835349.webp",
+      "mocks/productPhoto/398835352.webp",
+      "mocks/productPhoto/398835358.webp",
+      "mocks/productPhoto/398835368.webp"
     ],
     "name": "Casual T-shirt",
     "rating": 41,
@@ -1297,10 +1297,10 @@
     "type": "T-shirts",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/431969948.webp",
-      "/mocks/productPhoto/431969950.webp",
-      "/mocks/productPhoto/431969952.webp",
-      "/mocks/productPhoto/431969954.webp"
+      "mocks/productPhoto/431969948.webp",
+      "mocks/productPhoto/431969950.webp",
+      "mocks/productPhoto/431969952.webp",
+      "mocks/productPhoto/431969954.webp"
     ],
     "name": "Sport Active Shorts",
     "rating": 35,
@@ -1317,10 +1317,10 @@
     "type": "T-shirts",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/446503688.webp",
-      "/mocks/productPhoto/446503696.webp",
-      "/mocks/productPhoto/446503705.webp",
-      "/mocks/productPhoto/446503712.webp"
+      "mocks/productPhoto/446503688.webp",
+      "mocks/productPhoto/446503696.webp",
+      "mocks/productPhoto/446503705.webp",
+      "mocks/productPhoto/446503712.webp"
     ],
     "name": "T-shirt adidas",
     "rating": 46,
@@ -1337,10 +1337,10 @@
     "type": "Shorts",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/336299111.webp",
-      "/mocks/productPhoto/336299113.webp",
-      "/mocks/productPhoto/336299116.webp",
-      "/mocks/productPhoto/336299119.webp"
+      "mocks/productPhoto/336299111.webp",
+      "mocks/productPhoto/336299113.webp",
+      "mocks/productPhoto/336299116.webp",
+      "mocks/productPhoto/336299119.webp"
     ],
     "name": "Gym Shorts",
     "rating": 44,
@@ -1357,10 +1357,10 @@
     "type": "Dress",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/354606101.webp",
-      "/mocks/productPhoto/354606105.webp",
-      "/mocks/productPhoto/354606107.webp",
-      "/mocks/productPhoto/354606110.webp"
+      "mocks/productPhoto/354606101.webp",
+      "mocks/productPhoto/354606105.webp",
+      "mocks/productPhoto/354606107.webp",
+      "mocks/productPhoto/354606110.webp"
     ],
     "name": "Casual dress",
     "rating": 58,
@@ -1377,10 +1377,10 @@
     "type": "Dress",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/418832451.webp",
-      "/mocks/productPhoto/418832452.webp",
-      "/mocks/productPhoto/418832453.webp",
-      "/mocks/productPhoto/418832454.webp"
+      "mocks/productPhoto/418832451.webp",
+      "mocks/productPhoto/418832452.webp",
+      "mocks/productPhoto/418832453.webp",
+      "mocks/productPhoto/418832454.webp"
     ],
     "name": "Formal dress",
     "rating": 39,
@@ -1397,10 +1397,10 @@
     "type": "T-shirts",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/451515118.webp",
-      "/mocks/productPhoto/451515120.webp",
-      "/mocks/productPhoto/451515124.webp",
-      "/mocks/productPhoto/451515127.webp"
+      "mocks/productPhoto/451515118.webp",
+      "mocks/productPhoto/451515120.webp",
+      "mocks/productPhoto/451515124.webp",
+      "mocks/productPhoto/451515127.webp"
     ],
     "name": "Party T-shirt",
     "rating": 41,
@@ -1417,9 +1417,9 @@
     "type": "T-shirts",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/69708719.webp",
-      "/mocks/productPhoto/69708732.webp",
-      "/mocks/productPhoto/69708753.webp"
+      "mocks/productPhoto/69708719.webp",
+      "mocks/productPhoto/69708732.webp",
+      "mocks/productPhoto/69708753.webp"
     ],
     "name": "Casual T-shirt",
     "rating": 30,
@@ -1436,10 +1436,10 @@
     "type": "Trousers",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/218065090.webp",
-      "/mocks/productPhoto/218065094.webp",
-      "/mocks/productPhoto/218065099.webp",
-      "/mocks/productPhoto/218065107.webp"
+      "mocks/productPhoto/218065090.webp",
+      "mocks/productPhoto/218065094.webp",
+      "mocks/productPhoto/218065099.webp",
+      "mocks/productPhoto/218065107.webp"
     ],
     "name": "Casual Jeans",
     "rating": 38,
@@ -1456,10 +1456,10 @@
     "type": "Trousers",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/356770831.webp",
-      "/mocks/productPhoto/356770833.webp",
-      "/mocks/productPhoto/356770835.webp",
-      "/mocks/productPhoto/356770837.webp"
+      "mocks/productPhoto/356770831.webp",
+      "mocks/productPhoto/356770833.webp",
+      "mocks/productPhoto/356770835.webp",
+      "mocks/productPhoto/356770837.webp"
     ],
     "name": "Casual Jeans",
     "rating": 44,
@@ -1476,10 +1476,10 @@
     "type": "T-shirts",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/446502222.webp",
-      "/mocks/productPhoto/446502224.webp",
-      "/mocks/productPhoto/446502232.webp",
-      "/mocks/productPhoto/446502234.webp"
+      "mocks/productPhoto/446502222.webp",
+      "mocks/productPhoto/446502224.webp",
+      "mocks/productPhoto/446502232.webp",
+      "mocks/productPhoto/446502234.webp"
     ],
     "name": "Gym T-shirt",
     "rating": 46,
@@ -1496,10 +1496,10 @@
     "type": "Trousers",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/420598844.webp",
-      "/mocks/productPhoto/420598847.webp",
-      "/mocks/productPhoto/420598848.webp",
-      "/mocks/productPhoto/420598850.webp"
+      "mocks/productPhoto/420598844.webp",
+      "mocks/productPhoto/420598847.webp",
+      "mocks/productPhoto/420598848.webp",
+      "mocks/productPhoto/420598850.webp"
     ],
     "name": "Jeans for work",
     "rating": 43,
@@ -1516,10 +1516,10 @@
     "type": "Dress",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/445049497.webp",
-      "/mocks/productPhoto/445049502.webp",
-      "/mocks/productPhoto/445049507.webp",
-      "/mocks/productPhoto/445049511.webp"
+      "mocks/productPhoto/445049497.webp",
+      "mocks/productPhoto/445049502.webp",
+      "mocks/productPhoto/445049507.webp",
+      "mocks/productPhoto/445049511.webp"
     ],
     "name": "Formal dress",
     "rating": 57,
@@ -1536,9 +1536,9 @@
     "type": "Shirts",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/439411933.webp",
-      "/mocks/productPhoto/439411934.webp",
-      "/mocks/productPhoto/439411935.webp"
+      "mocks/productPhoto/439411933.webp",
+      "mocks/productPhoto/439411934.webp",
+      "mocks/productPhoto/439411935.webp"
     ],
     "name": "Casual Shirt",
     "rating": 41,
@@ -1555,9 +1555,9 @@
     "type": "Trousers",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/439395920.webp",
-      "/mocks/productPhoto/439395920.webp",
-      "/mocks/productPhoto/439395924.webp"
+      "mocks/productPhoto/439395920.webp",
+      "mocks/productPhoto/439395920.webp",
+      "mocks/productPhoto/439395924.webp"
     ],
     "name": "Sport trousers",
     "rating": 4.3,
@@ -1574,10 +1574,10 @@
     "type": "Trousers",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/426305326.webp",
-      "/mocks/productPhoto/426305330.webp",
-      "/mocks/productPhoto/426305333.webp",
-      "/mocks/productPhoto/426305335.webp"
+      "mocks/productPhoto/426305326.webp",
+      "mocks/productPhoto/426305330.webp",
+      "mocks/productPhoto/426305333.webp",
+      "mocks/productPhoto/426305335.webp"
     ],
     "name": "Casual trousers",
     "rating": 42,
@@ -1594,10 +1594,10 @@
     "type": "Trousers",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/430868754.webp",
-      "/mocks/productPhoto/430868757.webp",
-      "/mocks/productPhoto/430868758.webp",
-      "/mocks/productPhoto/430868760.webp"
+      "mocks/productPhoto/430868754.webp",
+      "mocks/productPhoto/430868757.webp",
+      "mocks/productPhoto/430868758.webp",
+      "mocks/productPhoto/430868760.webp"
     ],
     "name": "Casual Jeans",
     "rating": 45,
@@ -1614,9 +1614,9 @@
     "type": "Trousers",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/439404755.webp",
-      "/mocks/productPhoto/439404757.webp",
-      "/mocks/productPhoto/439404759.webp"
+      "mocks/productPhoto/439404755.webp",
+      "mocks/productPhoto/439404757.webp",
+      "mocks/productPhoto/439404759.webp"
     ],
     "name": "Casual Jeans",
     "rating": 43,
@@ -1633,9 +1633,9 @@
     "type": "Trousers",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/439399241.webp",
-      "/mocks/productPhoto/439399246.webp",
-      "/mocks/productPhoto/439399251.webp"
+      "mocks/productPhoto/439399241.webp",
+      "mocks/productPhoto/439399246.webp",
+      "mocks/productPhoto/439399251.webp"
     ],
     "name": "Party Jeans",
     "rating": 34,
@@ -1652,9 +1652,9 @@
     "type": "Trousers",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/439403649.webp",
-      "/mocks/productPhoto/439403650.webp",
-      "/mocks/productPhoto/439403651.webp"
+      "mocks/productPhoto/439403649.webp",
+      "mocks/productPhoto/439403650.webp",
+      "mocks/productPhoto/439403651.webp"
     ],
     "name": "Jeans for work",
     "rating": 41,
@@ -1671,9 +1671,9 @@
     "type": "Trousers",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/439404481.webp",
-      "/mocks/productPhoto/439404484.webp",
-      "/mocks/productPhoto/439404487.webp"
+      "mocks/productPhoto/439404481.webp",
+      "mocks/productPhoto/439404484.webp",
+      "mocks/productPhoto/439404487.webp"
     ],
     "name": "Party Jeans",
     "rating": 42,
@@ -1690,10 +1690,10 @@
     "type": "Dress",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/368824354.webp",
-      "/mocks/productPhoto/368824357.webp",
-      "/mocks/productPhoto/368824360.webp",
-      "/mocks/productPhoto/368824363.webp"
+      "mocks/productPhoto/368824354.webp",
+      "mocks/productPhoto/368824357.webp",
+      "mocks/productPhoto/368824360.webp",
+      "mocks/productPhoto/368824363.webp"
     ],
     "name": "Party dress",
     "rating": 40,
@@ -1710,10 +1710,10 @@
     "type": "Trousers",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/391328192.webp",
-      "/mocks/productPhoto/391328201.webp",
-      "/mocks/productPhoto/391328207.webp",
-      "/mocks/productPhoto/391328212.webp"
+      "mocks/productPhoto/391328192.webp",
+      "mocks/productPhoto/391328201.webp",
+      "mocks/productPhoto/391328207.webp",
+      "mocks/productPhoto/391328212.webp"
     ],
     "name": "Casual trousers",
     "rating": 45,
@@ -1730,10 +1730,10 @@
     "type": "Trousers",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/391349376.webp",
-      "/mocks/productPhoto/391349377.webp",
-      "/mocks/productPhoto/391349378.webp",
-      "/mocks/productPhoto/391349379.webp"
+      "mocks/productPhoto/391349376.webp",
+      "mocks/productPhoto/391349377.webp",
+      "mocks/productPhoto/391349378.webp",
+      "mocks/productPhoto/391349379.webp"
     ],
     "name": "Casual Jeans",
     "rating": 39,
@@ -1750,10 +1750,10 @@
     "type": "Trousers",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/356745333.webp",
-      "/mocks/productPhoto/356745335.webp",
-      "/mocks/productPhoto/356745337.webp",
-      "/mocks/productPhoto/356745339.webp"
+      "mocks/productPhoto/356745333.webp",
+      "mocks/productPhoto/356745335.webp",
+      "mocks/productPhoto/356745337.webp",
+      "mocks/productPhoto/356745339.webp"
     ],
     "name": "Casual Jeans",
     "rating": 56,
@@ -1770,10 +1770,10 @@
     "type": "Trousers",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/444424878.webp",
-      "/mocks/productPhoto/444424881.webp",
-      "/mocks/productPhoto/444424887.webp",
-      "/mocks/productPhoto/444424891.webp"
+      "mocks/productPhoto/444424878.webp",
+      "mocks/productPhoto/444424881.webp",
+      "mocks/productPhoto/444424887.webp",
+      "mocks/productPhoto/444424891.webp"
     ],
     "name": "Casual cool jeans",
     "rating": 32,
@@ -1790,9 +1790,9 @@
     "type": "Trousers",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/430101313.webp",
-      "/mocks/productPhoto/430101315.webp",
-      "/mocks/productPhoto/430101317.webp"
+      "mocks/productPhoto/430101313.webp",
+      "mocks/productPhoto/430101315.webp",
+      "mocks/productPhoto/430101317.webp"
     ],
     "name": "Casual top jeans",
     "rating": 49,
@@ -1809,10 +1809,10 @@
     "type": "Trousers",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/218059638.webp",
-      "/mocks/productPhoto/218059647.webp",
-      "/mocks/productPhoto/218059656.webp",
-      "/mocks/productPhoto/218059666.webp"
+      "mocks/productPhoto/218059638.webp",
+      "mocks/productPhoto/218059647.webp",
+      "mocks/productPhoto/218059656.webp",
+      "mocks/productPhoto/218059666.webp"
     ],
     "name": "Party Jeans",
     "rating": 45,
@@ -1829,11 +1829,11 @@
     "type": "Trousers",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/428935311.webp",
-      "/mocks/productPhoto/428935315.webp",
-      "/mocks/productPhoto/428935319.webp",
-      "/mocks/productPhoto/428935335.webp",
-      "/mocks/productPhoto/428935340.webp"
+      "mocks/productPhoto/428935311.webp",
+      "mocks/productPhoto/428935315.webp",
+      "mocks/productPhoto/428935319.webp",
+      "mocks/productPhoto/428935335.webp",
+      "mocks/productPhoto/428935340.webp"
     ],
     "name": "Party Jeans",
     "rating": 44,
@@ -1850,11 +1850,11 @@
     "type": "Trousers",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/409897316.webp",
-      "/mocks/productPhoto/409897317.webp",
-      "/mocks/productPhoto/409897318.webp",
-      "/mocks/productPhoto/409897319.webp",
-      "/mocks/productPhoto/409897320.webp"
+      "mocks/productPhoto/409897316.webp",
+      "mocks/productPhoto/409897317.webp",
+      "mocks/productPhoto/409897318.webp",
+      "mocks/productPhoto/409897319.webp",
+      "mocks/productPhoto/409897320.webp"
     ],
     "name": "Gym trousers",
     "rating": 45,
@@ -1871,10 +1871,10 @@
     "type": "Trousers",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/412616842.webp",
-      "/mocks/productPhoto/412616846.webp",
-      "/mocks/productPhoto/412616850.webp",
-      "/mocks/productPhoto/412616854.webp"
+      "mocks/productPhoto/412616842.webp",
+      "mocks/productPhoto/412616846.webp",
+      "mocks/productPhoto/412616850.webp",
+      "mocks/productPhoto/412616854.webp"
     ],
     "name": "Sport puma",
     "rating": 43,
@@ -1891,10 +1891,10 @@
     "type": "Trousers",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/461257834.webp",
-      "/mocks/productPhoto/461257839.webp",
-      "/mocks/productPhoto/461257847.webp",
-      "/mocks/productPhoto/461257854.webp"
+      "mocks/productPhoto/461257834.webp",
+      "mocks/productPhoto/461257839.webp",
+      "mocks/productPhoto/461257847.webp",
+      "mocks/productPhoto/461257854.webp"
     ],
     "name": "Sport puma",
     "rating": 45,
@@ -1911,10 +1911,10 @@
     "type": "Trousers",
     "sex": "Male",
     "images": [
-      "/mocks/productPhoto/456546568.webp",
-      "/mocks/productPhoto/456546579.webp",
-      "/mocks/productPhoto/456546589.webp",
-      "/mocks/productPhoto/456546618.webp"
+      "mocks/productPhoto/456546568.webp",
+      "mocks/productPhoto/456546579.webp",
+      "mocks/productPhoto/456546589.webp",
+      "mocks/productPhoto/456546618.webp"
     ],
     "name": "Sport trousers",
     "rating": 38,
@@ -1931,9 +1931,9 @@
     "type": "Dress",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/274254994.webp",
-      "/mocks/productPhoto/274254997.webp",
-      "/mocks/productPhoto/274255000.webp"
+      "mocks/productPhoto/274254994.webp",
+      "mocks/productPhoto/274254997.webp",
+      "mocks/productPhoto/274255000.webp"
     ],
     "name": "Formal dress",
     "rating": 42,
@@ -1950,11 +1950,11 @@
     "type": "Dress",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/345599468.webp",
-      "/mocks/productPhoto/345599470.webp",
-      "/mocks/productPhoto/345599473.webp",
-      "/mocks/productPhoto/345599477.webp",
-      "/mocks/productPhoto/345599481.webp"
+      "mocks/productPhoto/345599468.webp",
+      "mocks/productPhoto/345599470.webp",
+      "mocks/productPhoto/345599473.webp",
+      "mocks/productPhoto/345599477.webp",
+      "mocks/productPhoto/345599481.webp"
     ],
     "name": "Casual dress",
     "rating": 4.0,
@@ -1971,10 +1971,10 @@
     "type": "Dress",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/433975317.webp",
-      "/mocks/productPhoto/433975319.webp",
-      "/mocks/productPhoto/433975321.webp",
-      "/mocks/productPhoto/433975323.webp"
+      "mocks/productPhoto/433975317.webp",
+      "mocks/productPhoto/433975319.webp",
+      "mocks/productPhoto/433975321.webp",
+      "mocks/productPhoto/433975323.webp"
     ],
     "name": "Dress Party",
     "rating": 39,
@@ -1991,11 +1991,11 @@
     "type": "Dress",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/437662453.webp",
-      "/mocks/productPhoto/437662455.webp",
-      "/mocks/productPhoto/437662456.webp",
-      "/mocks/productPhoto/437662458.webp",
-      "/mocks/productPhoto/437662461.webp"
+      "mocks/productPhoto/437662453.webp",
+      "mocks/productPhoto/437662455.webp",
+      "mocks/productPhoto/437662456.webp",
+      "mocks/productPhoto/437662458.webp",
+      "mocks/productPhoto/437662461.webp"
     ],
     "name": "Casual dress",
     "rating": 53,
@@ -2012,11 +2012,11 @@
     "type": "Dress",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/258879363.webp",
-      "/mocks/productPhoto/258879376.webp",
-      "/mocks/productPhoto/258879384.webp",
-      "/mocks/productPhoto/258879390.webp",
-      "/mocks/productPhoto/258879400.webp"
+      "mocks/productPhoto/258879363.webp",
+      "mocks/productPhoto/258879376.webp",
+      "mocks/productPhoto/258879384.webp",
+      "mocks/productPhoto/258879390.webp",
+      "mocks/productPhoto/258879400.webp"
     ],
     "name": "Black dress",
     "rating": 49,
@@ -2033,11 +2033,11 @@
     "type": "Dress",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/315046255.webp",
-      "/mocks/productPhoto/315046256.webp",
-      "/mocks/productPhoto/315046257.webp",
-      "/mocks/productPhoto/315046258.webp",
-      "/mocks/productPhoto/315046259.webp"
+      "mocks/productPhoto/315046255.webp",
+      "mocks/productPhoto/315046256.webp",
+      "mocks/productPhoto/315046257.webp",
+      "mocks/productPhoto/315046258.webp",
+      "mocks/productPhoto/315046259.webp"
     ],
     "name": "Casual dress",
     "rating": 37,
@@ -2054,10 +2054,10 @@
     "type": "Dress",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/461702564.webp",
-      "/mocks/productPhoto/461702582.webp",
-      "/mocks/productPhoto/461702594.webp",
-      "/mocks/productPhoto/461702607.webp"
+      "mocks/productPhoto/461702564.webp",
+      "mocks/productPhoto/461702582.webp",
+      "mocks/productPhoto/461702594.webp",
+      "mocks/productPhoto/461702607.webp"
     ],
     "name": "Stylish dress",
     "rating": 41,
@@ -2074,11 +2074,11 @@
     "type": "Trousers",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/462924597.webp",
-      "/mocks/productPhoto/462924600.webp",
-      "/mocks/productPhoto/462924598.webp",
-      "/mocks/productPhoto/462924596.webp",
-      "/mocks/productPhoto/462924595.webp"
+      "mocks/productPhoto/462924597.webp",
+      "mocks/productPhoto/462924600.webp",
+      "mocks/productPhoto/462924598.webp",
+      "mocks/productPhoto/462924596.webp",
+      "mocks/productPhoto/462924595.webp"
     ],
     "name": "Gym trousers",
     "rating": 35,
@@ -2095,10 +2095,10 @@
     "type": "Trousers",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/459788027.webp",
-      "/mocks/productPhoto/459788035.webp",
-      "/mocks/productPhoto/459788042.webp",
-      "/mocks/productPhoto/459788054.webp"
+      "mocks/productPhoto/459788027.webp",
+      "mocks/productPhoto/459788035.webp",
+      "mocks/productPhoto/459788042.webp",
+      "mocks/productPhoto/459788054.webp"
     ],
     "name": "Sport Active",
     "rating": 39,
@@ -2115,11 +2115,11 @@
     "type": "Trousers",
     "sex": "Female",
     "images": [
-      "/mocks/productPhoto/446954437.webp",
-      "/mocks/productPhoto/446954440.webp",
-      "/mocks/productPhoto/446954445.webp",
-      "/mocks/productPhoto/446954448.webp",
-      "/mocks/productPhoto/446954453.webp"
+      "mocks/productPhoto/446954437.webp",
+      "mocks/productPhoto/446954440.webp",
+      "mocks/productPhoto/446954445.webp",
+      "mocks/productPhoto/446954448.webp",
+      "mocks/productPhoto/446954453.webp"
     ],
     "name": "Sport Active",
     "rating": 51,

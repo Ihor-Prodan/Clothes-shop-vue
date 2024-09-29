@@ -44,11 +44,16 @@
           v-for="(image, index) in props.images"
           :key="index"
         >
-          <img
-            class="swiper-image"
-            :src="image"
-            alt="product image"
-          />
+          <div
+            ref="imageContainer"
+            class="image-container"
+          >
+            <img
+              class="swiper-image"
+              :src="image"
+              alt="product image"
+            />
+          </div>
         </swiper-slide>
       </swiper>
     </div>
@@ -59,6 +64,7 @@
         :space-between="10"
         watch-slides-progress
         slide-to-clicked-slide
+        :mousewheel="true"
         @swiper="setThumbsSwiper"
       >
         <swiper-slide
@@ -80,6 +86,14 @@
   .swiper-container {
     max-width: 600px;
     height: auto;
+  }
+
+  .image-container {
+    max-width: 600px;
+    height: 400px;
+    overflow-y: auto;
+    border-radius: 10px;
+    cursor: pointer;
   }
 
   .gallery-top {
@@ -106,7 +120,7 @@
 
   .swiper-image {
     width: 100%;
-    height: 400px;
+    height: auto;
     object-fit: cover;
     border-radius: 10px;
   }
