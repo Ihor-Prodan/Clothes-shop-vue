@@ -6,7 +6,7 @@
   import ReviewCard from './ReviewCard.vue';
 
   import { useProductStore } from '@/stores/product';
-  import { computed, onMounted, ref } from 'vue';
+  import { computed, onMounted, ref, watch } from 'vue';
   import { useReviewsStore } from '@/stores/reviews';
   import Recommended from './Recommended.vue';
   import { useRoute } from 'vue-router';
@@ -31,6 +31,14 @@
     reviewsArr.fetchReviews();
     productsArr.fetchProducts();
   });
+
+  watch(
+    () => route.params.id,
+    (newId) => {
+      productId.value = newId;
+      productsArr.fetchProducts();
+    }
+  );
 
   const infoButtonStyle = `
     display: flex;

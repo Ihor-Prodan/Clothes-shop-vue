@@ -90,7 +90,10 @@
       <div
         v-for="type in filterClothesType"
         :key="type"
-        class="filters-container-filter-type"
+        :class="{
+          filterActive: selectedClothesType.includes(type),
+          'filters-container-filter-type': !selectedClothesType.includes(type),
+        }"
         @click="updateSelectedClothesType(type)"
       >
         <p class="filters-container-filter-text">{{ type }}</p>
@@ -124,7 +127,10 @@
       <div
         v-for="type in filterStyleType"
         :key="type"
-        class="filters-container-filter-type"
+        :class="{
+          filterActive: selectedStyleType.includes(type),
+          'filters-container-filter-type': !selectedStyleType.includes(type),
+        }"
         @click="updateSelectedStyleType(type)"
       >
         <p class="filters-container-filter-text">{{ type }}</p>
@@ -217,5 +223,18 @@
   .line-container {
     width: 100%;
     margin: 10px 0 15px 0;
+  }
+
+  .filterActive {
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease-in-out;
+    border-bottom: 1px solid #e4e4e4;
+    border-radius: 10px;
+    padding: 3px 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 </style>

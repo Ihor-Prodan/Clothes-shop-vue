@@ -58,7 +58,9 @@
           v-for="product in sortedProducts"
           :key="product.id"
         >
-          <ProductCard :product="product" />
+          <router-link :to="`/product/${product.id}`">
+            <ProductCard :product="product" />
+          </router-link>
         </template>
       </div>
       <div class="button-container">
