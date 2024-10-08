@@ -8,6 +8,7 @@
   import Pagination from './Pagination.vue';
   import type { Product } from '@/Types/Product';
   import { useFilterStore } from '@/stores/filterStore';
+  import { useRoute, useRouter } from 'vue-router';
 
   const productsArr = useProductStore();
   const productsList = computed(() => productsArr.products);
@@ -53,6 +54,27 @@
       filteredProducts.value = productsList.value;
     }
   });
+
+  const route = useRoute();
+  const router = useRouter();
+  const selectedStyle = ref(route.query.style as string | undefined);
+
+  const queryTitle = computed(() => {
+    if (selectedStyle.value) {
+      return (
+        selectedStyle.value.charAt(0).toUpperCase() +
+        selectedStyle.value.slice(1).toLowerCase()
+      );
+    }
+    return 'All styles';
+  });
+
+  watch(
+    () => route.query.style,
+    (newStyle) => {
+      selectedStyle.value = newStyle as string | undefined;
+    }
+  );
 </script>
 
 <template>
@@ -60,12 +82,17 @@
     <section class="products">
       <Line />
       <div class="products-link-container">
-        <p class="link-home">Home</p>
+        <p
+          class="link-home"
+          @click="router.push('/')"
+        >
+          Home
+        </p>
         <img
           class="link-icon"
           src="../assets/svg/linkIcon.svg"
         />
-        <p class="link-product">Casual</p>
+        <p class="link-product">{{ queryTitle }}</p>
       </div>
       <div class="products-container-andProducts">
         <Filter
@@ -76,7 +103,7 @@
         <div class="products-container">
           <div class="product-type-container">
             <div class="product-typeAndTitle">
-              <p class="product-type">Casual</p>
+              <p class="product-type">{{ queryTitle }}</p>
               <div class="product-type-container-filter">
                 <UIdrobdown />
               </div>

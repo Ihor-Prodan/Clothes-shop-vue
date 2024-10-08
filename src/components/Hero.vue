@@ -1,5 +1,9 @@
 <script setup lang="ts">
+  import { useRouter } from 'vue-router';
   import Button from './UIcomponents/UIbutton.vue';
+  import { useProductStore } from '@/stores/product';
+  const router = useRouter();
+  const productsArr = useProductStore();
 
   const benefitsList = [
     {
@@ -32,6 +36,11 @@
     font-weight: 500;
     border: transparent;
   `;
+
+  const goToShop = () => {
+    router.push('/shop');
+    productsArr.fetchProducts();
+  };
 </script>
 
 <template>
@@ -48,6 +57,7 @@
           :is-white="false"
           title="Shop Now"
           :style="heroButtonStyle"
+          @click="goToShop"
         />
         <div class="hero-content">
           <div

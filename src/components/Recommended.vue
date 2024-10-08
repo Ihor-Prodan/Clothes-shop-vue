@@ -4,12 +4,14 @@
   import UIbutton from './UIcomponents/UIbutton.vue';
   import { useProductStore } from '@/stores/product';
   import Line from './UIcomponents/UIline.vue';
+  import { useRouter } from 'vue-router';
 
   interface Props {
     title: string;
   }
 
   const { title } = defineProps<Props>();
+  const router = useRouter();
 
   const productsArr = useProductStore();
   const products = computed(() => productsArr.products);
@@ -42,6 +44,11 @@
   onMounted(() => {
     productsArr.fetchProducts();
   });
+
+  const goToShop = () => {
+    router.push('/shop');
+    productsArr.fetchProducts();
+  };
 </script>
 
 <template>
@@ -68,6 +75,7 @@
           :is-white="true"
           title="View All"
           :style="styleButton"
+          @click="goToShop"
         />
       </div>
       <template v-if="isArrivals">

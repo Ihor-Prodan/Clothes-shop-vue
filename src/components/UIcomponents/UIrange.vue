@@ -1,39 +1,45 @@
 <script setup lang="ts">
   import { useFilterStore } from '@/stores/filterStore';
-  import { ref } from 'vue';
+  import { onMounted, reactive, watch } from 'vue';
 
   const filterStore = useFilterStore();
-  const priceRange = ref<[number, number]>([...filterStore.priceRange]);
 
-  const updatePriceRange = (range: [number, number]) => {
-    filterStore.resetFilters();
-    filterStore.setPriceRange(range);
-  };
+  const priceRange = reactive({
+    min: filterStore.priceRange[0],
+    max: filterStore.priceRange[1],
+  });
+
+  watch(priceRange, (newRange) => {
+    filterStore.setPriceRange([newRange.min, newRange.max]);
+  });
+
+  onMounted(() => {
+    priceRange.min = filterStore.priceRange[0];
+    priceRange.max = filterStore.priceRange[1];
+  });
 </script>
 
 <template>
   <div class="price-filter">
-    <label for="min-price">Minimum price: {{ priceRange[0] }}</label>
+    <label for="min-price">Minimum price: {{ priceRange.min }}</label>
     <input
       id="min-price"
-      v-model="priceRange[0]"
+      v-model="priceRange.min"
       type="range"
       min="0"
       max="100"
-      @input="updatePriceRange(priceRange)"
     />
 
-    <label for="max-price">Maximum price: {{ priceRange[1] }}</label>
+    <label for="max-price">Maximum price: {{ priceRange.max }}</label>
     <input
       id="max-price"
-      v-model="priceRange[1]"
+      v-model="priceRange.max"
       type="range"
       min="0"
       max="100"
-      @input="updatePriceRange(priceRange)"
     />
 
-    <p>Selected range: {{ priceRange[0] }} - {{ priceRange[1] }}</p>
+    <p>Selected range: {{ priceRange.min }} - {{ priceRange.max }}</p>
   </div>
 </template>
 

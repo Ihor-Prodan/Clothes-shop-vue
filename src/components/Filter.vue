@@ -5,10 +5,13 @@
   import { computed, onMounted, watch } from 'vue';
   import { useFilterStore } from '@/stores/filterStore';
   import type { Product } from '@/Types/Product';
+  import { useRoute, useRouter } from 'vue-router';
 
   const filterStore = useFilterStore();
   const emit = defineEmits(['update-products']);
   const props = defineProps<{ productsList: Product[] }>();
+  const router = useRouter();
+  const route = useRoute();
 
   const filterClothesType = [
     'T-shirts',
@@ -59,16 +62,34 @@
   const updateSelectedClothesType = (type: string) => {
     filterStore.resetFilters();
     filterStore.setSelectedClothesType([type]);
+
+    updateQueryParams();
   };
 
   const updateSelectedStyleType = (style: string) => {
     filterStore.resetFilters();
     filterStore.setSelectedStyleType([style]);
+
+    router.push({ path: '/shop', query: { style: style } });
+
+    updateQueryParams();
   };
+
+  watch(
+    () => route.query.style,
+    (newStyle) => {
+      if (newStyle) {
+        filterStore.setSelectedStyleType([newStyle as string]);
+      }
+    },
+    { immediate: true }
+  );
 
   const updatePriceRange = (range: [number, number]) => {
     filterStore.resetFilters();
     filterStore.setPriceRange(range);
+
+    updateQueryParams();
   };
 
   onMounted(() => {
@@ -76,6 +97,54 @@
     filterStore.setSelectedStyleType(selectedStyleType.value);
     filterStore.setSelectedSize(selectedSize.value);
     filterStore.setPriceRange(priceRange.value);
+  });
+
+  const updateQueryParams = () => {
+    const queryParams: any = {};
+
+    if (selectedClothesType.value) {
+      queryParams.type = selectedClothesType.value[0];
+    }
+    if (selectedStyleType.value.length) {
+      queryParams.style =
+        selectedStyleType.value[0].charAt(0).toUpperCase() +
+        selectedStyleType.value[0].slice(1).toLowerCase();
+    }
+    if (selectedSize.value) {
+      queryParams.size = selectedSize.value;
+    }
+    if (priceRange.value) {
+      queryParams.minPrice = priceRange.value[0];
+      queryParams.maxPrice = priceRange.value[1];
+    }
+
+    router.push({ path: '/shop', query: queryParams });
+  };
+
+  watch(
+    () => route.query,
+    (newQuery) => {
+      // if (newQuery.type) {
+      //   filterStore.setSelectedClothesType([newQuery.type as string]);
+      // }
+      if (newQuery.style) {
+        filterStore.setSelectedStyleType([newQuery.style as string]);
+      }
+      // if (newQuery.size) {
+      //   filterStore.setSelectedSize(newQuery.size as string);
+      // }
+      // if (newQuery.minPrice && newQuery.maxPrice) {
+      //   filterStore.setPriceRange([
+      //     Number(newQuery.minPrice),
+      //     Number(newQuery.maxPrice),
+      //   ]);
+      // }
+    },
+    { immediate: true }
+  );
+
+  onMounted(() => {
+    updateQueryParams();
   });
 </script>
 
