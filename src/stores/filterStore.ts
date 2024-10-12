@@ -12,7 +12,11 @@ export const useFilterStore = defineStore('filter', {
       this.selectedClothesType = types;
     },
     setSelectedStyleType(styles: string[]) {
-      this.selectedStyleType = styles;
+      if (styles.includes('All styles')) {
+        this.selectedStyleType = ['All styles'];
+      } else {
+        this.selectedStyleType = styles;
+      }
     },
     setSelectedSize(size: string) {
       this.selectedSize = size;
@@ -40,17 +44,28 @@ export const useFilterStore = defineStore('filter', {
     filteredItems: (state) => {
       return (items: any[]) => {
         return items.filter((item) => {
-          return (
-            (state.selectedClothesType.length === 0 ||
-              state.selectedClothesType.some(
-                (selected) => selected === item.type
-              )) &&
-            (state.selectedStyleType.length === 0 ||
-              state.selectedStyleType.includes(item.style)) &&
-            (state.selectedSize === '' || item.size === state.selectedSize) &&
+          const matchesType =
+            state.selectedClothesType.includes('All types') ||
+            state.selectedClothesType.length === 0 ||
+            state.selectedClothesType.some(
+              (selected) => selected === item.type
+            );
+
+          const matchesStyle =
+            state.selectedStyleType.includes('All styles') ||
+            state.selectedStyleType.length === 0 ||
+            state.selectedStyleType.includes(item.style);
+
+          const matchesSize =
+            state.selectedSize === 'ALL' ||
+            state.selectedSize === '' ||
+            item.large.includes(state.selectedSize);
+
+          const matchesPrice =
             item.price >= state.priceRange[0] &&
-            item.price <= state.priceRange[1]
-          );
+            item.price <= state.priceRange[1];
+
+          return matchesType && matchesStyle && matchesSize && matchesPrice;
         });
       };
     },

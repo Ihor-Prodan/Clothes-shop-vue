@@ -14,6 +14,7 @@
   const route = useRoute();
 
   const filterClothesType = [
+    'All types',
     'T-shirts',
     'Shorts',
     'Shirts',
@@ -21,8 +22,8 @@
     'Dress',
     'Trousers',
   ];
-  const sizesFilter = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
-  const filterStyleType = ['Casual', 'Formal', 'Party', 'Gym'];
+  const sizesFilter = ['ALL', 'XS', 'S', 'M', 'L', 'XL', 'XXL'];
+  const filterStyleType = ['All styles', 'Casual', 'Formal', 'Party', 'Gym'];
 
   const selectedClothesType = computed(() => filterStore.selectedClothesType);
   const selectedStyleType = computed(() => filterStore.selectedStyleType);
@@ -30,44 +31,61 @@
   const priceRange = computed(() => filterStore.priceRange);
   const hasActiveFilters = computed(() => filterStore.hasActiveFilters);
 
+  // const filteredItems = computed(() => {
+  //   if (!hasActiveFilters.value) {
+  //     return props.productsList;
+  //   } else {
+  //     return props.productsList.filter((item) => {
+  //       const matchesType =
+  //         !selectedClothesType.value.length ||
+  //         selectedClothesType.value.some((selected) => selected === item.type);
+
+  //       // const matchesType =
+  //       // !selectedClothesType.value.length ||
+  //       // selectedClothesType.value.some((selected) => selected === item.type);
+
+  //       const matchesStyle =
+  //         selectedStyleType.value.includes('All styles') ||
+  //         !selectedStyleType.value.length ||
+  //         selectedStyleType.value.some((selected) => selected === item.style);
+
+  //       const matchesSize =
+  //         !selectedSize.value || item.large.includes(selectedSize.value);
+
+  //       const matchesPrice =
+  //         item.price >= priceRange.value[0] &&
+  //         item.price <= priceRange.value[1];
+
+  //       return matchesType && matchesStyle && matchesSize && matchesPrice;
+  //     });
+  //   }
+  // });
+
   const filteredItems = computed(() => {
     if (!hasActiveFilters.value) {
       return props.productsList;
     } else {
-      return props.productsList.filter((item) => {
-        const matchesType =
-          !selectedClothesType.value.length ||
-          selectedClothesType.value.some((selected) => selected === item.type);
-        const matchesStyle =
-          !selectedStyleType.value.length ||
-          selectedStyleType.value.some((selected) => selected === item.style);
-        const matchesSize =
-          !selectedSize.value || item.large.includes(selectedSize.value);
-        const matchesPrice =
-          item.price >= priceRange.value[0] &&
-          item.price <= priceRange.value[1];
-
-        return matchesType && matchesStyle && matchesSize && matchesPrice;
-      });
+      return filterStore.filteredItems(props.productsList);
     }
   });
 
   watch(
     [selectedClothesType, selectedStyleType, selectedSize, priceRange],
     () => {
+      updateQueryParams();
       emit('update-products', filteredItems.value);
     }
   );
 
   const updateSelectedClothesType = (type: string) => {
-    filterStore.resetFilters();
+    // filterStore.resetFilters();
     filterStore.setSelectedClothesType([type]);
 
     updateQueryParams();
   };
 
   const updateSelectedStyleType = (style: string) => {
-    filterStore.resetFilters();
+    // filterStore.resetFilters();
     filterStore.setSelectedStyleType([style]);
 
     router.push({ path: '/shop', query: { style: style } });
@@ -103,7 +121,7 @@
     const queryParams: any = {};
 
     if (selectedClothesType.value) {
-      queryParams.type = selectedClothesType.value[0];
+      queryParams.type = selectedClothesType.value;
     }
     if (selectedStyleType.value.length) {
       queryParams.style =
@@ -133,12 +151,12 @@
       // if (newQuery.size) {
       //   filterStore.setSelectedSize(newQuery.size as string);
       // }
-      // if (newQuery.minPrice && newQuery.maxPrice) {
-      //   filterStore.setPriceRange([
-      //     Number(newQuery.minPrice),
-      //     Number(newQuery.maxPrice),
-      //   ]);
-      // }
+      if (newQuery.minPrice && newQuery.maxPrice) {
+        filterStore.setPriceRange([
+          Number(newQuery.minPrice),
+          Number(newQuery.maxPrice),
+        ]);
+      }
     },
     { immediate: true }
   );
@@ -197,7 +215,10 @@
         v-for="type in filterStyleType"
         :key="type"
         :class="{
-          filterActive: selectedStyleType.includes(type),
+          filterActive:
+            (selectedStyleType.includes(type) &&
+              !selectedStyleType.includes('All styles')) ||
+            (type === 'All styles' && selectedStyleType.includes('All styles')),
           'filters-container-filter-type': !selectedStyleType.includes(type),
         }"
         @click="updateSelectedStyleType(type)"
@@ -219,7 +240,7 @@
     display: flex;
     flex-direction: column;
     width: 300px;
-    height: 1000px;
+    height: 1110px;
     border: 1px solid #e4e4e4;
     border-radius: 20px;
     padding: 10px;

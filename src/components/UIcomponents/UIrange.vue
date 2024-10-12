@@ -9,11 +9,19 @@
     max: filterStore.priceRange[1],
   });
 
-  watch(priceRange, (newRange) => {
-    filterStore.setPriceRange([newRange.min, newRange.max]);
-  });
+  watch(
+    priceRange,
+    (newRange) => {
+      filterStore.setPriceRange([newRange.min, newRange.max]);
+    },
+    { deep: true }
+  );
 
   onMounted(() => {
+    if (filterStore.priceRange[0] !== 0 || filterStore.priceRange[1] !== 100) {
+      filterStore.setPriceRange([0, 100]);
+    }
+
     priceRange.min = filterStore.priceRange[0];
     priceRange.max = filterStore.priceRange[1];
   });

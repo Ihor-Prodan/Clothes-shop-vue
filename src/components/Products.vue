@@ -42,6 +42,7 @@
 
   const updateFilteredProducts = (filtered: Product[]) => {
     filteredProducts.value = filtered;
+    currentPage.value = 1;
   };
 
   onMounted(() => {
@@ -68,6 +69,22 @@
     }
     return 'All styles';
   });
+
+  const updateQueryParams = () => {
+    const queryParams: any = { ...route.query };
+
+    queryParams.page = currentPage.value;
+
+    router.push({ path: '/shop', query: queryParams });
+  };
+
+  watch(
+    () => route.query.page,
+    (newPage) => {
+      currentPage.value = parseInt(newPage as string) || 1;
+    },
+    { immediate: true }
+  );
 
   watch(
     () => route.query.style,
@@ -123,7 +140,12 @@
               :total-pages="totalPages"
               @next-page="goToNextPage"
               @previous-page="goToPreviousPage"
-              @go-to-page="(page) => (currentPage = page)"
+              @go-to-page="
+                (page) => {
+                  currentPage = page;
+                  updateQueryParams();
+                }
+              "
             />
           </div>
         </div>

@@ -1,16 +1,40 @@
 <script setup lang="ts">
   import { useFilterStore } from '@/stores/filterStore';
-  import { ref } from 'vue';
+  import { onMounted, ref, watch } from 'vue';
+  import { useRoute, useRouter } from 'vue-router';
 
   const filterStore = useFilterStore();
   defineProps<{ sizes: string[] }>();
 
   const selectedSize = ref<string>('');
+  const route = useRoute();
+  const router = useRouter();
 
   const selectSize = (size: string) => {
     filterStore.setSelectedSize(size);
     selectedSize.value = size;
+
+    const queryParams = { ...route.query, size: size };
+    router.push({ path: route.path, query: queryParams });
   };
+
+  onMounted(() => {
+    if (route.query.size) {
+      selectedSize.value = route.query.size as string;
+      filterStore.setSelectedSize(route.query.size as string);
+    }
+  });
+
+  watch(
+    () => route.query.size,
+    (newSize) => {
+      if (newSize) {
+        selectedSize.value = newSize as string;
+        filterStore.setSelectedSize(newSize as string);
+      }
+    },
+    { immediate: true }
+  );
 </script>
 
 <template>

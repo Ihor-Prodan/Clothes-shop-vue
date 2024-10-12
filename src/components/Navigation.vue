@@ -8,6 +8,7 @@
     {
       title: 'Shop',
       href: '/shop',
+      style: 'All styles',
     },
     {
       title: 'On Sale',
@@ -24,9 +25,13 @@
     },
   ]);
 
-  const navigate = (href: string) => {
+  const navigate = (href: string, style: string | null) => {
     if (href === '/shop') {
-      router.push(href);
+      if (style) {
+        router.push({ query: { style }, path: href });
+      } else {
+        router.push({ path: href });
+      }
     } else {
       const element = document.querySelector(href);
 
@@ -45,7 +50,7 @@
         :key="nav.title"
         class="navigation-item"
         :href="nav.href"
-        @click="navigate(nav.href)"
+        @click="navigate(nav.href, nav.style ?? null)"
       >
         {{ nav.title }}
       </li>

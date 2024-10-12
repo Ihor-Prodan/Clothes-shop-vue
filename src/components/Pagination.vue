@@ -23,7 +23,8 @@
   watch(
     () => route.query.page,
     (newPage) => {
-      emit('go-to-page', parseInt(newPage as string, 10) || currentPage);
+      const pageNumber = parseInt(newPage as string, 10) || currentPage;
+      emit('go-to-page', pageNumber);
     }
   );
 </script>
