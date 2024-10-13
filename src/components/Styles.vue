@@ -45,38 +45,6 @@
               />
             </div>
           </template>
-          <!-- <div class="small">
-            <p class="styles-container-image-title">Casual</p>
-            <img
-              class="image"
-              src="../assets/image/casual.png"
-              alt="Casual"
-            />
-          </div>
-          <div class="large">
-            <p class="styles-container-image-title">Formal</p>
-            <img
-              class="image"
-              src="../assets/image/formal.png"
-              alt="Formal"
-            />
-          </div>
-          <div class="large">
-            <p class="styles-container-image-title">Party</p>
-            <img
-              class="image"
-              src="../assets/image/party.png"
-              alt="Party"
-            />
-          </div>
-          <div class="small">
-            <p class="styles-container-image-title">Gym</p>
-            <img
-              class="image"
-              src="../assets/image/gym.png"
-              alt="Gym"
-            />
-          </div> -->
         </div>
       </div>
     </section>

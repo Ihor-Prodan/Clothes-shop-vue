@@ -2,6 +2,7 @@ import { defineStore } from 'pinia';
 
 export const useFilterStore = defineStore('filter', {
   state: () => ({
+    selectedSexType: ['All clothes'],
     selectedClothesType: [] as string[],
     selectedStyleType: [] as string[],
     selectedSize: '' as string,
@@ -10,6 +11,13 @@ export const useFilterStore = defineStore('filter', {
   actions: {
     setSelectedClothesType(types: string[]) {
       this.selectedClothesType = types;
+    },
+    setSelectedSexType(sex: string[]) {
+      if (sex.includes('All clothes')) {
+        this.selectedSexType = ['All clothes'];
+      } else {
+        this.selectedSexType = sex;
+      }
     },
     setSelectedStyleType(styles: string[]) {
       if (styles.includes('All styles')) {
@@ -35,6 +43,7 @@ export const useFilterStore = defineStore('filter', {
     hasActiveFilters: (state) => {
       return (
         state.selectedClothesType.length > 0 ||
+        state.selectedSexType.length > 0 ||
         state.selectedStyleType.length > 0 ||
         state.selectedSize !== '' ||
         state.priceRange[0] > 0 ||
@@ -56,6 +65,11 @@ export const useFilterStore = defineStore('filter', {
             state.selectedStyleType.length === 0 ||
             state.selectedStyleType.includes(item.style);
 
+          const matchesSex =
+            state.selectedSexType.includes('All clothes') ||
+            state.selectedSexType.length === 0 ||
+            state.selectedSexType.includes(item.sex);
+
           const matchesSize =
             state.selectedSize === 'ALL' ||
             state.selectedSize === '' ||
@@ -65,7 +79,13 @@ export const useFilterStore = defineStore('filter', {
             item.price >= state.priceRange[0] &&
             item.price <= state.priceRange[1];
 
-          return matchesType && matchesStyle && matchesSize && matchesPrice;
+          return (
+            matchesType &&
+            matchesStyle &&
+            matchesSize &&
+            matchesPrice &&
+            matchesSex
+          );
         });
       };
     },
