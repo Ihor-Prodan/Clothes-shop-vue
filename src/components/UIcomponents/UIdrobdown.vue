@@ -1,7 +1,24 @@
+<script setup lang="ts">
+  defineProps({
+    filteredProducts: Number,
+    productsList: Number,
+    sortCriteria: String,
+    updateSortCriteria: Function,
+  });
+
+  // const sortOptions = [
+  //   { label: 'Most Cheapers', value: 'Most Cheapers' },
+  //   { label: 'Most Expensive', value: 'Most Expensive' },
+  //   { label: 'Most Popular', value: 'Most Popular' },
+  // ];
+</script>
+
 <template>
   <section class="filter">
     <div class="filter-container">
-      <p class="filter-text">Showing 1-10 of 100 Products</p>
+      <p class="filter-text">
+        Showing {{ filteredProducts }} of {{ productsList }} Products
+      </p>
       <p class="filter-text">Sort by:</p>
       <span class="filter-text-bold">Most Popular</span>
       <img

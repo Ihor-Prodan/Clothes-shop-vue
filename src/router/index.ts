@@ -37,7 +37,10 @@ const router = createRouter({
 });
 
 router.afterEach(() => {
-  window.scrollTo(0, 0);
-});
+  const activeElement = document.activeElement as HTMLInputElement;
 
+  if (!activeElement || activeElement.type !== 'range') {
+    window.scrollTo(0, 0);
+  }
+});
 export default router;

@@ -169,20 +169,22 @@
       <Line />
     </div>
     <p class="filters-container-filter-name">Sex</p>
-    <div
-      v-for="sex in filterSexType"
-      :key="sex"
-      :class="{
-        filterActive: selectedSex.includes(sex),
-        'filters-container-filter-type': !selectedSex.includes(sex),
-      }"
-      @click="updateSelectedSexType(sex)"
-    >
-      <p class="filters-container-filter-text">{{ sex }}</p>
-      <img
-        class="filters-container-filter-icon"
-        src="../assets/svg/linkIcon.svg"
-      />
+    <div class="filters-container">
+      <div
+        v-for="sex in filterSexType"
+        :key="sex"
+        :class="{
+          filterActive: selectedSex.includes(sex),
+          'filters-container-filter-type': !selectedSex.includes(sex),
+        }"
+        @click="updateSelectedSexType(sex)"
+      >
+        <p class="filters-container-filter-text">{{ sex }}</p>
+        <img
+          class="filters-container-filter-icon"
+          src="../assets/svg/linkIcon.svg"
+        />
+      </div>
     </div>
     <p class="filters-container-filter-name">Type</p>
     <div class="filters-container">

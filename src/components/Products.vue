@@ -17,11 +17,29 @@
 
   const currentPage = ref(1);
   const productsPerPage = ref(9);
+  const sortCriteria = ref('Most Popular');
 
   const paginatedProducts = computed(() => {
     const start = (currentPage.value - 1) * productsPerPage.value;
     const end = start + productsPerPage.value;
-    return filteredProducts.value.slice(start, end);
+    return sortedProducts.value.slice(start, end);
+  });
+
+  const updateSortCriteria = (newCriteria: string) => {
+    sortCriteria.value = newCriteria;
+  };
+
+  const sortedProducts = computed(() => {
+    return [...filteredProducts.value].sort((a, b) => {
+      if (sortCriteria.value === 'Most Popular') {
+        return b.rating - a.rating;
+      } else if (sortCriteria.value === 'Most Cheapest') {
+        return a.price - b.price;
+      } else if (sortCriteria.value === 'Most Expensive') {
+        return b.price - a.price;
+      }
+      return 0;
+    });
   });
 
   const totalPages = computed(() => {
@@ -121,11 +139,30 @@
           <div class="product-type-container">
             <div class="product-typeAndTitle">
               <p class="product-type">{{ queryTitle }}</p>
-              <div class="product-type-container-filter">
-                <UIdrobdown />
+              <div
+                v-if="filteredProducts.length"
+                class="product-type-container-filter"
+              >
+                <UIdrobdown
+                  :filtered-products="filteredProducts.length"
+                  :products-list="productsList.length"
+                  :sort-criteria="sortCriteria"
+                  @update-sort-criteria="updateSortCriteria"
+                />
               </div>
             </div>
-            <div class="products-grid">
+            <div
+              v-if="!filteredProducts.length"
+              class="products-message"
+            >
+              <p class="no-products-message">
+                No products found matching your filters.
+              </p>
+            </div>
+            <div
+              v-else
+              class="products-grid"
+            >
               <template
                 v-for="product in paginatedProducts"
                 :key="product.id"
@@ -136,6 +173,7 @@
               </template>
             </div>
             <Pagination
+              v-if="filteredProducts.length"
               :current-page="currentPage"
               :total-pages="totalPages"
               @next-page="goToNextPage"
@@ -204,5 +242,16 @@
       margin-bottom: 30px;
       display: flex;
     }
+  }
+
+  .products-message {
+    text-align: center;
+    padding: 40px;
+    font-size: 2.6em;
+    color: #555;
+  }
+
+  .no-products-message {
+    color: #555;
   }
 </style>
