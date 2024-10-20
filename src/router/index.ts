@@ -25,14 +25,6 @@ const router = createRouter({
       name: 'cart',
       component: () => import('../views/CartPage.vue'),
     },
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   // route level code-splitting
-    //   // this generates a separate chunk (About.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () => import('');
-    // }
   ],
 });
 
@@ -43,4 +35,17 @@ router.afterEach(() => {
     window.scrollTo(0, 0);
   }
 });
+
+router.beforeEach((to, from, next) => {
+  const previous = from.name
+    ? typeof from.name === 'string'
+      ? from.name.toLowerCase()
+      : from.name.toString().toLowerCase()
+    : null;
+  if (previous) {
+    localStorage.setItem('previousRoute', previous);
+  }
+  next();
+});
+
 export default router;

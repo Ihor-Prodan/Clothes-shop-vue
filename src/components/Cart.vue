@@ -1,6 +1,10 @@
 <script lang="ts" setup>
+  import { useCartStore } from '@/stores/cartStore';
   import UIbutton from './UIcomponents/UIbutton.vue';
   import Line from './UIcomponents/UIline.vue';
+
+  const productsCart = useCartStore();
+  const products = productsCart.productsInCart;
 
   const buttonStyle = `
     max-width: 200px;
@@ -37,122 +41,51 @@
       <div class="cart-container-product">
         <div class="cart-container-product-info">
           <div class="product-cards-container">
-            <div class="product-cards">
-              <div class="cart-container-product-info-container">
-                <img class="cart-container-product-info-img" />
-                <div class="cart-container-product-info-img-container-info">
-                  <p
-                    class="cart-container-product-info-img-container-info-title"
-                  >
-                    Gradient Graphic T-shirt
-                  </p>
-                  <p
-                    class="cart-container-product-info-img-container-info-size"
-                  >
-                    Size:
-                  </p>
-                  <p
-                    class="cart-container-product-info-img-container-info-price"
-                  >
-                    $145
-                  </p>
+            <template
+              v-for="(product, index) in products"
+              :key="product.id"
+            >
+              <div class="product-cards">
+                <div class="cart-container-product-info-container">
+                  <img
+                    class="cart-container-product-info-img"
+                    :src="product.images[0]"
+                  />
+                  <div class="cart-container-product-info-img-container-info">
+                    <p
+                      class="cart-container-product-info-img-container-info-title"
+                    >
+                      {{ product.name }}
+                    </p>
+                    <p
+                      class="cart-container-product-info-img-container-info-size"
+                    >
+                      Size: {{ product.large[0] }}
+                    </p>
+                    <p
+                      class="cart-container-product-info-img-container-info-price"
+                    >
+                      {{ product.price }}
+                    </p>
+                  </div>
+                </div>
+                <div class="cart-container-product-info-quantity">
+                  <img class="delete-icon" />
+                  <div class="counter-button">
+                    <img
+                      class="minus"
+                      src="../assets/svg/minus.svg"
+                    />
+                    <p class="countainer-button-text">1</p>
+                    <img
+                      class="plus"
+                      src="../assets/svg/plus.svg"
+                    />
+                  </div>
                 </div>
               </div>
-              <div class="cart-container-product-info-quantity">
-                <img class="delete-icon" />
-                <div class="counter-button">
-                  <img
-                    class="minus"
-                    src="../assets/svg/minus.svg"
-                  />
-                  <p class="countainer-button-text">1</p>
-                  <img
-                    class="plus"
-                    src="../assets/svg/plus.svg"
-                  />
-                </div>
-              </div>
-            </div>
-            <Line />
-            <div class="product-cards">
-              <div class="cart-container-product-info-container">
-                <img class="cart-container-product-info-img" />
-                <div class="cart-container-product-info-img-container-info">
-                  <p
-                    class="cart-container-product-info-img-container-info-title"
-                  >
-                    Gradient Graphic T-shirt
-                  </p>
-                  <p
-                    class="cart-container-product-info-img-container-info-size"
-                  >
-                    Size:
-                  </p>
-                  <p
-                    class="cart-container-product-info-img-container-info-price"
-                  >
-                    $145
-                  </p>
-                </div>
-              </div>
-              <div class="cart-container-product-info-quantity">
-                <img
-                  class="delete-icon"
-                  src="../assets/svg/delete.svg"
-                />
-                <div class="counter-button">
-                  <img
-                    class="minus"
-                    src="../assets/svg/minus.svg"
-                  />
-                  <p class="countainer-button-text">1</p>
-                  <img
-                    class="plus"
-                    src="../assets/svg/plus.svg"
-                  />
-                </div>
-              </div>
-            </div>
-            <Line />
-            <div class="product-cards">
-              <div class="cart-container-product-info-container">
-                <img class="cart-container-product-info-img" />
-                <div class="cart-container-product-info-img-container-info">
-                  <p
-                    class="cart-container-product-info-img-container-info-title"
-                  >
-                    Gradient Graphic T-shirt
-                  </p>
-                  <p
-                    class="cart-container-product-info-img-container-info-size"
-                  >
-                    Size: M
-                  </p>
-                  <p
-                    class="cart-container-product-info-img-container-info-price"
-                  >
-                    $145
-                  </p>
-                </div>
-              </div>
-              <div class="cart-container-product-info-quantity">
-                <img
-                  class="delete-icon"
-                  src="../assets/svg/delete.svg"
-                />
-                <div class="counter-button">
-                  <img
-                    class="minus"
-                    src="../assets/svg/minus.svg"
-                  />
-                  <p class="countainer-button-text">1</p>
-                  <img
-                    class="plus"
-                    src="../assets/svg/plus.svg"
-                  />
-                </div>
-              </div>
-            </div>
+              <Line v-if="index !== products.length - 1" />
+            </template>
           </div>
 
           <div class="cart-container-product-summary">

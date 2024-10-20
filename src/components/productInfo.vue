@@ -10,7 +10,9 @@
   import { useReviewsStore } from '@/stores/reviews';
   import Recommended from './Recommended.vue';
   import { useRoute } from 'vue-router';
+  import { useCartStore } from '@/stores/cartStore';
   const productsArr = useProductStore();
+  const productsCart = useCartStore();
   const productsList = computed(() => productsArr.products);
 
   const route = useRoute();
@@ -39,6 +41,25 @@
       productsArr.fetchProducts();
     }
   );
+
+  const prevLink = computed(() => {
+    const storedRoute = localStorage.getItem('previousRoute');
+    if (storedRoute) {
+      const firstLetter = storedRoute.charAt(0).toUpperCase();
+      const remainingLetters = storedRoute.slice(1).toLowerCase();
+      return firstLetter + remainingLetters;
+    }
+    return null;
+  });
+
+  const addToCart = () => {
+    const product = productsArr.products.find(
+      (p) => p.id.toString() === productId.value
+    );
+    if (product) {
+      productsCart.addProductToCart(product);
+    }
+  };
 
   const infoButtonStyle = `
     display: flex;
@@ -92,22 +113,17 @@
     <section class="product-info">
       <Line />
       <div class="link-container">
-        <p class="link-home">Home</p>
+        <p class="link-home">{{ prevLink }}</p>
         <img
           class="link-icon"
           src="../assets/svg/linkIcon.svg"
         />
-        <p class="link-product">Casual</p>
+        <p class="link-product">{{ product?.style }}</p>
         <img
           class="link-icon"
           src="../assets/svg/linkIcon.svg"
         />
-        <p class="link-product">Info</p>
-        <img
-          class="link-icon"
-          src="../assets/svg/linkIcon.svg"
-        />
-        <p class="link-product">Info</p>
+        <p class="link-product">{{ product?.type }}</p>
       </div>
 
       <div
@@ -184,6 +200,7 @@
                 title="Add to Cart"
                 :is-white="false"
                 :style="infoButtonStyle"
+                @click="addToCart"
               />
             </div>
           </div>
