@@ -1,6 +1,9 @@
 import HomePage from '@/views/HomePage.vue';
 import ShopPage from '@/views/ShopPage.vue';
+import { ref } from 'vue';
 import { createRouter, createWebHashHistory } from 'vue-router';
+
+const isSliderActive = ref(false);
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -31,7 +34,10 @@ const router = createRouter({
 router.afterEach(() => {
   const activeElement = document.activeElement as HTMLInputElement;
 
-  if (!activeElement || activeElement.type !== 'range') {
+  if (
+    !isSliderActive.value &&
+    (!activeElement || activeElement.type !== 'range')
+  ) {
     window.scrollTo(0, 0);
   }
 });

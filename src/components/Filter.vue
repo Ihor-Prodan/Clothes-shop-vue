@@ -2,7 +2,7 @@
   import Line from './UIcomponents/UIline.vue';
   import UIrange from './UIcomponents/UIrange.vue';
   import UIsizeButton from './UIcomponents/UIsizeButton.vue';
-  import { computed, onMounted, watch } from 'vue';
+  import { computed, onMounted, ref, watch } from 'vue';
   import { useFilterStore } from '@/stores/filterStore';
   import type { Product } from '@/Types/Product';
   import { useRoute, useRouter } from 'vue-router';
@@ -141,6 +141,16 @@
     router.push({ path: '/shop', query: queryParams });
   };
 
+  const isSliderActive = ref(false);
+
+  const startSliderInteraction = () => {
+    isSliderActive.value = true;
+  };
+
+  const endSliderInteraction = () => {
+    isSliderActive.value = false;
+  };
+
   watch(
     () => route.query,
     (newQuery) => {
@@ -216,6 +226,10 @@
               parseInt(String(route.query.maxPrice), 10),
             ])
           "
+          @mousedown="startSliderInteraction"
+          @mouseup="endSliderInteraction"
+          @touchstart="startSliderInteraction"
+          @touchend="endSliderInteraction"
         />
       </div>
       <Line />

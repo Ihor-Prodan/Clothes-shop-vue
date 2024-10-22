@@ -2,7 +2,8 @@
   import { useCartStore } from '@/stores/cartStore';
   import UIbutton from './UIcomponents/UIbutton.vue';
   import Line from './UIcomponents/UIline.vue';
-  import { ref, watch } from 'vue';
+  import { computed, ref, watch } from 'vue';
+  import type { Product } from '@/Types/Product';
 
   const productsCart = useCartStore();
   const products = ref(productsCart.productsInCart);
@@ -26,6 +27,33 @@
 `;
 
   const deleteProductFromCart = (productId: number) => {
+    productsCart.deleteProductById(productId);
+  };
+
+  const totalPrice = computed(() => {
+    return products.value.reduce(
+      (total, product) => total + product.price * (product.quantity || 1),
+      0
+    );
+  });
+
+  watch(
+    () => productsCart.productsInCart,
+    (newProducts) => {
+      products.value = newProducts;
+    }
+  );
+  const deliveryFee = 15;
+
+  const totalWithDiscount = computed(() => {
+    return totalPrice.value + deliveryFee;
+  });
+
+  const increaseProductQuantity = (product: Product) => {
+    productsCart.addProductToCart(product);
+  };
+
+  const decreaseProductQuantity = (productId: number) => {
     productsCart.removeProductFromCart(productId);
   };
 
@@ -82,7 +110,7 @@
                       <p
                         class="cart-container-product-info-img-container-info-price"
                       >
-                        {{ product.price }}
+                        {{ product.discountPrice || product.price }}
                       </p>
                     </div>
                   </div>
@@ -91,11 +119,15 @@
                       <img
                         class="minus"
                         src="../assets/svg/minus.svg"
+                        @click="decreaseProductQuantity(product.id)"
                       />
-                      <p class="countainer-button-text">1</p>
+                      <p class="countainer-button-text">
+                        {{ product.quantity }}
+                      </p>
                       <img
                         class="plus"
                         src="../assets/svg/plus.svg"
+                        @click="increaseProductQuantity(product)"
                       />
                     </div>
                   </div>
@@ -115,26 +147,24 @@
             <div class="cart-container-product-summary-info">
               <div class="cart-container-product-summary-info-text-container">
                 <p class="cart-container-product-summary-info-text">Subtotal</p>
-                <p class="cart-container-product-summary-info-price">$565</p>
-              </div>
-              <div class="cart-container-product-summary-info-text-container">
-                <p class="cart-container-product-summary-info-text">
-                  Discount (<span class="discount">-20%</span>)
-                </p>
-                <p class="cart-container-product-summary-info-price discount">
-                  -$113
+                <p class="cart-container-product-summary-info-price">
+                  €{{ Math.floor(totalPrice) }}
                 </p>
               </div>
               <div class="cart-container-product-summary-info-text-container">
                 <p class="cart-container-product-summary-info-text">
                   Delivery Fee
                 </p>
-                <p class="cart-container-product-summary-info-price">$15</p>
+                <p class="cart-container-product-summary-info-price">
+                  €{{ deliveryFee }}
+                </p>
               </div>
               <Line />
               <div class="cart-container-product-summary-info-text-container">
                 <p class="cart-container-product-summary-info-text">Total</p>
-                <p class="cart-container-product-summary-info-price">$467</p>
+                <p class="cart-container-product-summary-info-price">
+                  €{{ Math.floor(totalWithDiscount) }}
+                </p>
               </div>
               <div class="button-container">
                 <UIbutton
