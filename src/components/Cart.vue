@@ -32,7 +32,9 @@
 
   const totalPrice = computed(() => {
     return products.value.reduce(
-      (total, product) => total + product.price * (product.quantity || 1),
+      (total, product) =>
+        total +
+        (product.discountPrice || product.price) * (product.quantity || 1),
       0
     );
   });
@@ -46,7 +48,7 @@
   const deliveryFee = 15;
 
   const totalWithDiscount = computed(() => {
-    return totalPrice.value + deliveryFee;
+    return (totalPrice.value + deliveryFee).toFixed(2);
   });
 
   const increaseProductQuantity = (product: Product) => {
@@ -78,7 +80,20 @@
     </div>
     <div class="cart-container">
       <h3 class="cart-container-title">Your Cart</h3>
-      <div class="cart-container-product">
+      <div
+        v-if="products.length === 0"
+        class="cart-container-empty"
+      >
+        <img
+          class="cart-container-empy"
+          src="../assets/image/cartEmpy.webp"
+        />
+      </div>
+
+      <div
+        v-if="products.length > 0"
+        class="cart-container-product"
+      >
         <div class="cart-container-product-info">
           <div class="product-cards-container">
             <transition-group
@@ -148,7 +163,7 @@
               <div class="cart-container-product-summary-info-text-container">
                 <p class="cart-container-product-summary-info-text">Subtotal</p>
                 <p class="cart-container-product-summary-info-price">
-                  €{{ Math.floor(totalPrice) }}
+                  €{{ totalPrice.toFixed(2) }}
                 </p>
               </div>
               <div class="cart-container-product-summary-info-text-container">
@@ -163,11 +178,12 @@
               <div class="cart-container-product-summary-info-text-container">
                 <p class="cart-container-product-summary-info-text">Total</p>
                 <p class="cart-container-product-summary-info-price">
-                  €{{ Math.floor(totalWithDiscount) }}
+                  €{{ totalWithDiscount }}
                 </p>
               </div>
               <div class="button-container">
                 <UIbutton
+                  :disabled="false"
                   title="Go to Checkout"
                   :is-white="false"
                   :style="buttonStyle"
@@ -371,5 +387,14 @@
   .fade-leave-to {
     opacity: 0;
     transform: translateY(10px);
+  }
+
+  .cart-container-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
   }
 </style>

@@ -11,6 +11,7 @@
   import Recommended from './Recommended.vue';
   import { useRoute } from 'vue-router';
   import { useCartStore } from '@/stores/cartStore';
+  import type { Product } from '@/Types/Product';
   const productsArr = useProductStore();
   const productsCart = useCartStore();
   const productsList = computed(() => productsArr.products);
@@ -61,6 +62,39 @@
     }
   };
 
+  const activeProduct = computed(() => {
+    return productsCart.productsInCart.find(
+      (p) => p.id.toString() === productId.value
+    );
+  });
+
+  const deleteProductFromCart = (productId: number) => {
+    productsCart.deleteProductById(productId);
+  };
+
+  const handleButtonClick = () => {
+    if (activeProduct.value) {
+      deleteProductFromCart(Number(productId.value));
+    } else {
+      addToCart();
+    }
+  };
+
+  const increaseProductQuantity = (product: Product) => {
+    productsCart.addProductToCart(product);
+  };
+
+  const decreaseProductQuantity = (productId: number) => {
+    productsCart.removeProductFromCart(productId);
+  };
+
+  const getProductQuantity = (productId: number) => {
+    const productInCart = productsCart.productsInCart.find(
+      (product) => product.id === productId
+    );
+    return productInCart?.quantity || 1;
+  };
+
   const infoButtonStyle = `
     display: flex;
     width: 400px;
@@ -76,6 +110,22 @@
     font-size: 16px;
     font-weight: 500;
     border: none;
+  `;
+  const addedProductButton = `
+    display: flex;
+    width: 400px;
+    height: 52px;
+    padding: 16px 54px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+    border-radius: 62px;
+    background: #FFF;
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid rgba(0, 0, 0, 0.10);
   `;
 
   const infoReviewButton = `
@@ -189,18 +239,22 @@
                 <img
                   class="minus"
                   src="../assets/svg/minus.svg"
+                  @click="decreaseProductQuantity(product.id)"
                 />
-                <p class="countainer-button-text">1</p>
+                <p class="countainer-button-text">
+                  {{ getProductQuantity(product.id) }}
+                </p>
                 <img
                   class="plus"
                   src="../assets/svg/plus.svg"
+                  @click="increaseProductQuantity(product)"
                 />
               </div>
               <UIbutton
-                title="Add to Cart"
+                :title="activeProduct ? 'Added to Cart' : 'Add to Cart'"
                 :is-white="false"
-                :style="infoButtonStyle"
-                @click="addToCart"
+                :style="activeProduct ? addedProductButton : infoButtonStyle"
+                @click="handleButtonClick"
               />
             </div>
           </div>
