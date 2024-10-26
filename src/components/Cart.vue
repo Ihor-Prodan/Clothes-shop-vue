@@ -7,6 +7,7 @@
 
   const productsCart = useCartStore();
   const products = ref(productsCart.productsInCart);
+  const selectedSize = ref<string>('');
 
   const buttonStyle = `
     max-width: 200px;
@@ -27,7 +28,7 @@
 `;
 
   const deleteProductFromCart = (productId: number) => {
-    productsCart.deleteProductById(productId);
+    productsCart.deleteProductById(productId, selectedSize.value);
   };
 
   const totalPrice = computed(() => {
@@ -51,12 +52,12 @@
     return (totalPrice.value + deliveryFee).toFixed(2);
   });
 
-  const increaseProductQuantity = (product: Product) => {
-    productsCart.addProductToCart(product);
+  const increaseProductQuantity = (product: Product, size: string) => {
+    productsCart.addProductToCart(product, size);
   };
 
-  const decreaseProductQuantity = (productId: number) => {
-    productsCart.removeProductFromCart(productId);
+  const decreaseProductQuantity = (productId: number, size: string) => {
+    productsCart.removeProductFromCart(productId, size);
   };
 
   watch(
@@ -120,7 +121,7 @@
                       <p
                         class="cart-container-product-info-img-container-info-size"
                       >
-                        Size: {{ product.large[0] }}
+                        Size: {{ product.size }}
                       </p>
                       <p
                         class="cart-container-product-info-img-container-info-price"
@@ -134,7 +135,9 @@
                       <img
                         class="minus"
                         src="../assets/svg/minus.svg"
-                        @click="decreaseProductQuantity(product.id)"
+                        @click="
+                          decreaseProductQuantity(product.id, product.size)
+                        "
                       />
                       <p class="countainer-button-text">
                         {{ product.quantity }}
@@ -142,7 +145,7 @@
                       <img
                         class="plus"
                         src="../assets/svg/plus.svg"
-                        @click="increaseProductQuantity(product)"
+                        @click="increaseProductQuantity(product, product.size)"
                       />
                     </div>
                   </div>

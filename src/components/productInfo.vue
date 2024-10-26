@@ -18,6 +18,7 @@
 
   const route = useRoute();
   const productId = ref(route.params.id);
+  const selectedSize = ref<string>('');
 
   const product = computed(() =>
     productsArr.products.find((p) => p.id.toString() === productId.value)
@@ -30,10 +31,27 @@
     )
   );
 
+  const updateSelectedSize = () => {
+    if (route.query.size) {
+      selectedSize.value = route.query.size as string;
+    }
+  };
+
   onMounted(() => {
     reviewsArr.fetchReviews();
     productsArr.fetchProducts();
+
+    updateSelectedSize();
   });
+
+  watch(
+    () => route.query.size,
+    (newSize) => {
+      if (newSize) {
+        selectedSize.value = newSize as string;
+      }
+    }
+  );
 
   watch(
     () => route.params.id,
@@ -58,7 +76,7 @@
       (p) => p.id.toString() === productId.value
     );
     if (product) {
-      productsCart.addProductToCart(product);
+      productsCart.addProductToCart(product, selectedSize.value);
     }
   };
 
@@ -69,7 +87,7 @@
   });
 
   const deleteProductFromCart = (productId: number) => {
-    productsCart.deleteProductById(productId);
+    productsCart.deleteProductById(productId, selectedSize.value);
   };
 
   const handleButtonClick = () => {
@@ -81,18 +99,18 @@
   };
 
   const increaseProductQuantity = (product: Product) => {
-    productsCart.addProductToCart(product);
+    productsCart.addProductToCart(product, selectedSize.value);
   };
 
   const decreaseProductQuantity = (productId: number) => {
-    productsCart.removeProductFromCart(productId);
+    productsCart.removeProductFromCart(productId, selectedSize.value);
   };
 
   const getProductQuantity = (productId: number) => {
     const productInCart = productsCart.productsInCart.find(
       (product) => product.id === productId
     );
-    return productInCart?.quantity || 1;
+    return productInCart?.quantity || 0;
   };
 
   const infoButtonStyle = `
@@ -111,6 +129,7 @@
     font-weight: 500;
     border: none;
   `;
+
   const addedProductButton = `
     display: flex;
     width: 400px;
@@ -230,7 +249,10 @@
             <div class="product-info-container-info-size">
               <p class="product-info-container-info-size-title">Size:</p>
               <div class="product-info-container-info-size-container">
-                <UIsizeButton :sizes="product.large" />
+                <UIsizeButton
+                  :sizes="product?.large"
+                  @select-size="updateSelectedSize()"
+                />
               </div>
             </div>
             <Line />
@@ -251,7 +273,7 @@
                 />
               </div>
               <UIbutton
-                :title="activeProduct ? 'Added to Cart' : 'Add to Cart'"
+                :title="activeProduct ? 'Remove from Cart' : 'Add to Cart'"
                 :is-white="false"
                 :style="activeProduct ? addedProductButton : infoButtonStyle"
                 @click="handleButtonClick"
