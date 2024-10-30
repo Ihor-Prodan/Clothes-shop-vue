@@ -238,6 +238,7 @@
         <div class="filters-container-filter-size-container">
           <UIsizeButton
             v-model="selectedSize"
+            :is-product-info="false"
             :sizes="sizesFilter"
           />
         </div>

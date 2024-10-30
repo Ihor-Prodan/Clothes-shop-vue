@@ -7,7 +7,6 @@
 
   const productsCart = useCartStore();
   const products = ref(productsCart.productsInCart);
-  const selectedSize = ref<string>('');
 
   const buttonStyle = `
     max-width: 200px;
@@ -27,8 +26,8 @@
     border: none;
 `;
 
-  const deleteProductFromCart = (productId: number) => {
-    productsCart.deleteProductById(productId, selectedSize.value);
+  const deleteProductFromCart = (productId: number, size: string) => {
+    productsCart.deleteProductById(productId, size);
   };
 
   const totalPrice = computed(() => {
@@ -152,7 +151,7 @@
                   <img
                     class="cart-container-product-info-delete"
                     src="../assets/svg/delete.svg"
-                    @click="deleteProductFromCart(product.id)"
+                    @click="deleteProductFromCart(product.id, product.size)"
                   />
                 </div>
                 <Line v-if="index !== products.length - 1" />

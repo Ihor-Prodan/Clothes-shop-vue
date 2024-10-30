@@ -1,10 +1,13 @@
 <script setup lang="ts">
+  import { useCartStore } from '@/stores/cartStore';
   import { useFilterStore } from '@/stores/filterStore';
   import { onMounted, ref, watch } from 'vue';
   import { useRoute, useRouter } from 'vue-router';
 
   const filterStore = useFilterStore();
-  defineProps<{ sizes: string[] }>();
+  const cartStore = useCartStore();
+
+  defineProps<{ sizes: string[]; isProductInfo: boolean }>();
 
   const selectedSize = ref<string>('');
   const route = useRoute();
@@ -41,7 +44,17 @@
   <div
     v-for="s in sizes"
     :key="s"
-    :class="['size', { 'size-active': selectedSize === s }]"
+    :class="[
+      'size',
+      {
+        'size-active':
+          selectedSize === s ||
+          (cartStore.productsInCart.some(
+            (item) => item.size === s && item.id.toString() === route.params.id
+          ) &&
+            isProductInfo),
+      },
+    ]"
     @click="selectSize(s)"
   >
     {{ s }}

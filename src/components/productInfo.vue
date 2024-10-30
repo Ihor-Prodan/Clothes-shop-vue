@@ -19,6 +19,7 @@
   const route = useRoute();
   const productId = ref(route.params.id);
   const selectedSize = ref<string>('');
+  const cartSelectedSize = ref<string>('');
 
   const product = computed(() =>
     productsArr.products.find((p) => p.id.toString() === productId.value)
@@ -35,6 +36,10 @@
     if (route.query.size) {
       selectedSize.value = route.query.size as string;
     }
+  };
+
+  const updateCartSize = (size: string) => {
+    cartSelectedSize.value = size;
   };
 
   onMounted(() => {
@@ -82,7 +87,8 @@
 
   const activeProduct = computed(() => {
     return productsCart.productsInCart.find(
-      (p) => p.id.toString() === productId.value
+      (p) =>
+        p.id.toString() === productId.value && p.size === selectedSize.value
     );
   });
 
@@ -250,8 +256,9 @@
               <p class="product-info-container-info-size-title">Size:</p>
               <div class="product-info-container-info-size-container">
                 <UIsizeButton
+                  :is-product-info="true"
                   :sizes="product?.large"
-                  @select-size="updateSelectedSize()"
+                  @select-size="updateCartSize(selectedSize)"
                 />
               </div>
             </div>
