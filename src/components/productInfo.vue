@@ -14,12 +14,13 @@
   import type { Product } from '@/Types/Product';
   const productsArr = useProductStore();
   const productsCart = useCartStore();
-  const productsList = computed(() => productsArr.products);
+  // const productsList = computed(() => productsArr.products);
 
   const route = useRoute();
   const productId = ref(route.params.id);
   const selectedSize = ref<string>('');
   const cartSelectedSize = ref<string>('');
+  const isProductInfo = true;
 
   const product = computed(() =>
     productsArr.products.find((p) => p.id.toString() === productId.value)
@@ -27,9 +28,7 @@
 
   const reviewsArr = useReviewsStore();
   const reviews = computed(() =>
-    reviewsArr.reviews.filter(
-      (rev) => rev.productID === productsList.value[1].id
-    )
+    reviewsArr.reviews.filter((rev) => rev.productID === product.value?.id)
   );
 
   const updateSelectedSize = () => {
@@ -118,6 +117,12 @@
     );
     return productInCart?.quantity || 0;
   };
+
+  watch(selectedSize, (newSize) => {
+    if (newSize) {
+      updateCartSize(newSize);
+    }
+  });
 
   const infoButtonStyle = `
     display: flex;
@@ -256,7 +261,8 @@
               <p class="product-info-container-info-size-title">Size:</p>
               <div class="product-info-container-info-size-container">
                 <UIsizeButton
-                  :is-product-info="true"
+                  v-model="selectedSize"
+                  :is-product-info="isProductInfo"
                   :sizes="product?.large"
                   @select-size="updateCartSize(selectedSize)"
                 />
@@ -298,14 +304,28 @@
             :style="infoReviewButton"
           />
         </div>
-        <div class="review-grid">
+        <div
+          v-if="reviews.length > 0"
+          class="review-grid"
+        >
           <ReviewCard
             v-for="review in reviews"
             :key="review.id"
             v-bind="review"
           />
         </div>
-        <div class="addReview-container">
+        <div
+          v-else
+          class="review-grid-empty"
+        >
+          <p class="review-grid-empty-text">
+            Looks like no one has reviewed this product. You could be the first!
+          </p>
+        </div>
+        <div
+          v-if="reviews.length > 6"
+          class="addReview-container"
+        >
           <UIbutton
             title="Load More Reviews"
             :is-white="true"
@@ -484,6 +504,24 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 25px;
+
+    &-empty {
+      display: flex;
+      flex-direction: row;
+      gap: 25px;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+
+      &-text {
+        margin-top: 90px;
+        display: flex;
+        color: rgba(0, 0, 0, 0.4);
+        font-size: 34px;
+        font-weight: 400;
+        text-align: center;
+      }
+    }
   }
 
   .addReview-container {

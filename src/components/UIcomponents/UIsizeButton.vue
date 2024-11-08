@@ -7,24 +7,31 @@
   const filterStore = useFilterStore();
   const cartStore = useCartStore();
 
-  defineProps<{ sizes: string[]; isProductInfo: boolean }>();
+  const props = defineProps<{ sizes: string[]; isProductInfo: boolean }>();
 
   const selectedSize = ref<string>('');
   const route = useRoute();
   const router = useRouter();
 
   const selectSize = (size: string) => {
-    filterStore.setSelectedSize(size);
-    selectedSize.value = size;
+    if (!props.isProductInfo) {
+      filterStore.setSelectedSize(size);
+      selectedSize.value = size;
+    }
+    // filterStore.setSelectedSize(size);
+    // selectedSize.value = size;
 
     const queryParams = { ...route.query, size: size };
+
     router.push({ path: route.path, query: queryParams });
   };
-
   onMounted(() => {
     if (route.query.size) {
       selectedSize.value = route.query.size as string;
-      filterStore.setSelectedSize(route.query.size as string);
+      if (props.isProductInfo) {
+        filterStore.setSelectedSize(route.query.size as string);
+      }
+      // filterStore.setSelectedSize(route.query.size as string);
     }
   });
 

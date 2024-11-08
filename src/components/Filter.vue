@@ -32,6 +32,7 @@
   const priceRange = computed(() => filterStore.priceRange);
   const selectedSex = computed(() => filterStore.selectedSexType);
   const hasActiveFilters = computed(() => filterStore.hasActiveFilters);
+  const isProductInfo = false;
 
   const filteredItems = computed(() => {
     if (!hasActiveFilters.value) {
@@ -238,7 +239,7 @@
         <div class="filters-container-filter-size-container">
           <UIsizeButton
             v-model="selectedSize"
-            :is-product-info="false"
+            :is-product-info="isProductInfo"
             :sizes="sizesFilter"
           />
         </div>
