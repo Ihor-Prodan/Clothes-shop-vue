@@ -11,15 +11,15 @@
   import Recommended from './Recommended.vue';
   import { useRoute } from 'vue-router';
   import { useCartStore } from '@/stores/cartStore';
-  import type { Product } from '@/Types/Product';
+  // import ModalAddReview from './ModalAddReview.vue';
   const productsArr = useProductStore();
   const productsCart = useCartStore();
-  // const productsList = computed(() => productsArr.products);
 
   const route = useRoute();
   const productId = ref(route.params.id);
   const selectedSize = ref<string>('');
   const cartSelectedSize = ref<string>('');
+  const errorMessage = ref<string>('');
   const isProductInfo = true;
 
   const product = computed(() =>
@@ -79,8 +79,10 @@
     const product = productsArr.products.find(
       (p) => p.id.toString() === productId.value
     );
-    if (product) {
+    if (product && selectedSize.value) {
       productsCart.addProductToCart(product, selectedSize.value);
+    } else {
+      errorMessage.value = 'Choose size';
     }
   };
 
@@ -101,21 +103,6 @@
     } else {
       addToCart();
     }
-  };
-
-  const increaseProductQuantity = (product: Product) => {
-    productsCart.addProductToCart(product, selectedSize.value);
-  };
-
-  const decreaseProductQuantity = (productId: number) => {
-    productsCart.removeProductFromCart(productId, selectedSize.value);
-  };
-
-  const getProductQuantity = (productId: number) => {
-    const productInCart = productsCart.productsInCart.find(
-      (product) => product.id === productId
-    );
-    return productInCart?.quantity || 0;
   };
 
   watch(selectedSize, (newSize) => {
@@ -270,27 +257,18 @@
             </div>
             <Line />
             <div class="product-info-container-info-buttons">
-              <div class="counter-button">
-                <img
-                  class="minus"
-                  src="../assets/svg/minus.svg"
-                  @click="decreaseProductQuantity(product.id)"
-                />
-                <p class="countainer-button-text">
-                  {{ getProductQuantity(product.id) }}
-                </p>
-                <img
-                  class="plus"
-                  src="../assets/svg/plus.svg"
-                  @click="increaseProductQuantity(product)"
-                />
-              </div>
               <UIbutton
                 :title="activeProduct ? 'Remove from Cart' : 'Add to Cart'"
                 :is-white="false"
                 :style="activeProduct ? addedProductButton : infoButtonStyle"
                 @click="handleButtonClick"
               />
+              <p
+                v-if="errorMessage"
+                class="error-message"
+              >
+                {{ errorMessage }}
+              </p>
             </div>
           </div>
         </div>
@@ -313,6 +291,7 @@
             :key="review.id"
             v-bind="review"
           />
+          <!-- <ModalAddReview /> -->
         </div>
         <div
           v-else
@@ -352,6 +331,7 @@
       margin-top: 30px;
 
       &-info {
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;

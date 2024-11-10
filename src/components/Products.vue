@@ -60,7 +60,6 @@
 
   const updateFilteredProducts = (filtered: Product[]) => {
     filteredProducts.value = filtered;
-    currentPage.value = 1;
   };
 
   onMounted(() => {
