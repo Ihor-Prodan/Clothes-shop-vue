@@ -11,7 +11,8 @@
   import Recommended from './Recommended.vue';
   import { useRoute } from 'vue-router';
   import { useCartStore } from '@/stores/cartStore';
-  // import ModalAddReview from './ModalAddReview.vue';
+  import ModalAddReview from './ModalAddReview.vue';
+  import type { Reviews } from '@/Types/reviews';
   const productsArr = useProductStore();
   const productsCart = useCartStore();
 
@@ -21,6 +22,7 @@
   const cartSelectedSize = ref<string>('');
   const errorMessage = ref<string>('');
   const isProductInfo = true;
+  const showReviewModal = ref(false);
 
   const product = computed(() =>
     productsArr.products.find((p) => p.id.toString() === productId.value)
@@ -104,6 +106,15 @@
       addToCart();
     }
   };
+
+  function handleAddReview(newReview: Reviews) {
+    reviewsArr.addReview(newReview);
+    showReviewModal.value = false;
+  }
+
+  onMounted(() => {
+    reviewsArr.fetchReviews();
+  });
 
   watch(selectedSize, (newSize) => {
     if (newSize) {
@@ -280,6 +291,7 @@
             title="Write a Review"
             :is-white="false"
             :style="infoReviewButton"
+            @click="showReviewModal = true"
           />
         </div>
         <div
@@ -291,7 +303,11 @@
             :key="review.id"
             v-bind="review"
           />
-          <!-- <ModalAddReview /> -->
+          <ModalAddReview
+            v-if="showReviewModal"
+            @close="showReviewModal = false"
+            @submit-review="handleAddReview"
+          />
         </div>
         <div
           v-else

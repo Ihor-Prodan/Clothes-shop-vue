@@ -16,5 +16,9 @@ export const useReviewsStore = defineStore('rewiews', () => {
     }
   }
 
-  return { fetchReviews, reviews };
+  function addReview(newReview: Reviews) {
+    reviews.value.push(newReview);
+  }
+
+  return { fetchReviews, reviews, addReview };
 });
