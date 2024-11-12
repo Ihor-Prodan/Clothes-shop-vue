@@ -1158,5 +1158,405 @@
     "text": "Good product, but the stitching could be better.",
     "stars": 3,
     "posted": "Posted on June 16, 2023"
+  },
+  {
+    "id": 146,
+    "productID": 3,
+    "name": "Alice S.",
+    "text": "Amazing quality! Very comfortable and stylish.",
+    "stars": 5,
+    "posted": "Posted on May 10, 2023"
+  },
+  {
+    "id": 147,
+    "productID": 7,
+    "name": "Michael B.",
+    "text": "Not bad, but expected better durability.",
+    "stars": 3,
+    "posted": "Posted on June 1, 2023"
+  },
+  {
+    "id": 148,
+    "productID": 2,
+    "name": "Sara P.",
+    "text": "Perfect for my needs, very happy with the purchase.",
+    "stars": 5,
+    "posted": "Posted on April 25, 2023"
+  },
+  {
+    "id": 149,
+    "productID": 8,
+    "name": "Tommy L.",
+    "text": "Good value for money, but could be softer.",
+    "stars": 4,
+    "posted": "Posted on May 5, 2023"
+  },
+  {
+    "id": 150,
+    "productID": 10,
+    "name": "Lucy K.",
+    "text": "Color faded a bit after washing, but still decent.",
+    "stars": 3,
+    "posted": "Posted on June 20, 2023"
+  },
+  {
+    "id": 151,
+    "productID": 6,
+    "name": "Robert M.",
+    "text": "Exceeded my expectations! Very durable.",
+    "stars": 5,
+    "posted": "Posted on March 12, 2023"
+  },
+  {
+    "id": 152,
+    "productID": 1,
+    "name": "Nancy O.",
+    "text": "Comfortable and well-made. Will buy again.",
+    "stars": 4,
+    "posted": "Posted on April 30, 2023"
+  },
+  {
+    "id": 153,
+    "productID": 4,
+    "name": "Chris T.",
+    "text": "Arrived late, but the product is good.",
+    "stars": 3,
+    "posted": "Posted on May 18, 2023"
+  },
+  {
+    "id": 154,
+    "productID": 9,
+    "name": "Eva J.",
+    "text": "Absolutely love it! Great quality.",
+    "stars": 5,
+    "posted": "Posted on June 7, 2023"
+  },
+  {
+    "id": 155,
+    "productID": 5,
+    "name": "Daniel H.",
+    "text": "Product is okay, but not worth the price.",
+    "stars": 2,
+    "posted": "Posted on June 12, 2023"
+  },
+  {
+    "id": 156,
+    "productID": 2,
+    "name": "Olivia R.",
+    "text": "Beautiful design, but size runs small.",
+    "stars": 3,
+    "posted": "Posted on March 23, 2023"
+  },
+  {
+    "id": 157,
+    "productID": 7,
+    "name": "Max W.",
+    "text": "Just as described. Very satisfied.",
+    "stars": 5,
+    "posted": "Posted on April 15, 2023"
+  },
+  {
+    "id": 158,
+    "productID": 3,
+    "name": "Emma Z.",
+    "text": "Good product, but a bit overpriced.",
+    "stars": 4,
+    "posted": "Posted on May 9, 2023"
+  },
+  {
+    "id": 159,
+    "productID": 1,
+    "name": "Leo N.",
+    "text": "Could be improved, especially the stitching.",
+    "stars": 2,
+    "posted": "Posted on April 5, 2023"
+  },
+  {
+    "id": 160,
+    "productID": 8,
+    "name": "Sophia D.",
+    "text": "Amazing! Bought another one as a gift.",
+    "stars": 5,
+    "posted": "Posted on June 18, 2023"
+  },
+  {
+    "id": 161,
+    "productID": 6,
+    "name": "Jack P.",
+    "text": "Comfortable but wears out quickly.",
+    "stars": 3,
+    "posted": "Posted on May 20, 2023"
+  },
+  {
+    "id": 162,
+    "productID": 10,
+    "name": "Lily C.",
+    "text": "Good purchase overall, would recommend.",
+    "stars": 4,
+    "posted": "Posted on March 10, 2023"
+  },
+  {
+    "id": 163,
+    "productID": 4,
+    "name": "David G.",
+    "text": "Expected more durability for the price.",
+    "stars": 3,
+    "posted": "Posted on June 30, 2023"
+  },
+  {
+    "id": 164,
+    "productID": 9,
+    "name": "Chloe F.",
+    "text": "Wonderful product! Exceeded my expectations.",
+    "stars": 5,
+    "posted": "Posted on May 3, 2023"
+  },
+  {
+    "id": 165,
+    "productID": 5,
+    "name": "Oliver H.",
+    "text": "Not very impressed. Quality could be better.",
+    "stars": 2,
+    "posted": "Posted on April 12, 2023"
+  },
+  {
+    "id": 166,
+    "productID": 1,
+    "name": "Liam K.",
+    "text": "Stylish and comfortable, great for daily use.",
+    "stars": 4,
+    "posted": "Posted on February 10, 2023"
+  },
+  {
+    "id": 167,
+    "productID": 7,
+    "name": "Mia L.",
+    "text": "Amazing product! Bought it as a gift and they loved it.",
+    "stars": 5,
+    "posted": "Posted on April 25, 2023"
+  },
+  {
+    "id": 168,
+    "productID": 3,
+    "name": "Henry J.",
+    "text": "Good quality but could be a little cheaper.",
+    "stars": 3,
+    "posted": "Posted on May 17, 2023"
+  },
+  {
+    "id": 169,
+    "productID": 5,
+    "name": "Grace T.",
+    "text": "Very satisfied with the purchase!",
+    "stars": 5,
+    "posted": "Posted on June 8, 2023"
+  },
+  {
+    "id": 170,
+    "productID": 4,
+    "name": "Leo M.",
+    "text": "Product arrived in poor condition, disappointed.",
+    "stars": 2,
+    "posted": "Posted on June 21, 2023"
+  },
+  {
+    "id": 171,
+    "productID": 9,
+    "name": "Sophie B.",
+    "text": "Great quality and fast shipping.",
+    "stars": 4,
+    "posted": "Posted on March 1, 2023"
+  },
+  {
+    "id": 172,
+    "productID": 8,
+    "name": "Noah G.",
+    "text": "It’s okay, but I expected a bit more.",
+    "stars": 3,
+    "posted": "Posted on April 18, 2023"
+  },
+  {
+    "id": 173,
+    "productID": 6,
+    "name": "Lily Q.",
+    "text": "Absolutely love it! Will order again.",
+    "stars": 5,
+    "posted": "Posted on June 13, 2023"
+  },
+  {
+    "id": 174,
+    "productID": 2,
+    "name": "Ethan H.",
+    "text": "Decent quality but not worth the price.",
+    "stars": 3,
+    "posted": "Posted on May 11, 2023"
+  },
+  {
+    "id": 175,
+    "productID": 10,
+    "name": "Olivia F.",
+    "text": "Perfect fit and very comfortable.",
+    "stars": 4,
+    "posted": "Posted on May 30, 2023"
+  },
+  {
+    "id": 176,
+    "productID": 3,
+    "name": "Jacob W.",
+    "text": "The material feels cheap, unfortunately.",
+    "stars": 2,
+    "posted": "Posted on April 1, 2023"
+  },
+  {
+    "id": 177,
+    "productID": 7,
+    "name": "Charlotte D.",
+    "text": "Great buy, very satisfied with the quality.",
+    "stars": 5,
+    "posted": "Posted on March 5, 2023"
+  },
+  {
+    "id": 178,
+    "productID": 8,
+    "name": "Amelia P.",
+    "text": "Nice design, but it’s not very durable.",
+    "stars": 3,
+    "posted": "Posted on May 9, 2023"
+  },
+  {
+    "id": 179,
+    "productID": 4,
+    "name": "Elijah K.",
+    "text": "Good but not great, some issues with quality.",
+    "stars": 3,
+    "posted": "Posted on April 14, 2023"
+  },
+  {
+    "id": 180,
+    "productID": 1,
+    "name": "Isabella Z.",
+    "text": "Worth every penny! Amazing product.",
+    "stars": 5,
+    "posted": "Posted on June 2, 2023"
+  },
+  {
+    "id": 181,
+    "productID": 6,
+    "name": "Mason C.",
+    "text": "Arrived quickly, very happy with it.",
+    "stars": 4,
+    "posted": "Posted on May 15, 2023"
+  },
+  {
+    "id": 182,
+    "productID": 9,
+    "name": "Sophia L.",
+    "text": "A bit overpriced for what it offers.",
+    "stars": 3,
+    "posted": "Posted on June 6, 2023"
+  },
+  {
+    "id": 183,
+    "productID": 10,
+    "name": "Aiden Y.",
+    "text": "Didn’t meet my expectations, sadly.",
+    "stars": 2,
+    "posted": "Posted on June 24, 2023"
+  },
+  {
+    "id": 184,
+    "productID": 2,
+    "name": "Emily N.",
+    "text": "Super comfortable, love it!",
+    "stars": 5,
+    "posted": "Posted on May 27, 2023"
+  },
+  {
+    "id": 185,
+    "productID": 3,
+    "name": "Lucas R.",
+    "text": "Looks good but not very functional.",
+    "stars": 3,
+    "posted": "Posted on April 12, 2023"
+  },
+  {
+    "id": 186,
+    "productID": 8,
+    "name": "Zoe M.",
+    "text": "Great for the price, very happy.",
+    "stars": 4,
+    "posted": "Posted on March 29, 2023"
+  },
+  {
+    "id": 187,
+    "productID": 7,
+    "name": "Benjamin T.",
+    "text": "Not worth the hype, quite average.",
+    "stars": 3,
+    "posted": "Posted on May 22, 2023"
+  },
+  {
+    "id": 188,
+    "productID": 5,
+    "name": "Harper S.",
+    "text": "Love it! Great quality and design.",
+    "stars": 5,
+    "posted": "Posted on June 17, 2023"
+  },
+  {
+    "id": 189,
+    "productID": 1,
+    "name": "Daniel V.",
+    "text": "Disappointed with the quality for this price.",
+    "stars": 2,
+    "posted": "Posted on April 7, 2023"
+  },
+  {
+    "id": 190,
+    "productID": 9,
+    "name": "Evelyn X.",
+    "text": "Absolutely recommend! Fantastic product.",
+    "stars": 5,
+    "posted": "Posted on May 1, 2023"
+  },
+  {
+    "id": 191,
+    "productID": 6,
+    "name": "James H.",
+    "text": "Comfortable but a bit too large.",
+    "stars": 3,
+    "posted": "Posted on March 20, 2023"
+  },
+  {
+    "id": 192,
+    "productID": 4,
+    "name": "Ella Q.",
+    "text": "Arrived as described, very pleased.",
+    "stars": 4,
+    "posted": "Posted on May 4, 2023"
+  },
+  {
+    "id": 193,
+    "productID": 10,
+    "name": "Matthew G.",
+    "text": "The stitching came undone after a week.",
+    "stars": 2,
+    "posted": "Posted on June 11, 2023"
+  },
+  {
+    "id": 194,
+    "productID": 5,
+    "name": "Abigail P.",
+    "text": "Nice product, would buy it again.",
+    "stars": 4,
+    "posted": "Posted on April 19, 2023"
+  },
+  {
+    "id": 195,
+    "productID": 2,
+    "name": "Jack R.",
+    "text": "Quality is okay, but could be improved.",
+    "stars": 3,
+    "posted": "Posted on May 6, 2023"
   }
 ]
