@@ -29,9 +29,12 @@
   );
 
   const reviewsArr = useReviewsStore();
-  const reviews = computed(() =>
+
+  const reviewsFiltred = computed(() =>
     reviewsArr.reviews.filter((rev) => rev.productID === product.value?.id)
   );
+
+  const reviews = ref<Reviews[]>(reviewsFiltred.value);
 
   const updateSelectedSize = () => {
     if (route.query.size) {
@@ -39,12 +42,14 @@
     }
   };
 
+  console.log(reviews.value, 'jh');
+
   const updateCartSize = (size: string) => {
     cartSelectedSize.value = size;
   };
 
   onMounted(() => {
-    reviewsArr.fetchReviews();
+    // reviewsArr.fetchReviews();
     productsArr.fetchProducts();
 
     updateSelectedSize();
@@ -111,10 +116,6 @@
     reviewsArr.addReview(newReview);
     showReviewModal.value = false;
   }
-
-  onMounted(() => {
-    reviewsArr.fetchReviews();
-  });
 
   watch(selectedSize, (newSize) => {
     if (newSize) {

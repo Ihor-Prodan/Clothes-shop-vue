@@ -1,21 +1,36 @@
 <script setup lang="ts">
   import { ref } from 'vue';
+  import { useRoute } from 'vue-router';
 
-  const emit = defineEmits(['submitReview']);
+  const emit = defineEmits(['submit-review']);
+
+  const route = useRoute();
+  const productId = ref(route.params.id);
 
   const reviewData = ref({
-    stars: 0,
+    stars: 1,
     name: '',
     text: '',
-    id: 0,
-    productID: 0,
-    posted: Date.now(),
+    id: Date.now(),
+    productID: productId.value,
+    posted: formatDate(new Date()),
   });
 
-  function submitReview() {
+  console.log(reviewData.value);
+
+  const submitReview = () => {
     if (reviewData.value.name && reviewData.value.text) {
-      emit('submitReview', { ...reviewData.value });
+      emit('submit-review', { ...reviewData.value });
     }
+  };
+
+  function formatDate(date: Date) {
+    const options: Intl.DateTimeFormatOptions = {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    };
+    return `Posted on ${date.toLocaleDateString('en-US', options)}`;
   }
 </script>
 

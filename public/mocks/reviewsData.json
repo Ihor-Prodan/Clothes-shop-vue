@@ -649,7 +649,7 @@
   },
   {
     "id": 82,
-    "productID": 1,
+    "productID": 11,
     "name": "Sophia K.",
     "text": "Exceeded my expectations! Will definitely buy more.",
     "stars": 5,
@@ -657,7 +657,7 @@
   },
   {
     "id": 83,
-    "productID": 1,
+    "productID": 12,
     "name": "Mason L.",
     "text": "The fabric is soft, but the size was a bit off.",
     "stars": 4,
@@ -705,7 +705,7 @@
   },
   {
     "id": 89,
-    "productID": 2,
+    "productID": 20,
     "name": "Liam P.",
     "text": "The product is fine, but I expected better packaging.",
     "stars": 3,
@@ -713,7 +713,7 @@
   },
   {
     "id": 90,
-    "productID": 2,
+    "productID": 21,
     "name": "Ava M.",
     "text": "Amazing quality! Perfect fit and the material is soft.",
     "stars": 5,
@@ -721,7 +721,7 @@
   },
   {
     "id": 91,
-    "productID": 2,
+    "productID": 22,
     "name": "Henry W.",
     "text": "The product arrived damaged, but the customer service was great.",
     "stars": 2,
@@ -801,7 +801,7 @@
   },
   {
     "id": 101,
-    "productID": 3,
+    "productID": 39,
     "name": "James S.",
     "text": "Good quality for the price. Very satisfied.",
     "stars": 4,
@@ -809,7 +809,7 @@
   },
   {
     "id": 102,
-    "productID": 3,
+    "productID": 31,
     "name": "Amelia H.",
     "text": "Nice product, but the packaging could be better.",
     "stars": 3,
@@ -817,7 +817,7 @@
   },
   {
     "id": 103,
-    "productID": 3,
+    "productID": 33,
     "name": "Lucas W.",
     "text": "The product arrived on time and the quality is top-notch.",
     "stars": 5,
@@ -889,7 +889,7 @@
   },
   {
     "id": 112,
-    "productID": 4,
+    "productID": 42,
     "name": "Sophia V.",
     "text": "Amazing product! The colors and design are perfect.",
     "stars": 5,
@@ -897,7 +897,7 @@
   },
   {
     "id": 113,
-    "productID": 4,
+    "productID": 47,
     "name": "James T.",
     "text": "The material feels a bit thin, but overall it's fine.",
     "stars": 3,
@@ -945,7 +945,7 @@
   },
   {
     "id": 119,
-    "productID": 5,
+    "productID": 57,
     "name": "Lucas K.",
     "text": "The product was delivered late, but the quality is excellent.",
     "stars": 4,
@@ -953,7 +953,7 @@
   },
   {
     "id": 120,
-    "productID": 5,
+    "productID": 55,
     "name": "Ava N.",
     "text": "The fabric feels nice, but the size was a little too small.",
     "stars": 3,
@@ -977,7 +977,7 @@
   },
   {
     "id": 123,
-    "productID": 5,
+    "productID": 54,
     "name": "Mason W.",
     "text": "The stitching is not as durable as expected, but still happy with the design.",
     "stars": 3,
