@@ -4,9 +4,15 @@
   import Line from './UIcomponents/UIline.vue';
   import { computed, ref, watch } from 'vue';
   import type { Product } from '@/Types/Product';
+  import { useRouter } from 'vue-router';
 
   const productsCart = useCartStore();
   const products = ref(productsCart.productsInCart);
+  const router = useRouter();
+
+  const goToProduct = (product: Product) => {
+    router.push({ name: 'info', params: { id: product.id } });
+  };
 
   const buttonStyle = `
     max-width: 200px;
@@ -105,7 +111,10 @@
                 v-for="(product, index) in products"
                 :key="product.id"
               >
-                <div class="product-cards">
+                <div
+                  class="product-cards"
+                  @click="goToProduct(product)"
+                >
                   <div class="cart-container-product-info-container">
                     <img
                       class="cart-container-product-info-img"
@@ -134,7 +143,7 @@
                       <img
                         class="minus"
                         src="../assets/svg/minus.svg"
-                        @click="
+                        @click.stop="
                           decreaseProductQuantity(product.id, product.size)
                         "
                       />
@@ -144,14 +153,18 @@
                       <img
                         class="plus"
                         src="../assets/svg/plus.svg"
-                        @click="increaseProductQuantity(product, product.size)"
+                        @click.stop="
+                          increaseProductQuantity(product, product.size)
+                        "
                       />
                     </div>
                   </div>
                   <img
                     class="cart-container-product-info-delete"
                     src="../assets/svg/delete.svg"
-                    @click="deleteProductFromCart(product.id, product.size)"
+                    @click.stop="
+                      deleteProductFromCart(product.id, product.size)
+                    "
                   />
                 </div>
                 <Line v-if="index !== products.length - 1" />
@@ -236,6 +249,7 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
+    cursor: pointer;
 
     &-container {
       display: flex;
@@ -246,6 +260,33 @@
       justify-content: space-between;
       border-radius: 20px;
       border: 1px solid rgba(0, 0, 0, 0.1);
+      transition: 0.3s;
+    }
+
+    &:hover .cart-container-product-info-img {
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+      transform: scale(1.1);
+      transition: transform 0.3s;
+    }
+
+    &:hover .counter-button {
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+      transform: scale(1.1);
+    }
+
+    &:hover .cart-container-product-info-img-container-info-title {
+      transform: scale(1.1);
+    }
+    &:hover .cart-container-product-info-img-container-info-size {
+      transform: scale(1.1);
+    }
+
+    &:hover .cart-container-product-info-img-container-info-price {
+      transform: scale(1.1);
+    }
+
+    &:hover .cart-container-product-info-delete {
+      transform: scale(1.1);
     }
   }
 
@@ -264,6 +305,7 @@
       border-radius: 10px;
       background-color: #000;
       object-fit: cover;
+      transition: 0.3s;
 
       &-container-info {
         display: flex;
@@ -274,18 +316,21 @@
           color: #000;
           font-size: 16px;
           font-weight: 500;
+          transition: 0.3s;
         }
 
         &-size {
           color: rgba(0, 0, 0, 0.6);
           font-size: 14px;
           font-weight: 400;
+          transition: 0.3s;
         }
 
         &-price {
           color: #000;
           font-size: 16px;
           font-weight: 500;
+          transition: 0.3s;
         }
       }
     }
@@ -308,6 +353,7 @@
     gap: 20px;
     border-radius: 62px;
     background: #f0f0f0;
+    transition: 0.3s;
   }
 
   .cart-container-product-summary {

@@ -23,6 +23,7 @@
   const errorMessage = ref<string>('');
   const isProductInfo = true;
   const showReviewModal = ref(false);
+  const visibleReviewsCount = ref(6);
 
   const product = computed(() =>
     productsArr.products.find((p) => p.id.toString() === productId.value)
@@ -31,10 +32,20 @@
   const reviewsArr = useReviewsStore();
 
   const reviewsFiltred = computed(() =>
-    reviewsArr.reviews.filter((rev) => rev.productID === product.value?.id)
+    reviewsArr.reviews.filter(
+      (rev) => Number(rev.productID) === product.value?.id
+    )
   );
 
-  const reviews = ref<Reviews[]>(reviewsFiltred.value);
+  const limitedReviews = computed(() =>
+    reviewsFiltred.value.slice(0, visibleReviewsCount.value)
+  );
+
+  const loadMoreReviews = () => {
+    visibleReviewsCount.value += 6;
+  };
+
+  const reviews = reviewsFiltred;
 
   const updateSelectedSize = () => {
     if (route.query.size) {
@@ -42,14 +53,12 @@
     }
   };
 
-  console.log(reviews.value, 'jh');
-
   const updateCartSize = (size: string) => {
     cartSelectedSize.value = size;
+    errorMessage.value = '';
   };
 
   onMounted(() => {
-    // reviewsArr.fetchReviews();
     productsArr.fetchProducts();
 
     updateSelectedSize();
@@ -114,6 +123,7 @@
 
   function handleAddReview(newReview: Reviews) {
     reviewsArr.addReview(newReview);
+
     showReviewModal.value = false;
   }
 
@@ -270,17 +280,19 @@
             <Line />
             <div class="product-info-container-info-buttons">
               <UIbutton
+                v-if="!errorMessage"
                 :title="activeProduct ? 'Remove from Cart' : 'Add to Cart'"
                 :is-white="false"
                 :style="activeProduct ? addedProductButton : infoButtonStyle"
                 @click="handleButtonClick"
               />
-              <p
+              <UIbutton
                 v-if="errorMessage"
-                class="error-message"
-              >
-                {{ errorMessage }}
-              </p>
+                :title="errorMessage"
+                :is-white="false"
+                :style="activeProduct ? addedProductButton : infoButtonStyle"
+                @click="handleButtonClick"
+              />
             </div>
           </div>
         </div>
@@ -300,14 +312,9 @@
           class="review-grid"
         >
           <ReviewCard
-            v-for="review in reviews"
+            v-for="review in limitedReviews"
             :key="review.id"
             v-bind="review"
-          />
-          <ModalAddReview
-            v-if="showReviewModal"
-            @close="showReviewModal = false"
-            @submit-review="handleAddReview"
           />
         </div>
         <div
@@ -318,14 +325,20 @@
             Looks like no one has reviewed this product. You could be the first!
           </p>
         </div>
+        <ModalAddReview
+          v-if="showReviewModal"
+          @close="showReviewModal = false"
+          @submit-review="handleAddReview"
+        />
         <div
-          v-if="reviews.length > 6"
+          v-if="reviewsFiltred.length > visibleReviewsCount"
           class="addReview-container"
         >
           <UIbutton
             title="Load More Reviews"
             :is-white="true"
             :style="loadReviev"
+            @click="loadMoreReviews"
           />
         </div>
       </div>

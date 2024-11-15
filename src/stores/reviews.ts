@@ -37,5 +37,5 @@ export const useReviewsStore = defineStore('reviews', () => {
     localStorage.setItem('reviews', JSON.stringify(newReviews));
   });
 
-  return { fetchReviews, reviews, addReview };
+  return { fetchReviews, reviews, addReview, loadReviewsFromLocalStorage };
 });

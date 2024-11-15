@@ -2,7 +2,7 @@
   import { ref } from 'vue';
   import { useRoute } from 'vue-router';
 
-  const emit = defineEmits(['submit-review']);
+  const emit = defineEmits(['submit-review', 'close']);
 
   const route = useRoute();
   const productId = ref(route.params.id);
@@ -16,12 +16,14 @@
     posted: formatDate(new Date()),
   });
 
-  console.log(reviewData.value);
-
   const submitReview = () => {
     if (reviewData.value.name && reviewData.value.text) {
       emit('submit-review', { ...reviewData.value });
     }
+  };
+
+  const closeModal = () => {
+    emit('close');
   };
 
   function formatDate(date: Date) {
@@ -36,6 +38,16 @@
 
 <template>
   <section class="modal">
+    <button
+      class="close-icon"
+      @click="closeModal"
+    >
+      <img
+        src="../assets/svg/closeIcon.svg"
+        alt="Close"
+      />
+    </button>
+
     <div class="review-star">
       <label
         class="review-text"
@@ -44,7 +56,7 @@
       >
       <select
         id="review-star-select"
-        v-model="reviewData.stars"
+        v-model.number="reviewData.stars"
         class="review-star-select"
       >
         <option value="1">1 - Poor</option>
@@ -121,6 +133,15 @@
       outline: none;
       resize: none;
     }
+  }
+
+  .close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
   }
 
   .review {

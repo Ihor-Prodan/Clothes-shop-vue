@@ -18,8 +18,6 @@
       filterStore.setSelectedSize(size);
       selectedSize.value = size;
     }
-    // filterStore.setSelectedSize(size);
-    // selectedSize.value = size;
 
     const queryParams = { ...route.query, size: size };
 
@@ -31,7 +29,6 @@
       if (props.isProductInfo) {
         filterStore.setSelectedSize(route.query.size as string);
       }
-      // filterStore.setSelectedSize(route.query.size as string);
     }
   });
 

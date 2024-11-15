@@ -27,7 +27,7 @@
             />
           </router-link>
           <img
-            class="icon"
+            class="icon-account"
             src="../assets/svg/account.svg"
             alt="account"
           />

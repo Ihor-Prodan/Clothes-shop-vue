@@ -3,17 +3,13 @@
   import 'swiper/swiper-bundle.css';
   import { Navigation } from 'swiper/modules';
   import { useReviewsStore } from '@/stores/reviews';
-  import { computed, onMounted, ref } from 'vue';
+  import { computed, ref } from 'vue';
   import ReviewCard from './ReviewCard.vue';
 
   const reviewsArr = useReviewsStore();
   const reviews = computed(() =>
     reviewsArr.reviews.filter((rev) => rev.stars > 3)
   );
-
-  onMounted(() => {
-    reviewsArr.fetchReviews();
-  });
 
   const prevEl = ref(null);
   const nextEl = ref(null);

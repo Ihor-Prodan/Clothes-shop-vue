@@ -49,15 +49,7 @@
             />
           </div>
         </div>
-        <div class="footer-content-policy">
-          <!-- <p>
-            We use cookies to enhance your experience. Learn more in our Privacy
-            Policy.
-          </p>
-          <p class="footer-content-mission">
-            Our mission is to provide sustainable fashion for everyone.
-          </p> -->
-        </div>
+        <div class="footer-content-policy"></div>
       </div>
     </section>
   </div>
