@@ -23,7 +23,7 @@
             <p><strong>Contact us:</strong></p>
             <p>Email: shop@co.com</p>
             <p>Phone: +38 123 456 789</p>
-            <p>Address: Fashion Street 10, Kyev, Ukraine</p>
+            <p>Address: Fashion Street 10, Kyiv, Ukraine</p>
           </div>
           <div class="footer-content-socials-icons">
             <img
@@ -37,7 +37,7 @@
         <div class="footer-content-paymentContainer">
           <div class="footer-content-hours">
             <p><strong>Working Hours:</strong></p>
-            <p>Mon-Fri: 9 AM - 6 PM</p>
+            <p>Mon-Fri: 9am - 6pm</p>
             <p>Sat-Sun: Closed</p>
           </div>
           <div class="footer-content-payment">

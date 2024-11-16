@@ -14,15 +14,17 @@
   const router = useRouter();
 
   const selectSize = (size: string) => {
-    if (!props.isProductInfo) {
-      filterStore.setSelectedSize(size);
-      selectedSize.value = size;
+    if (props.isProductInfo) {
+      filterStore.setSelectedSize(size || 'ALL');
+
+      selectedSize.value = size || 'ALL';
     }
 
-    const queryParams = { ...route.query, size: size };
+    const queryParams = { ...route.query, size: size || 'ALL' };
 
     router.push({ path: route.path, query: queryParams });
   };
+
   onMounted(() => {
     if (route.query.size) {
       selectedSize.value = route.query.size as string;
@@ -38,6 +40,9 @@
       if (newSize) {
         selectedSize.value = newSize as string;
         filterStore.setSelectedSize(newSize as string);
+      } else {
+        selectedSize.value = 'ALL';
+        filterStore.setSelectedSize(selectedSize.value);
       }
     },
     { immediate: true }

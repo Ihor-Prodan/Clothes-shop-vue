@@ -7,6 +7,8 @@
     totalPages: number;
   }>();
 
+  console.log(currentPage, totalPages);
+
   const emit = defineEmits(['previous-page', 'next-page', 'go-to-page']);
   const route = useRoute();
   const router = useRouter();
@@ -30,7 +32,10 @@
 </script>
 
 <template>
-  <div class="pagination">
+  <div
+    v-if="totalPages > 1"
+    class="pagination"
+  >
     <button
       class="buttons"
       :disabled="pageFromQuery === 1"

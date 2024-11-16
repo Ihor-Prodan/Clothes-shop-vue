@@ -167,10 +167,6 @@
     },
     { immediate: true }
   );
-
-  onMounted(() => {
-    updateQueryParams();
-  });
 </script>
 
 <template>
