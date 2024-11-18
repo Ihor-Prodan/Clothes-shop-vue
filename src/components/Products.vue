@@ -46,6 +46,8 @@
     return Math.ceil(filteredProducts.value.length / productsPerPage.value);
   });
 
+  // console.log(totalPages.value);
+
   const goToNextPage = () => {
     if (currentPage.value < totalPages.value) {
       currentPage.value += 1;
@@ -109,6 +111,10 @@
       selectedStyle.value = newStyle as string | undefined;
     }
   );
+
+  onMounted(() => {
+    currentPage.value = parseInt(route.query.page as string, 10) || 1;
+  });
 </script>
 
 <template>

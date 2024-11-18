@@ -30,21 +30,48 @@
     >
       <div class="styles-container">
         <h2 class="styles-title">BROWSE BY DRESS STYLE</h2>
-        <div class="styles-container-image">
-          <template
-            v-for="style in dressStyles"
-            :key="style.title"
-          >
-            <div :class="style.size">
-              <p class="styles-container-image-title">{{ style.title }}</p>
+        <div class="styles-grid">
+          <div class="containerImg">
+            <div class="grid-item small">
+              <p class="styles-container-image-title">Casual</p>
               <img
                 class="image"
-                :src="style.imageSrc"
-                :alt="style.title"
-                @click="goToShop(style.title.toLowerCase())"
+                :src="dressStyles[0].imageSrc"
+                :alt="dressStyles[0].title"
+                @click="goToShop(dressStyles[0].title.toLowerCase())"
               />
             </div>
-          </template>
+            <div class="grid-item large">
+              <p class="styles-container-image-title">Formal</p>
+              <img
+                class="image"
+                :src="dressStyles[1].imageSrc"
+                :alt="dressStyles[1].title"
+                @click="goToShop(dressStyles[1].title.toLowerCase())"
+              />
+            </div>
+          </div>
+
+          <div class="containerImg">
+            <div class="grid-item large">
+              <p class="styles-container-image-title">Party</p>
+              <img
+                class="image"
+                :src="dressStyles[2].imageSrc"
+                :alt="dressStyles[2].title"
+                @click="goToShop(dressStyles[2].title.toLowerCase())"
+              />
+            </div>
+            <div class="grid-item small">
+              <p class="styles-container-image-title">Gym</p>
+              <img
+                class="image"
+                :src="dressStyles[3].imageSrc"
+                :alt="dressStyles[3].title"
+                @click="goToShop(dressStyles[3].title.toLowerCase())"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -52,19 +79,26 @@
 </template>
 
 <style scoped lang="scss">
+  // @media (min-width: 768px) and (max-width: 1224px) {
+  //   .styles {
+  //     background-color: green;
+  //   }
+  // }
   .styles {
     margin-top: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 1239px;
-    height: 866px;
+    width: 100%;
+    height: 800px;
     flex-shrink: 0;
     border-radius: 40px;
     background: #f0f0f0;
 
     &-container {
+      padding-inline: 50px;
+      width: 100%;
       gap: 70px;
       display: flex;
       flex-direction: column;
@@ -73,7 +107,7 @@
     }
 
     &-container-image {
-      padding-inline: 60px;
+      // padding-inline: 60px;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
@@ -91,9 +125,17 @@
     }
   }
 
+  .containerImg {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
   .image {
     width: 100%;
-    max-height: 294px;
+    // max-height: 294px;
     border-radius: 20px;
     background: #fff;
     transition: transform 0.3s ease-in-out;
@@ -107,14 +149,21 @@
   }
 
   .small {
+    display: flex;
     position: relative;
-    width: 407px;
+    // width: 407px;
+    // width: 100%;
+    max-width: 354px;
+    max-height: 251px;
     height: auto;
   }
 
   .large {
+    display: flex;
     position: relative;
-    width: 684px;
+    // width: 684px;
+    max-width: 642px;
+    max-height: 251px;
     height: auto;
   }
 </style>

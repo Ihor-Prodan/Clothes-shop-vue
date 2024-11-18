@@ -118,25 +118,30 @@
 
     if (selectedClothesType.value.length) {
       queryParams.type = selectedClothesType.value;
+      queryParams.page = 1;
     }
 
     if (selectedSex.value.length) {
       queryParams.sex = selectedSex.value;
+      queryParams.page = 1;
     }
 
     if (selectedStyleType.value.length) {
       queryParams.style =
         selectedStyleType.value[0].charAt(0).toUpperCase() +
         selectedStyleType.value[0].slice(1).toLowerCase();
+      queryParams.page = 1;
     }
 
     if (selectedSize.value) {
       queryParams.size = selectedSize.value;
+      queryParams.page = 1;
     }
 
     if (priceRange.value) {
       queryParams.minPrice = String(priceRange.value[0]);
       queryParams.maxPrice = String(priceRange.value[1]);
+      queryParams.page = 1;
     }
 
     router.push({ path: '/shop', query: queryParams });
