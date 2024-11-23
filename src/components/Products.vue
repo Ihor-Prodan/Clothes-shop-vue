@@ -46,8 +46,6 @@
     return Math.ceil(filteredProducts.value.length / productsPerPage.value);
   });
 
-  // console.log(totalPages.value);
-
   const goToNextPage = () => {
     if (currentPage.value < totalPages.value) {
       currentPage.value += 1;

@@ -1,11 +1,22 @@
 <script setup lang="ts">
+  import { ref } from 'vue';
   import type { Reviews } from '@/Types/reviews';
 
   const props = defineProps<Reviews>();
+  const isExpanded = ref(false);
+
+  const toggleExpand = () => {
+    isExpanded.value = !isExpanded.value;
+  };
 </script>
 
 <template>
-  <section class="reviews">
+  <section
+    class="reviews"
+    :class="{ 'reviews--expanded': isExpanded }"
+    @mouseenter="toggleExpand"
+    @mouseleave="toggleExpand"
+  >
     <div class="reviews-star-container">
       <img
         v-for="(star, index) in props.stars"
@@ -23,7 +34,10 @@
         alt="quote"
       />
     </div>
-    <p class="reviews-text">
+    <p
+      class="reviews-text"
+      :class="{ 'reviews-text--clamped': !isExpanded }"
+    >
       {{ props.text }}
     </p>
   </section>
@@ -35,7 +49,7 @@
   .reviews {
     display: flex;
     max-width: 400px;
-    height: 240px;
+    min-height: 240px;
     padding: 28px 32px;
     align-items: flex-start;
     align-content: flex-start;
@@ -44,6 +58,11 @@
     flex-wrap: wrap;
     border-radius: 20px;
     border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: height 0.3s ease-in-out;
+
+    &--expanded {
+      height: auto;
+    }
 
     &-star-container {
       display: flex;
@@ -60,6 +79,15 @@
     &-text {
       @include fontBase;
       color: rgba(0, 0, 0, 0.6);
+      overflow: hidden;
+      transition: all 0.3s ease-in-out;
+
+      &--clamped {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        white-space: normal;
+      }
     }
   }
 </style>

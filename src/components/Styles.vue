@@ -79,11 +79,6 @@
 </template>
 
 <style scoped lang="scss">
-  // @media (min-width: 768px) and (max-width: 1224px) {
-  //   .styles {
-  //     background-color: green;
-  //   }
-  // }
   .styles {
     margin-top: 80px;
     display: flex;
@@ -107,7 +102,6 @@
     }
 
     &-container-image {
-      // padding-inline: 60px;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
@@ -135,7 +129,6 @@
 
   .image {
     width: 100%;
-    // max-height: 294px;
     border-radius: 20px;
     background: #fff;
     transition: transform 0.3s ease-in-out;
@@ -151,8 +144,6 @@
   .small {
     display: flex;
     position: relative;
-    // width: 407px;
-    // width: 100%;
     max-width: 354px;
     max-height: 251px;
     height: auto;
@@ -161,7 +152,6 @@
   .large {
     display: flex;
     position: relative;
-    // width: 684px;
     max-width: 642px;
     max-height: 251px;
     height: auto;

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-  import { computed, onMounted } from 'vue';
+  import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
   import ProductCard from './ProductCard.vue';
   import UIbutton from './UIcomponents/UIbutton.vue';
   import { useProductStore } from '@/stores/product';
@@ -15,6 +15,20 @@
 
   const productsArr = useProductStore();
   const products = computed(() => productsArr.products);
+  const screenWidth = ref(window.innerWidth);
+
+  const updateScreenWidth = () => {
+    screenWidth.value = window.innerWidth;
+  };
+
+  onMounted(() => {
+    window.addEventListener('resize', updateScreenWidth);
+    productsArr.fetchProducts();
+  });
+
+  onBeforeUnmount(() => {
+    window.removeEventListener('resize', updateScreenWidth);
+  });
 
   const styleButton = `
     display: flex;
@@ -34,10 +48,14 @@
   const sortedProducts = computed(() => {
     const productsCopy = [...products.value];
 
+    const maxItems = screenWidth.value <= 1324 ? 3 : 4;
+
     if (isArrivals) {
-      return productsCopy.sort((a, b) => b.price - a.price).slice(0, 4);
+      return productsCopy.sort((a, b) => b.price - a.price).slice(0, maxItems);
     } else {
-      return productsCopy.sort((a, b) => b.rating - a.rating).slice(0, 4);
+      return productsCopy
+        .sort((a, b) => b.rating - a.rating)
+        .slice(0, maxItems);
     }
   });
 
@@ -117,5 +135,16 @@
 
   .line-container {
     margin-top: 64px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1324px) {
+    .recommended {
+      &-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-bottom: 36px;
+      }
+    }
   }
 </style>

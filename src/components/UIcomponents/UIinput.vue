@@ -177,4 +177,10 @@
     text-align: center;
     color: #888;
   }
+
+  @media (min-width: 768px) and (max-width: 1230px) {
+    .input-container {
+      width: 18rem;
+    }
+  }
 </style>

@@ -142,4 +142,29 @@
     top: 297px;
     right: 634px;
   }
+
+  @media (min-width: 768px) and (max-width: 1230px) {
+    .hero {
+      background-size: cover;
+      background-position: center;
+
+      &-title {
+        font-size: 44px;
+        font-weight: 700;
+        line-height: 64px;
+      }
+
+      &-content {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 32px;
+
+        &-benefits {
+          margin-top: 40px;
+          padding-right: 32px;
+        }
+      }
+    }
+  }
 </style>

@@ -37,7 +37,7 @@
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
   .header {
     display: flex;
     align-items: center;
@@ -60,5 +60,15 @@
     flex-direction: row;
     justify-content: center;
     gap: 14px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1324px) {
+    .header {
+      height: 76px;
+
+      &-content {
+        gap: 20px;
+      }
+    }
   }
 </style>
