@@ -59,6 +59,7 @@
   @import '../../assets/mixins.scss';
 
   .footer {
+    display: flex;
     width: 100%;
     height: 250px;
     flex-shrink: 0;
@@ -108,6 +109,17 @@
       display: flex;
       align-items: center;
       justify-content: start;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1199px) {
+    .footer {
+      &-container {
+        justify-content: space-between;
+        gap: 20px;
+        align-items: center;
+        padding: 0 50px;
+      }
     }
   }
 </style>

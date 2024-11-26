@@ -21,4 +21,10 @@
   .container {
     padding-inline: 100px;
   }
+
+  @media (min-width: 768px) and (max-width: 1230px) {
+    .container {
+      padding-inline: 50px;
+    }
+  }
 </style>

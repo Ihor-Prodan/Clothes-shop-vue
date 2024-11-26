@@ -131,18 +131,6 @@
     }
   }
 
-  .starBig {
-    position: absolute;
-    top: 86px;
-    right: 81px;
-  }
-
-  .starSmall {
-    position: absolute;
-    top: 297px;
-    right: 634px;
-  }
-
   @media (min-width: 768px) and (max-width: 1230px) {
     .hero {
       background-size: cover;
@@ -164,6 +152,10 @@
           margin-top: 40px;
           padding-right: 32px;
         }
+      }
+
+      &-container {
+        padding: 76px 0 36px 50px;
       }
     }
   }
