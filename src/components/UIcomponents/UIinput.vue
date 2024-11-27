@@ -178,15 +178,9 @@
     color: #888;
   }
 
-  @media (min-width: 1050px) and (max-width: 1230px) {
+  @media (min-width: 768px) and (max-width: 1230px) {
     .input-container {
       width: 18rem;
-    }
-  }
-
-  @media (min-width: 768px) and (max-width: 1049px) {
-    .input-container {
-      width: 15rem;
     }
   }
 </style>

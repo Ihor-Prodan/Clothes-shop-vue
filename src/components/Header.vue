@@ -2,8 +2,25 @@
   import { useRouter } from 'vue-router';
   import Navigation from './Navigation.vue';
   import UIinput from './UIcomponents/UIinput.vue';
+  import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
 
   const router = useRouter();
+
+  const screenWidth = ref(window.innerWidth);
+
+  const updateScreenWidth = () => {
+    screenWidth.value = window.innerWidth;
+  };
+
+  const isIconVisible = computed(() => screenWidth.value > 1050);
+
+  onMounted(() => {
+    window.addEventListener('resize', updateScreenWidth);
+  });
+
+  onBeforeUnmount(() => {
+    window.removeEventListener('resize', updateScreenWidth);
+  });
 </script>
 
 <template>
@@ -11,7 +28,7 @@
     <section class="header">
       <div class="header-content">
         <img
-          class="icon"
+          v-if="isIconVisible"
           src="../assets/svg/logo.svg"
           alt="logo"
           @click="router.push('/')"
