@@ -159,4 +159,32 @@
       }
     }
   }
+
+  @media (min-width: 768px) and (max-width: 815px) {
+    .hero {
+      &-title {
+        font-size: 34px;
+        font-weight: 700;
+      }
+
+      &-content {
+        gap: 22px;
+
+        &-benefits {
+          margin-top: 60px;
+          padding-right: 12px;
+
+          &-title {
+            color: $primary-color-black;
+            font-size: 30px;
+            font-weight: 700;
+          }
+        }
+      }
+
+      &-container {
+        padding: 76px 0 36px 50px;
+      }
+    }
+  }
 </style>

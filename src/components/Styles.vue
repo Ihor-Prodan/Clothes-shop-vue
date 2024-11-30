@@ -156,4 +156,10 @@
     max-height: 251px;
     height: auto;
   }
+
+  @media (min-width: 768px) and (max-width: 915px) {
+    .styles {
+      height: 650px;
+    }
+  }
 </style>

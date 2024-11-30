@@ -5,11 +5,20 @@
   import { useReviewsStore } from '@/stores/reviews';
   import { computed, ref } from 'vue';
   import ReviewCard from './ReviewCard.vue';
+  import { useScreenWidth } from '@/Hooks/useScreenWidth';
 
   const reviewsArr = useReviewsStore();
+  const { screenWidth } = useScreenWidth();
   const reviews = computed(() =>
     reviewsArr.reviews.filter((rev) => rev.stars > 3)
   );
+
+  const slidesPerView = computed(() => {
+    if (screenWidth.value <= 1000) {
+      return 2;
+    }
+    return 3;
+  });
 
   const prevEl = ref(null);
   const nextEl = ref(null);
@@ -40,8 +49,8 @@
           :loop="true"
           :modules="[Navigation]"
           :space-between="20"
-          :slides-per-view="3"
-          :slides-per-group="3"
+          :slides-per-view="slidesPerView"
+          :slides-per-group="slidesPerView"
           effect="fade"
           :speed="700"
           :navigation="{ prevEl: prevEl, nextEl: nextEl }"

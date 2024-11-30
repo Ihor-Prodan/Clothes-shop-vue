@@ -21,9 +21,9 @@
         <div class="footer-content-socials">
           <div class="footer-content-contact">
             <p><strong>Contact us:</strong></p>
-            <p>Email: shop@co.com</p>
-            <p>Phone: +38 123 456 789</p>
-            <p>Address: Fashion Street 10, Kyiv, Ukraine</p>
+            <p class="footer-text">Email: shop@co.com</p>
+            <p class="footer-text">Phone: +38 123 456 789</p>
+            <p class="footer-text">Address: Fashion Street 10, Kyiv, Ukraine</p>
           </div>
           <div class="footer-content-socials-icons">
             <img
@@ -37,8 +37,8 @@
         <div class="footer-content-paymentContainer">
           <div class="footer-content-hours">
             <p><strong>Working Hours:</strong></p>
-            <p>Mon-Fri: 9am - 6pm</p>
-            <p>Sat-Sun: Closed</p>
+            <p class="footer-text">Mon-Fri: 9am - 6pm</p>
+            <p class="footer-text">Sat-Sun: Closed</p>
           </div>
           <div class="footer-content-payment">
             <img
@@ -112,13 +112,50 @@
     }
   }
 
-  @media (min-width: 768px) and (max-width: 1199px) {
+  @media (min-width: 965px) and (max-width: 1199px) {
     .footer {
       &-container {
         justify-content: space-between;
         gap: 20px;
         align-items: center;
         padding: 0 50px;
+      }
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 964px) {
+    .footer {
+      &-container {
+        gap: 10px;
+        align-items: center;
+        padding: 0 50px;
+      }
+
+      &-content {
+        width: 30%;
+        gap: 15px;
+
+        &-description {
+          font-size: 12px;
+        }
+      }
+
+      &-text {
+        font-size: 12px;
+      }
+
+      &-content-paymentContainer {
+        align-items: center;
+      }
+
+      &-content-socials {
+        padding-left: 25px;
+        gap: 20px;
+
+        &-icons {
+          display: flex;
+          gap: 10px;
+        }
       }
     }
   }

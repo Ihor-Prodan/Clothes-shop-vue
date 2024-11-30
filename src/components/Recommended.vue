@@ -1,10 +1,11 @@
 <script lang="ts" setup>
-  import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
+  import { computed, onMounted } from 'vue';
   import ProductCard from './ProductCard.vue';
   import UIbutton from './UIcomponents/UIbutton.vue';
   import { useProductStore } from '@/stores/product';
   import Line from './UIcomponents/UIline.vue';
   import { useRouter } from 'vue-router';
+  import { useScreenWidth } from '@/Hooks/useScreenWidth';
 
   interface Props {
     title: string;
@@ -15,20 +16,21 @@
 
   const productsArr = useProductStore();
   const products = computed(() => productsArr.products);
-  const screenWidth = ref(window.innerWidth);
+  const { screenWidth } = useScreenWidth();
+  // const screenWidth = ref(window.innerWidth);
 
-  const updateScreenWidth = () => {
-    screenWidth.value = window.innerWidth;
-  };
+  // const updateScreenWidth = () => {
+  //   screenWidth.value = window.innerWidth;
+  // };
 
-  onMounted(() => {
-    window.addEventListener('resize', updateScreenWidth);
-    productsArr.fetchProducts();
-  });
+  // onMounted(() => {
+  //   window.addEventListener('resize', updateScreenWidth);
+  //   productsArr.fetchProducts();
+  // });
 
-  onBeforeUnmount(() => {
-    window.removeEventListener('resize', updateScreenWidth);
-  });
+  // onBeforeUnmount(() => {
+  //   window.removeEventListener('resize', updateScreenWidth);
+  // });
 
   const styleButton = `
     display: flex;

@@ -75,11 +75,44 @@
     }
 
     &-item {
+      padding: 20px 0;
       @include fontBase;
       cursor: pointer;
+      position: relative;
 
       &:hover {
-        text-shadow: 0 0 0.01px #000;
+        text-shadow: 0 0 0.03px #000;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 10px;
+        width: 0;
+        height: 4px;
+        border-radius: 8px;
+        background-color: #000;
+        transition: all 0.4s ease;
+        transform: translateX(-50%);
+      }
+
+      &:hover::after {
+        width: 100%;
+        left: 0;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 815px) {
+    .navigation {
+      &-list {
+        gap: 14px;
+      }
+
+      &-item {
+        font-size: 14px;
       }
     }
   }

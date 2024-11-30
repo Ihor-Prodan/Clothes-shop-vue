@@ -2,25 +2,13 @@
   import { useRouter } from 'vue-router';
   import Navigation from './Navigation.vue';
   import UIinput from './UIcomponents/UIinput.vue';
-  import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
+  import { computed } from 'vue';
+  import { useScreenWidth } from '@/Hooks/useScreenWidth';
 
   const router = useRouter();
-
-  const screenWidth = ref(window.innerWidth);
-
-  const updateScreenWidth = () => {
-    screenWidth.value = window.innerWidth;
-  };
+  const { screenWidth } = useScreenWidth();
 
   const isIconVisible = computed(() => screenWidth.value > 1050);
-
-  onMounted(() => {
-    window.addEventListener('resize', updateScreenWidth);
-  });
-
-  onBeforeUnmount(() => {
-    window.removeEventListener('resize', updateScreenWidth);
-  });
 </script>
 
 <template>
