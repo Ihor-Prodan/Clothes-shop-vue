@@ -16,9 +16,43 @@
   });
 
   const goToPage = (page: number) => {
-    router.push({ query: { ...route.query, page } });
-    emit('go-to-page', page);
+    if (page >= 1 && page <= totalPages) {
+      router.push({ query: { ...route.query, page } });
+      emit('go-to-page', page);
+    }
   };
+
+  const generatePageNumbers = computed(() => {
+    const pageNumbers: (number | string)[] = [];
+
+    if (totalPages <= 7) {
+      for (let i = 1; i <= totalPages; i++) {
+        pageNumbers.push(i);
+      }
+    } else {
+      pageNumbers.push(1, 2);
+
+      if (pageFromQuery.value <= 4) {
+        pageNumbers.push(3, 4, 5);
+        pageNumbers.push('...');
+      } else if (pageFromQuery.value >= totalPages - 3) {
+        pageNumbers.push('...');
+        pageNumbers.push(totalPages - 4, totalPages - 3, totalPages - 2);
+      } else {
+        pageNumbers.push('...');
+        pageNumbers.push(
+          pageFromQuery.value - 1,
+          pageFromQuery.value,
+          pageFromQuery.value + 1
+        );
+        pageNumbers.push('...');
+      }
+
+      pageNumbers.push(totalPages - 1, totalPages);
+    }
+
+    return pageNumbers;
+  });
 
   watch(
     () => route.query.page,
@@ -42,17 +76,20 @@
       <img src="../assets/svg/buttonArow.svg" />
       Previous
     </button>
-    <div class="page-container">
-      <div
-        v-for="page in totalPages"
-        :key="page"
+
+    <ul class="page-container">
+      <li
+        v-for="(page, index) in generatePageNumbers"
+        :key="index"
         class="page-numbers"
-        :class="{ active: page === pageFromQuery }"
-        @click="goToPage(page)"
+        :class="{ active: page === pageFromQuery, ellipsis: page === '...' }"
+        @click="typeof page === 'number' && goToPage(page)"
       >
-        {{ page }}
-      </div>
-    </div>
+        <span v-if="typeof page === 'string'">{{ page }}</span>
+        <span v-else>{{ page }}</span>
+      </li>
+    </ul>
+
     <button
       class="buttons"
       :disabled="pageFromQuery === totalPages"
@@ -96,11 +133,22 @@
       transition: box-shadow 0.3s ease-in-out;
       font-weight: 600;
     }
-  }
 
-  .active {
-    background: #000;
-    color: #fff;
+    &.active {
+      background: #000;
+      color: #fff;
+    }
+
+    &.ellipsis {
+      font-weight: 500;
+      font-size: 18px;
+      border-radius: 4px;
+      background: none;
+      cursor: default;
+      &:hover {
+        box-shadow: none;
+      }
+    }
   }
 
   .buttons {

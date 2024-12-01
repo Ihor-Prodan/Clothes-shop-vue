@@ -245,6 +245,25 @@
       margin-bottom: 30px;
       display: flex;
     }
+
+    @media (min-width: 768px) and (max-width: 1300px) {
+      .products {
+        &-link-container {
+          margin: 30px 0;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 5px;
+        }
+
+        &-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-gap: 45px;
+          min-height: 1113px;
+        }
+      }
+    }
   }
 
   .products-message {
