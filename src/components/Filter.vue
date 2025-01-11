@@ -118,30 +118,30 @@
 
     if (selectedClothesType.value.length) {
       queryParams.type = selectedClothesType.value;
-      queryParams.page = 1;
+      // queryParams.page = 1;
     }
 
     if (selectedSex.value.length) {
       queryParams.sex = selectedSex.value;
-      queryParams.page = 1;
+      // queryParams.page = 1;
     }
 
     if (selectedStyleType.value.length) {
       queryParams.style =
         selectedStyleType.value[0].charAt(0).toUpperCase() +
         selectedStyleType.value[0].slice(1).toLowerCase();
-      queryParams.page = 1;
+      // queryParams.page = 1;
     }
 
     if (selectedSize.value) {
       queryParams.size = selectedSize.value;
-      queryParams.page = 1;
+      // queryParams.page = 1;
     }
 
     if (priceRange.value) {
       queryParams.minPrice = String(priceRange.value[0]);
       queryParams.maxPrice = String(priceRange.value[1]);
-      queryParams.page = 1;
+      // queryParams.page = 1;
     }
 
     router.push({ path: '/shop', query: queryParams });
@@ -381,5 +381,77 @@
     width: 16px;
     height: 16px;
     transition: transform 0.3s ease-in-out;
+  }
+
+  @media (max-width: 1024px) {
+    .filters {
+      min-width: 210px;
+      padding: 10px 8px;
+
+      &-title {
+        font-size: 18px;
+      }
+
+      &-container {
+        gap: 8px;
+
+        &-filter-type {
+          padding: 2px 8px;
+          border-radius: 8px;
+        }
+
+        &-filter-text {
+          font-size: 14px;
+        }
+
+        &-filter-name {
+          font-size: 14px;
+        }
+
+        &-filter-size {
+          gap: 8px;
+
+          &-container {
+            gap: 8px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .filters {
+      min-width: 210px;
+      padding: 8px 6px;
+
+      &-title {
+        font-size: 16px;
+      }
+
+      &-container {
+        gap: 6px;
+
+        &-filter-type {
+          padding: 2px 6px;
+          border-radius: 6px;
+        }
+
+        &-filter-text {
+          font-size: 12px;
+        }
+
+        &-filter-name {
+          font-size: 12px;
+        }
+
+        &-filter-size {
+          gap: 6px;
+
+          &-container {
+            gap: 6px;
+          }
+        }
+      }
+    }
   }
 </style>

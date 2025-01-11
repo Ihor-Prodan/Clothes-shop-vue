@@ -177,8 +177,20 @@
   .page-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     gap: 10px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1324px) {
+    .page-numbers {
+      width: 20px;
+      height: 20px;
+    }
+
+    .buttons {
+      height: 22px;
+    }
   }
 </style>
